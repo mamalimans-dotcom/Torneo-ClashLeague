@@ -14,8 +14,7 @@ body {
     background-size: cover;      
     background-position: center; 
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    
+
 
     display: flex;
     justify-content: center;
@@ -27,55 +26,62 @@ body {
 
 
 
-h1 {
-    padding: 30px;
-    color: white;
-    justify-content: center;
-    text-align: left;
 
-    }
 
-.form {
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: none;
-    color: aliceblue;
+#EMAIL{
+    border: 20%;
+    border-color: black;
+    border-radius: 50vh;
+    margin: 5%;
 }
 
 .log{
-    background-color: aliceblue;
-    border-radius: 15%;
-    
+    background-color: black;
+    border-radius: 15vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aliceblue;
 }
 .submit{
-    background-color: aqua;
-    border-radius: 15%;
-    
+    border-color: yellow;
+    border-radius: 30vh;
+    font-family:fantasy;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.5);    
+    text-align: center;
 }
+
+.Regist{
+    color: yellow;
+    background: none;
+    border: none;
+    text-decoration: underline; 
+    text-underline-offset: 3px;
+    font-weight: bold;
+}
+
 
 
     
 </style>
 <body>
-    <h1>CLASH LEAGUE</h1>
+    
 
     
     <form>
         <label class="log"   for="EMAIL">EMAIL:</label><br>
-        <input class="login" type="text" id="EMAIL">
+        <input type="text" id="EMAIL">
         <br>
         <br>
         <label  class="log" for="CONTRASEÑA">CONTRASEÑA:</label><br>
-        <input class="login" type="password" id="CONTRASEÑA">
+        <input type="password" id="EMAIL">
         <br>
         <br>
 
+        <input class="Regist" type="submit" value="Registrarse como administrador">
+        <br>
+        <br>
         <input class="submit"  type="submit" value="Login">
-        <br>
-        <br>
-        <input class="submit" type="submit" value="Registrarse como administtrador">
     </form>
-    <img src="esqueleto.jpg">
+    
 </body>
 </html>
