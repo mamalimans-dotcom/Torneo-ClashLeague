@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASH LEAGUE</title>
+</head>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    /* Aquí ponemos tu imagen como fondo */
+    background-image: url('esqueleto.jpg'); 
+    background-size: cover;      /* Cubre toda la pantalla */
+    background-position: center; /* Centra la foto */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* Centramos el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altura total de la ventana */
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+h1 {
+    padding: 30px;
+    color: white;
+    justify-content: center;
+    text-align: left;
+
+    }
+
+.form {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    color: aliceblue;
+}
+
+.log{
+    background-color: aliceblue;
+    border-radius: 15%;
+    
+}
+.submit{
+    background-color: aqua;
+    border-radius: 15%;
+    
+}
+
+
+    
+</style>
+<body>
+    <h1>CLASH LEAGUE</h1>
+
+    
+    <form>
+        <label class="log"   for="EMAIL">EMAIL:</label><br>
+        <input class="login" type="text" id="EMAIL">
+        <br>
+        <br>
+        <label  class="log" for="CONTRASEÑA">CONTRASEÑA:</label><br>
+        <input class="login" type="password" id="CONTRASEÑA">
+        <br>
+        <br>
+
+        <input class="submit"  type="submit" value="Login">
+        <br>
+        <br>
+        <input class="submit" type="submit" value="Registrarse como administtrador">
+    </form>
+    <img src="esqueleto.jpg">
+</body>
+</html>
