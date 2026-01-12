@@ -9,80 +9,142 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
+
     
-    background-image: url('esqueleto.jpg'); 
-    background-size: cover;      
-    background-position: center; 
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.45)
+    ), url('esqueleto.jpg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-  
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    flex-direction: column;   
+    justify-content: center;  
+    align-items: center;   
+       
+    gap: 90px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
-
-
-
-#EMAIL{
-    border: 20%;
-    border-color: black;
-    border-radius: 50vh;
-    margin: 5%;
-}
-
-.log{
-    background-color: black;
-    border-radius: 15vh;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: aliceblue;
-}
-.submit{
-    border-color: yellow;
-    border-radius: 30vh;
-    font-family:fantasy;
-    color: aliceblue;
-    background-color: rgba(0, 0, 0, 0.5);    
+h1 {
+    color: white;
+    margin-bottom: 50px;
+    letter-spacing: 4px;
     text-align: center;
+    font-size: 29px;
 }
 
-.Regist{
+.form{
+    background: rgba(51, 49, 49, 0.55);
+    padding: 70px;
+    border-radius: 20px;
+    width: 250px;
+    box-shadow: 0 0 25px rgba(175, 171, 171, 0.6);
+    display: flex;
+    flex-direction: column;
+     
+}
+
+
+
+
+input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: 3px solid black;  
+    font-size: 15px;
+}
+.log{
+    text-align: left;
+    font-size: 19px;
+    font-weight: bold;
+    color: aliceblue;
+    
+}
+
+
+.submit {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
     color: yellow;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-color: gold;
+    border: 10%;
+}
+
+.submit:hover {
+    background: gold;
+    transform: scale(1.05);
+    
+}
+
+.administrador{
     background: none;
     border: none;
-    text-decoration: underline; 
-    text-underline-offset: 3px;
+    color: yellow;
     font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: 0.3s;
+    margin: 20px;
 }
 
+.administrador:hover {
+    text-shadow: 0 0 8px yellow;
+    transform: scale(1.03);
+}
 
+.Botones{
+    margin-top: 40px;                       
+    padding: 15px 25px;
+    background: rgba(39, 37, 37, 0.6);            
+    display: flex;
+    gap: 120px;                             
+    box-shadow: 0 0 15px rgba(112, 109, 109, 0.6);   
+}
+.Botones img{
+    width: 60px;
+}
 
     
 </style>
 <body>
-    
+    <div class="form">
+        <h1>CLASH LEAGUE</h1>
 
-    
-    <form>
-        <label class="log"   for="EMAIL">EMAIL:</label><br>
-        <input type="text" id="EMAIL">
-        <br>
-        <br>
-        <label  class="log" for="CONTRASEÑA">CONTRASEÑA:</label><br>
-        <input type="password" id="EMAIL">
-        <br>
-        <br>
+        <form>
+            <label class="log">EMAIL</label>
+            <input type="email" id="email">
 
-        <input class="Regist" type="submit" value="Registrarse como administrador">
-        <br>
-        <br>
-        <input class="submit"  type="submit" value="Login">
-    </form>
-    
+            <label class="log">CONTRASEÑA</label>
+            <input type="password" id="password">
+
+            <a href=""> <button class="administrador" type="button">
+                Registrarse como administrador
+            </button></a>
+
+            <br><br>
+
+           <a href=""><input class="submit" type="submit" value="Login"></a>
+        </form>
+    </div>
+
+    <div class="Botones">
+    <a href="Nike.como"><img src="Volver.svg"></a>
+    <a href="Adidas.com"><img src="Casa.svg"></a>
+    <a href="Puma.com"><img src="Siguiente.svg"></a>
+</div>
+
 </body>
 </html>
