@@ -1,8 +1,9 @@
 body {
-    background-image: url(/doc/web/img/clasificacion/fondo);
-    background-size: cover;
-    background-position: center;
+    background-image: url(/doc/web/img/clasificacion/fondo.png);
+    background-size: cover;      
+    background-position: center; 
     background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
     margin: 0;
     font-family: "Bangers", cursive;
@@ -48,3 +49,69 @@ body {
     font-size: 30px;
 
 }
+.navegacion {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;              
+}
+
+.navegacion ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion ul li a {
+   color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+.clasificacion{
+    border: white 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.418);
+
+}
+.rondas{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+
+    margin-top: 20px;
+     
+}
+.grupo{
+    border: white 2px solid;
+    display: flex;
+   padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.418);
+    margin-left: 25px;
+
+}
+.match {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.match::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: #ffffff;
+  right: -30px;
+  top: 15px;
+}
+
