@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo Clash Royale</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #000;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .clasificaciones {
+        width: 100%;
+        max-width: 420px;
+        padding: 15px;
+        color: white;
+    }
+
+    h1 {
+        text-align: center;
+        color: #f5c400;
+        margin-bottom: 25px;
+    }
+
+    h1 span {
+        font-size: 20px;
+    }
+
+    .ronda {
+        margin-bottom: 35px;
+    }
+
+    .ronda-titulo {
+        text-align: center;
+        background: #f5c400;
+        color: #000;
+        font-weight: bold;
+        padding: 6px 15px;
+        border-radius: 20px;
+        width: fit-content;
+        margin: 0 auto 20px;
+    }
+
+    .secciones{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    .grupos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .grupo {
+        background: #f5c400;
+        color: #000;
+        padding: 10px 12px;
+        border-radius: 6px;
+        width: 150px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .winner-green {
+        background: #00c853;
+        color: white;
+    }
+
+    .ganador {
+        background: #f5c400;
+        color: #000;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    /* LINEAS DEL BRACKET */
+    .secciones::before {
+        content: "";
+        position: absolute;
+        left: 155px;
+        width: 20px;
+        height: 2px;
+        background: #f5c400;
+    }
+
+    .secciones::after {
+        content: "";
+        position: absolute;
+        left: 175px;
+        top: 50%;
+        width: 2px;
+        height: 50px;
+        background: #f5c400;
+        transform: translateY(-50%);
+    }
+
+    .campeon {
+        background: linear-gradient(45deg, gold, orange);
+        color: #000;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+
+    <div class="clasificaciones">
+
+        <h1>CLASIFICACIONES
+            <br>
+            <span>TORNEO 1 </span>
+        </h1>
+
+        <!-- RONDA 1 -->
+        <div class="ronda">
+            <div class="ronda-titulo">Ronda 1</div>
+
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 1</div>
+                    <div class="grupo">jugador 2</div>
+                </div>
+                <div class="ganador">jugador 2</div>
+            </div>
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 3</div>
+                    <div class="grupo">jugador 4</div>
+                </div>
+                <div class="ganador">jugador 4</div>
+            </div>
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 5</div>
+                    <div class="grupo">jugador 6</div>
+                </div>
+                <div class="ganador">jugador 5</div>
+            </div>
+
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 7</div>
+                    <div class="grupo">jugador 8</div>
+                </div>
+                <div class="ganador">jugador 8</div>
+            </div>
+        </div>
+
+        <!-- ronda 2 -->
+        <div class="ronda">
+            <div class="ronda-titulo">Ronda 2 </div>
+
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 2</div>
+                    <div class="grupo">jugador 4</div>
+                </div>
+                <div class="ganador">jugador 4</div>
+            </div>
+             <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 5</div>
+                    <div class="grupo">jugador 8</div>
+                </div>
+                <div class="ganador">jugador 8</div>
+            </div>
+        </div>
+        <!-- semifinal -->
+         <div class="ronda">
+            <div class="ronda-titulo">semifinal </div>
+
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 8</div>
+                    <div class="grupo">jugador 4</div>
+                </div>
+                <div class="ganador">jugador 4</div>
+            </div>
+                
+        </div>
+
+        <!-- FINAL -->
+        <div class="ronda">
+            <div class="ronda-titulo">Final</div>
+
+            <div class="campeon">
+                🏆 jugador 4
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

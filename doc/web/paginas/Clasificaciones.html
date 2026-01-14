@@ -8,10 +8,204 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="\doc\web\css\clasificacion.css">
     <title>Clasificacion</title>
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+     
+    }
+body {
+    background-image: url(/doc/web/img/clasificacion/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    justify-content: center;
+}
 
+.encavezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: "Bangers", cursive;
+    background: rgba(0, 0, 0, 0.418);
+
+}
+
+.boton-hamburguesa {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.linea {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    border-radius: 2px;
+
+}
+
+.logo {
+    width: 60px;
+}
+
+.encavezado h1 {
+    margin: 0;
+    font-size: 30px;
+
+}
+
+.navegacion {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navegacion ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion ul li a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.clasificaciones {
+
+    width: 100%;
+    max-width: 420px;
+    
+
+    /* nose para que es Ajusta el ancho máximo según sea necesario */
+    padding: 15px;
+    margin: 0 auto;
+
+
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'FontAwesome';
+    color: rgb(237, 237, 105);
+
+
+}
+
+h2 span {
+    color: white;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.ronda {
+    margin-bottom: 35px;
+}
+
+.ronda-titulo {
+    text-align: center;
+    background-color: rgba(36, 26, 49, 0.778);
+    color: rgb(237, 237, 105);
+    font-weight: bold;
+    padding: 6px 15px;
+    border-radius: 20px;
+    width: fit-content;
+    /*nose que hace*/
+    margin: 0 auto 20px;
+
+}
+
+.secciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    position: relative;
+    /*posicion relativa*/
+
+}
+
+.grupos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /*espacio entre los divs*/
+}
+
+.grupo {
+    background-color: #261037;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 6px;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.ganador {
+    background-color: #261037c4;
+    border: 2px solid gold;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    position: relative;
+}
+.secciones::before {
+        content: "";
+        position: absolute;
+        background: #261037;
+        left: 210px;
+        width: 20px;
+        height: 4px;
+    }
+
+    .secciones::after {
+         content: "";
+        position: absolute;
+        background: #261037;
+        left: 230px;
+        top: 50%;
+        width: 4px;
+        height: 50px;
+        transform: translateY(-50%);
+     
+    }
+    .campeon {
+        background:  #261037c4;
+         border: 2px solid gold;
+        color:rgb(237, 237, 105);
+        font-weight: bold;
+        text-align: center;
+        padding:15px;
+        border-radius: 10px ;
+        font-size: 18px;
+    }
+
+</style>
 <body>
     <div class="encavezado">
         <div class="boton-hamburguesa" id="botonMenu">
@@ -23,38 +217,94 @@
         <img class="logo" src="\doc\web\img\clasificacion\image_png.png" alt="icono">
 
     </div>
-    <div class="clasificacion">
-        <div class="rondas">
-            <div class="grupo cla">Grupo A</div>
-            <div class="grupo cla">Grupo B</div>
-            <div class="grupo cla">Grupo C</div>
-            <div class="grupo cla">Grupo D</div>
-            <div class="grupo cla">Grupo E</div>
-            <div class="grupo cla">Grupo F</div>
-            <div class="grupo cla">Grupo G</div>
-            <div class="grupo cla">Grupo H</div>
+    <div class="clasificaciones">
+        <h2>CLASIFICACIONES<!-- AMARILLO --->
+            <br>
+            <br>
+            <span>TORNEO 1</span>
+        </h2><!-- BLANCO --->
+        <!-- RONDA 1 -->
+        <!-- RONDA 1 -->
+        <div class="ronda">
+            <div class="ronda-titulo">Ronda 1</div>
+
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 1</div>
+                    <div class="grupo">jugador 2</div>
+                </div>
+                <div class="ganador">jugador 2</div>
+            </div>
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 3</div>
+                    <div class="grupo">jugador 4</div>
+                </div>
+                <div class="ganador">jugador 4</div>
+            </div>
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 5</div>
+                    <div class="grupo">jugador 6</div>
+                </div>
+                <div class="ganador">jugador 5</div>
+            </div>
+
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 7</div>
+                    <div class="grupo">jugador 8</div>
+                </div>
+                <div class="ganador">jugador 8</div>
+            </div>
         </div>
-        <div class="rondas">
-            <div class="grupo semifinal">Grupo B</div>
-            <div class="grupo semifinal">Grupo D</div>
-            <div class="grupo semifinal">Grupo E</div>
-            <div class="grupo semifinal">Grupo G</div>
+
+        <!-- ronda 2 -->
+        <div class="ronda">
+            <div class="ronda-titulo">Ronda 2 </div>
+
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 2</div>
+                    <div class="grupo">jugador 4</div>
+                </div>
+                <div class="ganador">jugador 4</div>
+            </div>
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 5</div>
+                    <div class="grupo">jugador 8</div>
+                </div>
+                <div class="ganador">jugador 8</div>
+            </div>
+        </div>
+        <!-- semifinal -->
+        <div class="ronda">
+            <div class="ronda-titulo">semifinal </div>
+
+            <div class="secciones">
+                <div class="grupos">
+                    <div class="grupo">jugador 8</div>
+                    <div class="grupo">jugador 4</div>
+                </div>
+                <div class="ganador">jugador 4</div>
+            </div>
 
         </div>
-        <div class="rondas">
-            <div class="grupo final">Grupo E</div>
-            <div class="grupo final">Grupo D</div>
 
+        <!-- FINAL -->
+        <div class="ronda">
+            <div class="ronda-titulo">Final</div>
+
+            <div class="campeon">
+                🏆 jugador 4
+            </div>
         </div>
-        <div class="rondas">
-            <div class="grupo ganador">Grupo D</div>
-        </div>
+
     </div>
-    <div class="match">
-        <div class="player">A</div>
-        <div class="player">B</div>
-    </div>
 
+
+    </div>
 
     <div class="navegacion" id="navegacion-baja">
         <ul>
