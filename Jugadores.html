@@ -13,195 +13,167 @@
 <style>
     * {
         box-sizing: border-box;
-     
+
     }
-body {
-    background-image: url(fondo.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-    margin: 0;
-    justify-content: center;
-}
 
-.encavezado {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    font-family: "Bangers", cursive;
-    background: rgba(0, 0, 0, 0.418);
+    body {
+        background-image: url(fondo.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        margin: 0;
+        justify-content: center;
+    }
 
-}
+    .encavezado {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        font-family: "Bangers", cursive;
+        background: rgba(0, 0, 0, 0.418);
 
-.boton-hamburguesa {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    }
 
-}
+    .boton-hamburguesa {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-.linea {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-    border-radius: 2px;
+    }
 
-}
+    .desplegable {
+        background-color: rgba(14, 13, 13, 0.5);
+        border-radius: 5px;
+        top: 130px;
+        left: 15px;
+        cursor: pointer;
+    }
 
-.logo {
-    width: 60px;
-}
+    .desplegable img {
+        width: 60px;
+        transition: 0.3s;
+    }
 
-.encavezado h1 {
-    margin: 0;
-    font-size: 30px;
+    .desplegable img:hover {
+        transform: scale(1.09);
+    }
 
-}
+    #desplegable {
+        display: none;
+    }
 
-.navegacion {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 1000;
-}
+    .Panel {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        width: 70%;
+        background-color: rgba(7, 7, 7, 0.5);
+        padding: 30px;
+        border-radius: 5px;
+        z-index: 10;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: 0.3s;
+    }
 
-.navegacion ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+    #desplegable:checked+label+.Panel {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+    }
 
-.navegacion ul li a {
-    color: white;
-    font-size: 22px;
-    text-decoration: none;
-}
+    .Panel .opciones {
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: rgba(14, 13, 13, 0.5);
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-color: gold;
+        margin: 10px;
+        display: flex;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
+    .Panel .opciones:hover {
+        background: gold;
+        transform: scale(1.1);
+    }
 
+    .Panel a {
+        text-decoration: none;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .encavezado h1 {
+        margin: 0;
+        font-size: 30px;
+
+    }
+
+    .Botones {
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(39, 37, 37, 0.6);
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
+        border-radius: 5px;
+    }
+
+    .Botones img {
+        width: 60px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .Botones img:hover {
+        transform: scale(1.09);
+    }
 </style>
+
 <body>
     <div class="encavezado">
         <div class="boton-hamburguesa" id="botonMenu">
-            <div class="linea"></div>
-            <div class="linea"></div>
-            <div class="linea"></div>
+            <input type="checkbox" id="desplegable">
+            <label for="desplegable" class="desplegable">
+                <img src="Barras.svg">
+            </label>
+
+
+            <div class="Panel">
+                <a href=""><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
+                <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
+                <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
+
+                <ol>
+                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                </ol>
+            </div>
         </div>
+
         <h1> CLASH LEAGUE </h1>
-        <img class="logo" src="\doc\web\img\clasificacion\image_png.png" alt="icono">
-
+        <img class="logo" src="image_png.png" alt="icono">
     </div>
-    <div class="clasificaciones">
-        <h2>CLASIFICACIONES<!-- AMARILLO --->
-            <br>
-            <br>
-            <span>TORNEO 1</span>
-        </h2><!-- BLANCO --->
-        <!-- RONDA 1 -->
-      
-        <div class="ronda">
-            <div class="ronda-titulo">Ronda 1</div>
-
-            <div class="secciones">
-                <div class="grupos">
-                    <div class="grupo">jugador 1</div>
-                    <div class="grupo">jugador 2</div>
-                </div>
-                <div class="ganador">jugador 2</div>
-            </div>
-            <div class="secciones">
-                <div class="grupos">
-                    <div class="grupo">jugador 3</div>
-                    <div class="grupo">jugador 4</div>
-                </div>
-                <div class="ganador">jugador 4</div>
-            </div>
-            <div class="secciones">
-                <div class="grupos">
-                    <div class="grupo">jugador 5</div>
-                    <div class="grupo">jugador 6</div>
-                </div>
-                <div class="ganador">jugador 5</div>
-            </div>
-
-            <div class="secciones">
-                <div class="grupos">
-                    <div class="grupo">jugador 7</div>
-                    <div class="grupo">jugador 8</div>
-                </div>
-                <div class="ganador">jugador 8</div>
-            </div>
-        </div>
-
-        <!-- ronda 2 -->
-        <div class="ronda">
-            <div class="ronda-titulo">Ronda 2 </div>
-
-            <div class="secciones">
-                <div class="grupos">
-                    <div class="grupo">jugador 2</div>
-                    <div class="grupo">jugador 4</div>
-                </div>
-                <div class="ganador">jugador 4</div>
-            </div>
-            <div class="secciones">
-                <div class="grupos">
-                    <div class="grupo">jugador 5</div>
-                    <div class="grupo">jugador 8</div>
-                </div>
-                <div class="ganador">jugador 8</div>
-            </div>
-        </div>
-        <!-- semifinal -->
-        <div class="ronda">
-            <div class="ronda-titulo">semifinal </div>
-
-            <div class="secciones">
-                <div class="grupos">
-                    <div class="grupo">jugador 8</div>
-                    <div class="grupo">jugador 4</div>
-                </div>
-                <div class="ganador">jugador 4</div>
-            </div>
-
-        </div>
-
-        <!-- finalote -->
-        <div class="ronda">
-            <div class="ronda-titulo">Final</div>
-
-            <div class="campeon">
-                🏆 jugador 4
-            </div>
-        </div>
-
-    </div>
-
-
-    </div>
-
-    <div class="navegacion" id="navegacion-baja">
-        <ul>
-            <li><a href=""><i class="fa-solid fa-arrow-left"></i></a></li>
-            <li><a href=""> <i class="fa-solid fa-house"></i></a></li>
-            <li><a href=""> <i class="fa-solid fa-right-from-bracket"></i></a></li>
-
-        </ul>
-
+    <div class="Botones">
+        <a href=""><img src="Volver.svg"></a>
+        <a href=""><img src="Casa.svg"></a>
+        <a href=""><img src="Siguiente.svg"></a>
     </div>
 </body>
 
