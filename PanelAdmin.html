@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLASH LEAGUE</title>
+    <title>ClASH LEAGUE</title>
 </head>
 <style>
-body{
+ body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -16,28 +16,72 @@ body{
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 100px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 35px;
+
+}
+
+#icono{
+    top: 20px;
+    right: 5px;
+    width: 60px;
+    position: absolute;
+}
+
+.desplegable{
+    position: absolute;
+    background-color: rgba(14, 13, 13, 0.5);
+    border-radius: 5px;
+    top: 130px;
+    left: 15px;
+    cursor: pointer;
+}
+.desplegable img{
+    width: 60px;
+    transition: 0.3s;
+}
+
+.desplegable img:hover{
+    transform: scale(1.09);
+}
+
+#desplegable{
+    display: none;
 }
 
 .Panel{
-    box-shadow: 0 0 15px rgba(136, 133, 133, 0.6); 
-    background: rgba(43, 42, 42, 0.6);
-    padding: 40px;
+    display: none;
+    position: absolute;
+    top: 195px;
+    left: 50px;
     width: 70%;
-    margin: auto;
-    border-radius: 10px;
-    z-index: 1;
-
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 30px;
+    border-radius: 5px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: 0.3s;
 }
+
+#desplegable:checked + label + .Panel{
+display: block;
+opacity: 1;
+transform: translateX(0);
+}
+
 .Panel .opciones{
     width: 100%;
     padding: 10px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(14, 13, 13, 0.5);
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -57,84 +101,60 @@ body{
 .Panel a{
     text-decoration: none;
 }
+
 #torneos{
     width: 50%;
 }
 
-input{
-    display: none;
-}
 .Botones{
-    margin-top: 10px;                       
-    padding: 15px ;
-    background: rgba(39, 37, 37, 0.6);            
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(39, 37, 37, 0.6);
     display: flex;
-    gap: 110px;                             
-    box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);   
+    gap: 110px;
+    box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
     border-radius: 5px;
 }
 
 .Botones img{
     width: 60px;
     cursor: pointer;
-    transition: 0.3s; 
+    transition: 0.3s;
 }
+
 .Botones img:hover{
     transform: scale(1.09);
 }
-
-.desplegable{
-    background: rgba(39, 37, 37, 0.6); 
-    box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);   
-    border-radius: 5px;
-    display: inline-block;
-    position: relative;
-}
-
-.desplegable img{
-    width: 60px;
-    cursor: pointer;
-    transition: 0.3s;
-    display: inline-block;
-    position: relative;
-    
-}
-.desplegable img:hover{
-   transform: scale(1.09);
-}
-
-.desplegable .Panel{
-    display: block;
-}
+   
 </style>
 <body>
     <h1>CLASH LEAGUE</h1>
+    <img src="image_png.png" id="icono">
 
-    <div class="desplegable">
+    <input type="checkbox" id="desplegable">
+    <label for="desplegable" class="desplegable">
         <img src="Barras.svg">
-    </div>
+    </label>
+
+
     <div class="Panel">
-        
         <a href=""><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
-       
         <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
-
         <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
-        
-        <ol>
-        <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
-      
-        <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 2"></a>
 
-        <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 3"></a>
+        <ol>
+            <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+            <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+            <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
         </ol>
     </div>
 
     <div class="Botones">
-        
-        <a href="Nike.como"><img src="Volver.svg"></a>
-        <a href="Adidas.com"><img src="Casa.svg" ></a>
-        <a href="Puma.com"><img src="Siguiente.svg" ></a>
+        <a href=""><img src="Volver.svg"></a>
+        <a href=""><img src="Casa.svg"></a>
+        <a href=""><img src="Siguiente.svg"></a>
     </div>
 </body>
 </html>
+
+
