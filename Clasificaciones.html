@@ -13,6 +13,7 @@
 <style>
     * {
         box-sizing: border-box;
+<<<<<<< HEAD
      
     }
 body {
@@ -92,112 +93,6 @@ body {
     text-decoration: none;
 }
 
-.clasificaciones {
-
-    width: 100%;
-    max-width: 420px; /* Ajusta el ancho máximo según sea necesario :) */
-    padding: 15px;
-    margin: 0 auto;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-family: 'FontAwesome';
-    color: rgb(237, 237, 105);
-
-
-}
-
-h2 span {
-    color: white;
-    margin-top: 15px;
-    font-size: 20px;
-}
-
-.ronda {
-    margin-bottom: 35px;
-}
-
-.ronda-titulo {
-    text-align: center;
-    background-color: rgba(36, 26, 49, 0.778);
-    color: rgb(237, 237, 105);
-    font-weight: bold;
-    padding: 6px 15px;
-    border-radius: 20px;
-    width: fit-content; /*nose que hace :/ */
-    margin: 0 auto 20px;
-
-}
-
-.secciones {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 15px;
-    position: relative;
-    /*posicion relativa*/
-
-}
-
-.grupos {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /*espacio entre los divs*/
-}
-
-.grupo {
-    background-color: #261037;
-    color: white;
-    padding: 10px 12px;
-    border-radius: 6px;
-    width: 150px;
-    text-align: center;
-    font-weight: bold;
-
-}
-
-.ganador {
-    background-color: #261037c4;
-    border: 2px solid gold;
-    color: white;
-    padding: 10px 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    position: relative;
-}
-.secciones::before {
-        content: "";
-        position: absolute;
-        background: #261037;
-        left: 210px;
-        width: 20px;
-        height: 4px;
-    }
-
-    .secciones::after {
-         content: "";
-        position: absolute;
-        background: #261037;
-        left: 230px;
-        top: 50%;
-        width: 4px;
-        height: 50px;
-        transform: translateY(-50%);
-     
-    }
-    .campeon {
-        background:  #261037c4;
-         border: 2px solid gold;
-        color:rgb(237, 237, 105);
-        font-weight: bold;
-        text-align: center;
-        padding:15px;
-        border-radius: 10px ;
-        font-size: 18px;
-    }
 
 </style>
 <body>
@@ -209,6 +104,273 @@ h2 span {
         </div>
         <h1> CLASH LEAGUE </h1>
         <img class="logo" src="\doc\web\img\clasificacion\image_png.png" alt="icono">
+=======
+
+    }
+
+    body {
+        background-image: url(fondo.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .encavezado {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        font-family: "Bangers", cursive;
+        background: rgba(0, 0, 0, 0.418);
+
+    }
+
+    .boton-hamburguesa {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+  .desplegable{
+    background-color: rgba(14, 13, 13, 0.5);
+    border-radius: 5px;
+    top: 130px;
+    left: 15px;
+    cursor: pointer;
+}
+.desplegable img{
+    width: 60px;
+    transition: 0.3s;
+}
+
+.desplegable img:hover{
+    transform: scale(1.09);
+}
+
+#desplegable{
+    display: none;
+}
+
+.Panel{
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 70%;
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 30px;
+    border-radius: 5px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: 0.3s;
+}
+
+#desplegable:checked + label + .Panel{
+display: block;
+opacity: 1;
+transform: translateX(0);
+}
+
+.Panel .opciones{
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgba(14, 13, 13, 0.5);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-color: gold;
+    margin: 10px;
+    display: flex;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Panel .opciones:hover{
+    background: gold;
+    transform: scale(1.1);
+}
+
+.Panel a{
+    text-decoration: none;
+}
+    .logo {
+        width: 60px;
+    }
+
+    .encavezado h1 {
+        margin: 0;
+        font-size: 30px;
+
+    }
+
+    .Botones {
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(39, 37, 37, 0.6);
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
+        border-radius: 5px;
+    }
+
+    .Botones img {
+        width: 60px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .Botones img:hover {
+        transform: scale(1.09);
+    }
+
+    .clasificaciones {
+
+        width: 100%;
+        max-width: 420px;
+        /* Ajusta el ancho máximo según sea necesario :) */
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-family: 'FontAwesome';
+        color: rgb(237, 237, 105);
+
+
+    }
+
+    h2 span {
+        color: white;
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+    .ronda {
+        margin-bottom: 35px;
+    }
+
+    .ronda-titulo {
+        text-align: center;
+        background-color: rgba(36, 26, 49, 0.778);
+        color: rgb(237, 237, 105);
+        font-weight: bold;
+        padding: 6px 15px;
+        border-radius: 20px;
+        width: fit-content;
+        /*nose que hace :/ */
+        margin: 0 auto 20px;
+
+    }
+
+    .secciones {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 15px;
+        position: relative;
+        /*posicion relativa*/
+
+    }
+
+    .grupos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /*espacio entre los divs*/
+    }
+
+    .grupo {
+        background-color: #261037;
+        color: white;
+        padding: 10px 12px;
+        border-radius: 6px;
+        width: 150px;
+        text-align: center;
+        font-weight: bold;
+
+    }
+
+    .ganador {
+        background-color: #261037c4;
+        border: 2px solid gold;
+        color: white;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .secciones::before {
+        content: "";
+        position: absolute;
+        background: #261037;
+        left: 210px;
+        width: 20px;
+        height: 4px;
+    }
+
+    .secciones::after {
+        content: "";
+        position: absolute;
+        background: #261037;
+        left: 230px;
+        top: 50%;
+        width: 4px;
+        height: 50px;
+        transform: translateY(-50%);
+
+    }
+
+    .campeon {
+        background: #261037c4;
+        border: 2px solid gold;
+        color: rgb(237, 237, 105);
+        font-weight: bold;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <div class="encavezado">
+        <div class="boton-hamburguesa" id="botonMenu">
+            <input type="checkbox" id="desplegable">
+            <label for="desplegable" class="desplegable">
+                <img src="Barras.svg">
+            </label>
+
+
+            <div class="Panel">
+                <a href=""><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
+                <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
+                <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
+
+                <ol>
+                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                </ol>
+            </div>
+        </div>
+
+        <h1> CLASH LEAGUE </h1>
+        <img class="logo" src="image_png.png" alt="icono">
+>>>>>>> 1072d5e774f5f94b8c54ce4b1ffe5996d9b4480a
 
     </div>
     <div class="clasificaciones">
@@ -218,7 +380,11 @@ h2 span {
             <span>TORNEO 1</span>
         </h2><!-- BLANCO --->
         <!-- RONDA 1 -->
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 1072d5e774f5f94b8c54ce4b1ffe5996d9b4480a
         <div class="ronda">
             <div class="ronda-titulo">Ronda 1</div>
 
@@ -297,6 +463,7 @@ h2 span {
 
     </div>
 
+<<<<<<< HEAD
 
     </div>
 
@@ -309,6 +476,15 @@ h2 span {
         </ul>
 
     </div>
+=======
+    <div class="Botones">
+        <a href=""><img src="Volver.svg"></a>
+        <a href=""><img src="Casa.svg"></a>
+        <a href=""><img src="Siguiente.svg"></a>
+    </div>
+
+
+>>>>>>> 1072d5e774f5f94b8c54ce4b1ffe5996d9b4480a
 </body>
 
 </html>
