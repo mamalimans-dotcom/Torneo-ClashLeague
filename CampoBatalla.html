@@ -10,25 +10,35 @@ body{
         margin: 0;
         padding: 0;
         min-height: 100vh;
-        background-image: url(Batalla.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        justify-content: center;
-        align-items: center;
+        width: 49vh;
         
     }
 
+.Batalla{
+    display: flex;
+    flex-direction: column;
+    height: 107vh;
+}
+
+.video{
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+}
 
 
 .Botones{
     display: flex;
-    gap: 120px;
+    height: 100px;
+    align-items: center;
+    gap: 100px;
     border-radius: 5px;
     justify-content: center;
-    background-color: rgba(14, 13, 13, 0.5);
-   
+    background: black;
 }
+
+
+
 
 .Botones img{
     width: 60px;
@@ -41,12 +51,17 @@ body{
 }
 </style>
 <body>
-    
+    <div class="Batalla">
+            <video class="video" autoplay muted loop>
+                <source src="VidBatalla.mp4" type="video/mp4">
+            </video>
 
-    <div class="Botones">
-        <a href=""><img src="Volver.svg"></a>
-        <a href=""><img src="Casa.svg"></a>
-        <a href=""><img src="Siguiente.svg"></a>
+        <div class="Botones">
+            <a href=""><img src="Volver.svg"></a>
+            <a href=""><img src="Casa.svg"></a>
+            <a href=""><img src="Siguiente.svg"></a>
+        </div>
+
     </div>
 </body>
 </html>
