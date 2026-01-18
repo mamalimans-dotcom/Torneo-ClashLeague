@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Jugadores</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+
+    }
+
+    body {
+        background-image: url(esqueleto.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .encavezado {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        font-family: "Bangers", cursive;
+        background: rgba(0, 0, 0, 0.418);
+
+    }
+
+    .boton-hamburguesa {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .desplegable {
+        background-color: rgba(14, 13, 13, 0.5);
+        border-radius: 5px;
+        top: 130px;
+        left: 15px;
+        cursor: pointer;
+    }
+
+    .desplegable img {
+        width: 60px;
+        transition: 0.3s;
+    }
+
+    .desplegable img:hover {
+        transform: scale(1.09);
+    }
+
+    #desplegable {
+        display: none;
+    }
+
+    .Panel {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        width: 70%;
+        background-color: rgba(7, 7, 7, 0.5);
+        padding: 30px;
+        border-radius: 5px;
+        z-index: 10;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: 0.3s;
+    }
+
+    #desplegable:checked+label+.Panel {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .Panel .opciones {
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: rgba(14, 13, 13, 0.5);
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-color: gold;
+        margin: 10px;
+        display: flex;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .Panel .opciones:hover {
+        background: gold;
+        transform: scale(1.1);
+    }
+
+    .Panel a {
+        text-decoration: none;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .encavezado h1 {
+        margin: 0;
+        font-size: 30px;
+
+    }
+
+    .Botones {
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(39, 37, 37, 0.6);
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
+        border-radius: 5px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .Botones img {
+        width: 60px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .Botones img:hover {
+        transform: scale(1.09);
+    }
+
+    .torneos {
+        font-family: 'FontAwesome';
+        width: 100%;
+        max-width: 420px;
+        padding: 15px;
+        margin: 0 auto;
+        padding-bottom: 120px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(237, 237, 105);
+        font-size: 30px;
+        font-weight: bold;
+
+    }
+
+    .participar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .torneo {
+
+        background: #261037;
+        padding: 15px;
+        border-radius: 20px;
+        border: 8px solid cyan;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .info-lateral {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        font-size: 16px;
+        white-space: nowrap;
+        color: white;
+    }
+
+    .info-lateral.izquierda {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: start;
+        gap: 6px;
+    }
+
+    .info-lateral.derecha {
+        justify-content: flex-end;
+    }
+
+    .icon-ver {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-ver input {
+        display: none;
+    }
+
+    .icon-ver i {
+        font-size: 16px;
+        color: #888;
+        transition: 0.2s;    
+        margin-right: 5px;
+    }
+
+    .icon-ver span {
+        font-size: 8px;
+        color: white;
+        ;
+
+    }
+
+    .icon-ver input:checked+i {
+        color: cyan;
+        text-shadow: 0 0 6px cyan;
+    }
+
+    .copas {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    /* ICONOS GENERALES */
+    .info-lateral i {
+        font-size: 15px;
+    }
+
+    .info-princ {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-princ .titulo {
+        margin: 0;
+        font-size: 18px;
+        color: rgb(237, 237, 105);
+        line-height: 1.2;
+        font-weight: bold;
+    }
+
+    .info-princ span {
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+
+    }
+
+    /* IMAGEN */
+    .info-img {
+        width: 70%;
+    }
+
+    .btn {
+        width: 70%;
+        padding: 10px;
+        margin: 20px auto;
+        display: block;
+        background-color: #261037cc;
+        border-radius: 10px;
+        border: 2px solid cyan;
+        color: rgb(237, 237, 105);
+        font-family: 'FontAwesome';
+        font-weight: bold;
+        font-size: 16px;
+
+    }
+
+    .btn:hover {
+        background-color: cyan;
+        color: #261037;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+</style>
+
+<body>
+    <div class="encavezado">
+        <div class="boton-hamburguesa" id="botonMenu">
+            <input type="checkbox" id="desplegable">
+            <label for="desplegable" class="desplegable">
+                <img src="Barras.svg">
+            </label>
+
+
+            <div class="Panel">
+                <a href=""><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
+                <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
+                <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
+
+                <ol>
+                    <a href="Clasificaciones.html"><input class="opciones" id="torneos" type="submit"
+                            value="TORNEO 1"></a>
+                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                </ol>
+            </div>
+        </div>
+        <h1> CLASH LEAGUE </h1>
+        <img class="logo" src="image_png.png" alt="icono">
+    </div>
+    <div class="torneos">
+        <h2>Torneos</h2>
+        <form action="Login.html" method="get">
+            <div class="participar">
+                <div class="torneo">
+                    <div class="info-lateral izquierda">
+
+                        <label class="icon-ver">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>ver</span>
+                        </label>
+                        <div class="copas">
+                            <span>5000</span>
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                    </div>
+                    <div class="info-princ">
+                        <p class="titulo">
+                            Sin Cartas Legendarias<br>
+                            <span>1 x 1</span>
+                        </p>
+                        <img src="arena1.png" alt="arena" class="info-img">
+                    </div>
+                    <div class="info-lateral derecha">
+                        <span>5 / 8</span>
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                </div>
+                <div class="boton">
+                    <input type="submit" value="Participar" class="btn">
+                </div>
+            </div>
+            <div class="participar">
+                <div class="torneo">
+                    <div class="info-lateral izquierda">
+
+                        <label class="icon-ver">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-eye"></i>
+                             <span>ver</span>
+                        </label>
+                        <div class="copas">
+                            <span>5000</span>
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                    </div>
+                    <div class="info-princ">
+                        <p class="titulo">
+                            Definitivo Gigantes vs. Pekkas<br>
+                            <span>1 x 1</span>
+                        </p>
+                        <img src="arena2.png" alt="arena" class="info-img">
+                    </div>
+                    <div class="info-lateral derecha">
+                        <span>5 / 8</span>
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                </div>
+                <div class="boton">
+                    <input type="submit" value="Participar" class="btn">
+                </div>
+            </div>
+            <div class="participar">
+                <div class="torneo">
+                    <div class="info-lateral izquierda">
+
+                        <label class="icon-ver">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-eye"></i>
+                             <span>ver</span>
+                        </label>
+                        <div class="copas">
+                            <span>5000</span>
+                            
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                    </div>
+                    <div class="info-princ">
+                        <p class="titulo">
+                            Torneo Elite del Recreo <br>
+                            <span>1 x 1</span>
+                        </p>
+                        <img src="arena3.png" alt="arena" class="info-img">
+                    </div>
+                    <div class="info-lateral derecha">
+                        <span>5 / 8</span>
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                </div>
+                <div class="boton">
+                    <input type="submit" value="Participar" class="btn">
+                </div>
+            </div>
+            <div class="participar">
+                <div class="torneo">
+                    <div class="info-lateral izquierda">
+
+                        <label class="icon-ver">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-eye"></i>
+                             <span>ver</span>
+                        </label>
+                        <div class="copas">
+                            <span>5000</span>
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                    </div>
+                    <div class="info-princ">
+                        <p class="titulo">
+                            Duelo de Mazos Raros<br>
+                            <span>1 x 1</span>
+                        </p>
+                        <img src="arena1.png" alt="arena" class="info-img">
+                    </div>
+                    <div class="info-lateral derecha">
+                        <span>5 / 8</span>
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                </div>
+                <div class="boton">
+                    <input type="submit" value="Participar" class="btn">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="Botones">
+        <a href=""><img src="Volver.svg"></a>
+        <a href="Principal.html"><img src="Casa.svg"></a>
+        <a href=""><img src="Siguiente.svg"></a>
+    </div>
+</body>
+
+</html>
