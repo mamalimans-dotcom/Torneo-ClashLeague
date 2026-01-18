@@ -11,9 +11,9 @@
     <title>Jugadores</title>
 </head>
 <style>
+    /*encabezado */
     * {
         box-sizing: border-box;
-
     }
 
     body {
@@ -121,9 +121,9 @@
     .encavezado h1 {
         margin: 0;
         font-size: 30px;
-
     }
 
+    /*Navegacion baja */
     .Botones {
         margin-top: 10px;
         padding: 15px;
@@ -147,6 +147,7 @@
         transform: scale(1.09);
     }
 
+    /*Contenedor Principal */
     .torneos {
         font-family: 'FontAwesome';
         width: 100%;
@@ -214,7 +215,7 @@
     .icon-ver i {
         font-size: 16px;
         color: #888;
-        transition: 0.2s;    
+        transition: 0.2s;
         margin-right: 5px;
     }
 
@@ -238,7 +239,6 @@
         white-space: nowrap;
     }
 
-    /* ICONOS GENERALES */
     .info-lateral i {
         font-size: 15px;
     }
@@ -263,10 +263,8 @@
         font-size: 18px;
         font-weight: bold;
         color: white;
-
     }
 
-    /* IMAGEN */
     .info-img {
         width: 70%;
     }
@@ -283,7 +281,6 @@
         font-family: 'FontAwesome';
         font-weight: bold;
         font-size: 16px;
-
     }
 
     .btn:hover {
@@ -295,6 +292,7 @@
 </style>
 
 <body>
+    <!--encabezado -->
     <div class="encavezado">
         <div class="boton-hamburguesa" id="botonMenu">
             <input type="checkbox" id="desplegable">
@@ -304,9 +302,9 @@
 
 
             <div class="Panel">
-                <a href=""><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
+                <a href="GestionJugadores.html"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
                 <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
-                <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
+                <a href="Clasificaciones.html"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
 
                 <ol>
                     <a href="Clasificaciones.html"><input class="opciones" id="torneos" type="submit"
@@ -319,10 +317,12 @@
         <h1> CLASH LEAGUE </h1>
         <img class="logo" src="image_png.png" alt="icono">
     </div>
+    <!-- LISTADO DE TORNEOS A JUGAR  ---->
     <div class="torneos">
         <h2>Torneos</h2>
-        <form action="Login.html" method="get">
-            <div class="participar">
+        <!--TORNEO 1 -->
+        <div class="participar">
+            <form action="Login.html" method="get">
                 <div class="torneo">
                     <div class="info-lateral izquierda">
 
@@ -351,15 +351,18 @@
                 <div class="boton">
                     <input type="submit" value="Participar" class="btn">
                 </div>
-            </div>
-            <div class="participar">
+            </form>
+        </div>
+        <!--torneo 2 -->
+        <div class="participar">
+            <form action="Jugadores.html" method="get">
                 <div class="torneo">
                     <div class="info-lateral izquierda">
 
                         <label class="icon-ver">
                             <input type="checkbox">
                             <i class="fa-solid fa-eye"></i>
-                             <span>ver</span>
+                            <span>ver</span>
                         </label>
                         <div class="copas">
                             <span>5000</span>
@@ -381,70 +384,73 @@
                 <div class="boton">
                     <input type="submit" value="Participar" class="btn">
                 </div>
-            </div>
-            <div class="participar">
-                <div class="torneo">
-                    <div class="info-lateral izquierda">
+            </form>
+        </div>
+        <!--torneo 3 -->
+        <div class="participar">
+            <div class="torneo">
+                <div class="info-lateral izquierda">
 
-                        <label class="icon-ver">
-                            <input type="checkbox">
-                            <i class="fa-solid fa-eye"></i>
-                             <span>ver</span>
-                        </label>
-                        <div class="copas">
-                            <span>5000</span>
-                            
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-                    </div>
-                    <div class="info-princ">
-                        <p class="titulo">
-                            Torneo Elite del Recreo <br>
-                            <span>1 x 1</span>
-                        </p>
-                        <img src="arena3.png" alt="arena" class="info-img">
-                    </div>
-                    <div class="info-lateral derecha">
-                        <span>5 / 8</span>
-                        <i class="fa-solid fa-people-group"></i>
-                    </div>
-                </div>
-                <div class="boton">
-                    <input type="submit" value="Participar" class="btn">
-                </div>
-            </div>
-            <div class="participar">
-                <div class="torneo">
-                    <div class="info-lateral izquierda">
+                    <label class="icon-ver">
+                        <input type="checkbox">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>ver</span>
+                    </label>
+                    <div class="copas">
+                        <span>5000</span>
 
-                        <label class="icon-ver">
-                            <input type="checkbox">
-                            <i class="fa-solid fa-eye"></i>
-                             <span>ver</span>
-                        </label>
-                        <div class="copas">
-                            <span>5000</span>
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-                    </div>
-                    <div class="info-princ">
-                        <p class="titulo">
-                            Duelo de Mazos Raros<br>
-                            <span>1 x 1</span>
-                        </p>
-                        <img src="arena1.png" alt="arena" class="info-img">
-                    </div>
-                    <div class="info-lateral derecha">
-                        <span>5 / 8</span>
-                        <i class="fa-solid fa-people-group"></i>
+                        <i class="fa-solid fa-trophy"></i>
                     </div>
                 </div>
-                <div class="boton">
-                    <input type="submit" value="Participar" class="btn">
+                <div class="info-princ">
+                    <p class="titulo">
+                        Torneo Elite del Recreo <br>
+                        <span>1 x 1</span>
+                    </p>
+                    <img src="arena3.png" alt="arena" class="info-img">
+                </div>
+                <div class="info-lateral derecha">
+                    <span>5 / 8</span>
+                    <i class="fa-solid fa-people-group"></i>
                 </div>
             </div>
-        </form>
+            <div class="boton">
+                <input type="submit" value="Participar" class="btn">
+            </div>
+        </div>
+        <!--torneo 4 -->
+        <div class="participar">
+            <div class="torneo">
+                <div class="info-lateral izquierda">
+
+                    <label class="icon-ver">
+                        <input type="checkbox">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>ver</span>
+                    </label>
+                    <div class="copas">
+                        <span>5000</span>
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                </div>
+                <div class="info-princ">
+                    <p class="titulo">
+                        Duelo de Mazos Raros<br>
+                        <span>1 x 1</span>
+                    </p>
+                    <img src="arena1.png" alt="arena" class="info-img">
+                </div>
+                <div class="info-lateral derecha">
+                    <span>5 / 8</span>
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+            </div>
+            <div class="boton">
+                <input type="submit" value="Participar" class="btn">
+            </div>
+        </div>
     </div>
+    <!--Navegacion baja -->
     <div class="Botones">
         <a href=""><img src="Volver.svg"></a>
         <a href="Principal.html"><img src="Casa.svg"></a>

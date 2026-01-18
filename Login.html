@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,143 +9,143 @@
 
 </head>
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    height: 110vh;
-    background-image:  url(esqueleto.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;   
-    justify-content: center;  
-    align-items: center;     
-    gap: 100px; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        height: 110vh;
+        background-image: url(esqueleto.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
 
-h1 {
-    color: white;
-    margin-bottom: 50px;
-    letter-spacing: 4px;
-    text-align: center;
-    font-size: 29px;
-}
+    h1 {
+        color: white;
+        margin-bottom: 50px;
+        letter-spacing: 4px;
+        text-align: center;
+        font-size: 29px;
+    }
 
-#icono{
-    right: 350px;
-    top: 215px;
-    width: 60px;
-    position: absolute;
-}
+    #icono {
+        right: 350px;
+        top: 215px;
+        width: 60px;
+        position: absolute;
+    }
 
-.form{
-    background: rgba(51, 49, 49, 0.55);
-    padding: 50px;
-    margin: 100px;
-    border-radius: 20px;
-    width: 230px;
-    box-shadow: 0 0 25px rgba(175, 171, 171, 0.6);
-    display: flex;
-    flex-direction: column;
-     
-}
+    .form {
+        background: rgba(51, 49, 49, 0.55);
+        padding: 50px;
+        margin: 100px;
+        border-radius: 20px;
+        width: 230px;
+        box-shadow: 0 0 25px rgba(175, 171, 171, 0.6);
+        display: flex;
+        flex-direction: column;
 
-input{
-    width: 100%;
-    padding: 10px;
-    border-radius: 12px;
-    border: 3px solid black;  
-    font-size: 15px;
-}
+    }
 
-.log{
-    text-align: left;
-    font-size: 19px;
-    font-weight: bold;
-    color: aliceblue;  
-}
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 12px;
+        border: 3px solid black;
+        font-size: 15px;
+    }
 
-.submit {
-    width: 100%;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: yellow;
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: 0.3s;
-    border-color: gold;
-    border: 10%;
-}
+    .log {
+        text-align: left;
+        font-size: 19px;
+        font-weight: bold;
+        color: aliceblue;
+    }
 
-.submit:hover {
-    background: gold;
-    transform: scale(1.05);
-}
+    .submit {
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: yellow;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: 0.3s;
+        border-color: gold;
+        border: 10%;
+    }
 
-.administrador{
-    background: none;
-    border: none;
-    color: yellow;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    transition: 0.3s;
-    margin: 20px;
-}
+    .submit:hover {
+        background: gold;
+        transform: scale(1.05);
+    }
 
-.administrador:hover {
-    text-shadow: 0 0 8px yellow;
-    transform: scale(1.03);
-}
+    .administrador {
+        background: none;
+        border: none;
+        color: yellow;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: 0.3s;
+        margin: 20px;
+    }
 
-.Botones{
-    margin-top: 10px;                       
-    padding: 15px ;
-    background: rgba(39, 37, 37, 0.6);            
-    display: flex;
-    gap: 110px;                             
-    box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);   
-    border-radius: 5px;
-}
+    .administrador:hover {
+        text-shadow: 0 0 8px yellow;
+        transform: scale(1.03);
+    }
 
-.Botones img{
-    width: 60px;
-    cursor: pointer;
-    transition: 0.3s; 
-}
-.Botones img:hover{
-    transform: scale(1.09);
-}
+    .Botones {
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(39, 37, 37, 0.6);
+        display: flex;
+        gap: 110px;
+        box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
+        border-radius: 5px;
+    }
+    .Botones img {
+        width: 60px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-
-    
+    .Botones img:hover {
+        transform: scale(1.09);
+    }
 </style>
+
 <body>
     <div class="form">
-        <h1>CLASH LEAGUE</h1>
-         <img src="image_png.png" id="icono">
-        <form>
+        <div class="titulo">
+            <h1>CLASH LEAGUE</h1>
+            <img src="image_png.png" id="icono">
+        </div>
+        <form action="Jugadores.html" method="get">
             <label class="log">EMAIL</label>
-            <input type="email" id="email">
+            <input type="email" id="email" required>
 
             <label class="log">CONTRASEÑA</label>
-            <input type="password" id="password">
+            <input type="password" id="password" required>
 
             <a href="PanelAdmin.html"> <button class="administrador" type="button">
-                Registrarse como administrador
-            </button></a>
+                    Registrarse como administrador
+                </button></a>
 
             <br><br>
 
-           <a href=""><input class="submit" type="submit" value="Login"></a>
+            <a href="Jugadores.html"><input class="submit" type="submit" value="Login"></a>
         </form>
     </div>
 
@@ -155,4 +156,5 @@ input{
     </div>
 
 </body>
+
 </html>
