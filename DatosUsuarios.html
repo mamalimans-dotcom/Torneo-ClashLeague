@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreacioUsuarios</title>
-     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <style>
-        body {
+    <title>DatosUsuarios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    body {
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -43,54 +45,10 @@
             width: 50px;
             position: absolute;
             left: 85%;
-            top: 10px;
+            top: 5px;
         }
 
-
-        .form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
-            padding: 20px;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .nombre {
-            font-size: 40px;
-            color: aliceblue;
-            display: block;
-            text-align: left;
-            margin-bottom: 15px;
-        }
-
-        .submit {
-            width: 100%;
-            height: 40px;
-            border-radius: 10px;
-            border: 5px solid black;
-            padding: 5px;
-            margin-bottom: 30px;
-        }
-
-        #boton {
-            width: 50%;
-            height: 40px;
-            border-radius: 10px;
-            border: 2px solid black;
-            font-family: 'Bangers', cursive;
-            font-weight: bold;
-            background-color: white;
-            color: black;
-            cursor: pointer;
-            font-size: 25px;
-            margin-top: 80px;
-        }
-
-       desplegable {
+        .desplegable {
             position: absolute;
             border-radius: 5px;
             cursor: pointer;
@@ -159,13 +117,73 @@
             color: inherit;
         }
 
+        .form{
+            font-size: 30px;
+            color: aliceblue;
+            margin: 50px;
+            position: absolute;
+            align-items: center;
+            top: 100px;
+        }
+
+        .form .usuario1 {
+            background-color: white;
+            border: 5px solid black;
+            width: 90%;
+            height: 40px;
+            border-radius: 10px;
+        
+        }
+
+         .form .usuario2 {
+            background-color: white;
+            border: 5px solid black;
+            width: 10%;
+            height: 30px;
+            border-radius: 10px;
+        
+        }
+        
+        select{
+            background-color: white;
+             background-color: white;
+            border: 5px solid black;
+            width: 23%;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Bangers', cursive;
+           
+        }
+
+        option{
+          font-family: 'Bangers', cursive;  
+          font-size: 16px;
+        }
+        
+        .Confirmacion{
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            margin-top: 50px;
+        }
+        .Confirmacion #guardar , #descartar{
+            background-color: white;
+            width: 130px;
+            height: 40px;
+            border: 5px solid black;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: 'Bangers', cursive;
+
+        }
         .Botones {
             display: flex;
             justify-content: space-around;
             padding: 15px;
             background: rgba(39, 37, 37, 0.6);
             border-radius: 5px;
-            margin: 0;
+            margin: 1px;
         }
 
         .Botones img {
@@ -177,10 +195,10 @@
         .Botones img:hover {
             transform: scale(1.09);
         }
-    </style>
-</head>
+
+</style>
 <body>
-    <div class="cabecera">
+     <div class="cabecera">
         <h1>CLASH LEAGUE</h1>
         <img src="image_png.png" id="icono">
     </div>
@@ -199,22 +217,57 @@
         <a href="#"><div class="opciones">TORNEO 3</div></a>
         </ol>
     </div>
-
-    <div class="form-container">
+    
         <div class="form">
             <form>
-                <label for="nombre" class="nombre">NOMBRE USUARIO:</label>
-                <input type="text" class="submit" id="nombre">
-
-                <label for="contraseña" class="nombre">CONTRASEÑA:</label>
-                <input type="password" class="submit" id="contraseña">
-
-                <a href="DatosUsuarios.html"><input type="submit" id="boton" value="SIGUIENTE"></a>
+                
+                <label for="nombre" id="nombre">NOMBRE JUGADOR:</label>
+                <br>
+                <input type="text" class="usuario1">
+                <br><br>
+                <label for="nombre" id="nombre">ID:</label>
+                <br>
+                <input type="number" class="usuario1">
+                
+                <br><br>
+                
+                <label for="nombre" id="nombre">NIVEL:</label>
+                <input type="number" class="usuario2">
+                <label for="nombre" id="nombre" >COPAS:</label>
+                <select>
+                    <option value="NUMERO">NUMERO</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="3000">3000</option>
+                    <option value="4000">4000</option>
+                    <option value="5000">5000</option>
+                    <option value="6000">6000</option>
+                    <option value="7000">7000</option>
+                    <option value="8000">8000</option>
+                    <option value="9000">9000</option>
+                    <option value="10.000">10.000</option>
+                </select>
+                <br><br>
+                <label for="nombre" id="nombre">CLAN:</label>
+                <br>
+                <input type="text" class="usuario1">
+                <br><br>
+                <label for="nombre" id="nombre" >ROL:</label>
+                <select>
+                    <option value=""></option>
+                    <option value="LIDER">LIDER</option>
+                    <option value="COMANDANTE">COMANDANTE</option>
+                    <option value="SOLDADO">SOLDADO</option>
+                </select>
+            <br><br>
+            <div class="Confirmacion">
+               <a href=""><input type="submit" value="GUARDAR" id="guardar"></a> 
+                <a href=""><input type="submit" value="DESCARTAR" id="descartar"></a>
+            </div>
             </form>
-        </div>
-    </div>
 
-    <div class="Botones">
+        </div>
+     <div class="Botones">
         <a href="Clasificaciones.html"><img src="Volver.svg" alt="Volver"></a>
         <a href="Login.html"><img src="Casa.svg" alt="Inicio"></a>
         <a href="Clasificaciones.html"><img src="Siguiente.svg" alt="Siguiente"></a>
