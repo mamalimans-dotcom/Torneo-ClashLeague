@@ -24,7 +24,9 @@
         background-attachment: fixed;
         color: white;
         margin: 0;
-        justify-content: center;
+        min-height: 100vh;
+        padding-bottom: 110px;
+        font-family: Arial, sans-serif;
     }
 
     .encavezado {
@@ -146,6 +148,135 @@
     .Botones img:hover {
         transform: scale(1.09);
     }
+
+    .torneos-jugadores {
+        width: 100%;
+        max-width: 420px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-family: 'FontAwesome';
+        color: rgb(237, 237, 105);
+    }
+
+    h2 span {
+        color: white;
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+
+    /*estilos de rondas*/
+    .jugadores {
+        border: 8px solid cyan;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        height: 90px;
+        margin-bottom: 15px;
+        align-items: center;
+        background-color: #261037cc;
+        cursor: pointer;
+    }
+
+
+    .torneo {
+        text-align: center;
+        color: rgb(237, 237, 105);
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    #jugadores:hover {
+        display: none;
+    }
+
+    .tabla-jugadores,
+    .tabla-jugadores2 {
+        display: none;
+        width: 100%;
+        background-color: rgba(40, 15, 60, 0.75);
+        border-radius: 12px;
+        padding: 12px;
+        overflow-x: auto;
+    }
+
+    #jugadores:checked+label+.tabla-jugadores {
+        display: block;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #EDEDED;
+    }
+
+    th {
+        color: #FFE600;
+        border-bottom: 2px solid #00F5FF;
+        padding: 8px;
+    }
+
+    td {
+        padding: 6px;
+        border-bottom: 1px dashed rgba(0, 245, 255, 0.4);
+    }
+
+    tr:hover {
+        background-color: rgba(0, 245, 255, 0.15);
+    }
+
+    .tabla-jugadores a {
+        text-decoration: none;
+    }
+
+    .tabla-jugadores .fa-pen-to-square {
+        color: #00F5FF;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .tabla-jugadores .fa-trash {
+        color: #FF4D6D;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .tabla-jugadores .fa-pen-to-square:hover {
+        transform: scale(1.2);
+        color: #7CFFFB;
+    }
+
+    .tabla-jugadores .fa-trash:hover {
+        transform: scale(1.2);
+        color: #FF7A90;
+    }
+
+    /*botones dela tabla */
+    .btn {
+        width: 70%;
+        padding: 10px;
+        margin: 20px auto;
+        display: block;
+        background-color: rgba(39, 37, 37, 0.6);
+        border-radius: 10px;
+        border: 2px solid cyan;
+        color: rgb(237, 237, 105);
+        font-family: 'FontAwesome';
+        font-weight: bold;
+        font-size: 16px;
+
+    }
+
+    .btn:hover {
+        background-color: cyan;
+        color: black;
+        transition: 0.3s;
+    }
 </style>
 
 <body>
@@ -177,9 +308,17 @@
     <!--Contenedor Principal -->
     <div class="torneos-jugadores">
         <h2>Gestion Jugadores</h2>
-        <div class="torneo">
-            <div class="tabla-jugadorres">
-                <table border="2">
+        <!--torneo 1-->
+
+        <input type="checkbox" id="jugadores">
+        <label for="jugadores" class="jugadores">
+            <div class="torneo">
+                <p>TORNEO 1 </p>
+            </div>
+        </label>
+        <div class="tabla-jugadores">
+            <form action="CreacionUsuarios.html" method="get">
+                <table>
                     <tr>
                         <th>Nombres</th>
                         <th>ID</th>
@@ -189,62 +328,287 @@
                     </tr>
                     <tr>
                         <td>MegaKnightPro</td>
-                        <td>#PQ8RV9L2Y</td>
-                        <td>🏆 6,850</td>
+                        <td>#w4855</td>
+                        <td>5000</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="CuadroEmergencia.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>ClashMaster99</td>
-                        <td>#2CYJVQP0G</td>
-                        <td>🏆 5,420</td>
+                        <td>#y1554</td>
+                        <td>6420</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>ValkyriaQueen</td>
-                        <td>#9LPC8Y2RQ</td>
-                        <td>🏆 7,210</td>
+                        <td>#d1456</td>
+                        <td>9010</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>RoyalGiantFan</td>
-                        <td>#R2GJ0V8CP</td>
-                        <td>🏆 4,980</td>
+                        <td>#g1556</td>
+                        <td>5980</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>SparkyWizard</td>
-                        <td>#V8Q2Y0L9P</td>
-                        <td>🏆 6,150</td>
+                        <td>#v7964</td>
+                        <td>6150</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>PekkaDestroyer</td>
-                        <td>#Y0L8CP2RQ</td>
-                        <td>🏆 5,730</td>
+                        <td>#f9845</td>
+                        <td>5730</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>GolemExpert</td>
-                        <td>#8CP2RQY0L</td>
-                        <td>🏆 6,990</td>
+                        <td>#t5896</td>
+                        <td>6990</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>XBowSniper</td>
-                        <td>#2RQY0L8CP</td>
-                        <td>🏆 5,560</td>
-                       <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td>#p1689</td>
+                        <td>5560</td>
+                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                 </table>
+
+                <input type="submit" value=" + Nuevo" class="btn">
+            </form>
+        </div>
+        <!--torneo 2-->
+        <input type="checkbox" id="jugadores">
+        <label for="jugadores" class="jugadores">
+            <div class="torneo">
+                <p>TORNEO 2 </p>
             </div>
+        </label>
+        <div class="tabla-jugadores2">
+
+            <table>
+                <tr>
+                    <th>Nombres</th>
+                    <th>ID</th>
+                    <th>Copas</th>
+                    <th>Edicion</th>
+                    <th>Eliminar</th>
+                </tr>
+                <tr>
+                    <td>MegaKnightPro</td>
+                    <td>#w4855</td>
+                    <td>5000</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>ClashMaster99</td>
+                    <td>#y1554</td>
+                    <td>6420</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>ValkyriaQueen</td>
+                    <td>#d1456</td>
+                    <td>9010</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>RoyalGiantFan</td>
+                    <td>#g1556</td>
+                    <td>5980</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>SparkyWizard</td>
+                    <td>#v7964</td>
+                    <td>6150</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>PekkaDestroyer</td>
+                    <td>#f9845</td>
+                    <td>5730</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>GolemExpert</td>
+                    <td>#t5896</td>
+                    <td>6990</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>XBowSniper</td>
+                    <td>#p1689</td>
+                    <td>5560</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            </table>
+        </div>
+        <!--Torneo 3 -->
+        <input type="checkbox" id="jugadores">
+        <label for="jugadores" class="jugadores">
+            <div class="torneo">
+                <p>TORNEO 3 </p>
+            </div>
+        </label>
+        <div class="tabla-jugadores">
+            <table>
+                <tr>
+                    <th>Nombres</th>
+                    <th>ID</th>
+                    <th>Copas</th>
+                    <th>Edicion</th>
+                    <th>Eliminar</th>
+                </tr>
+                <tr>
+                    <td>MegaKnightPro</td>
+                    <td>#w4855</td>
+                    <td>5000</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>ClashMaster99</td>
+                    <td>#y1554</td>
+                    <td>6420</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>ValkyriaQueen</td>
+                    <td>#d1456</td>
+                    <td>9010</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>RoyalGiantFan</td>
+                    <td>#g1556</td>
+                    <td>5980</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>SparkyWizard</td>
+                    <td>#v7964</td>
+                    <td>6150</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>PekkaDestroyer</td>
+                    <td>#f9845</td>
+                    <td>5730</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>GolemExpert</td>
+                    <td>#t5896</td>
+                    <td>6990</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>XBowSniper</td>
+                    <td>#p1689</td>
+                    <td>5560</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            </table>
+        </div>
+        <!--torneo 4-->
+        <input type="checkbox" id="jugadores">
+        <label for="jugadores" class="jugadores">
+            <div class="torneo">
+                <p>TORNEO 4</p>
+            </div>
+        </label>
+        <div class="tabla-jugadores">
+            <table>
+                <tr>
+                    <th>Nombres</th>
+                    <th>ID</th>
+                    <th>Copas</th>
+                    <th>Edicion</th>
+                    <th>Eliminar</th>
+                </tr>
+                <tr>
+                    <td>MegaKnightPro</td>
+                    <td>#w4855</td>
+                    <td>5000</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>ClashMaster99</td>
+                    <td>#y1554</td>
+                    <td>6420</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>ValkyriaQueen</td>
+                    <td>#d1456</td>
+                    <td>9010</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>RoyalGiantFan</td>
+                    <td>#g1556</td>
+                    <td>5980</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>SparkyWizard</td>
+                    <td>#v7964</td>
+                    <td>6150</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>PekkaDestroyer</td>
+                    <td>#f9845</td>
+                    <td>5730</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>GolemExpert</td>
+                    <td>#t5896</td>
+                    <td>6990</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>XBowSniper</td>
+                    <td>#p1689</td>
+                    <td>5560</td>
+                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            </table>
         </div>
     </div>
     <!--Navegacion baja -->
