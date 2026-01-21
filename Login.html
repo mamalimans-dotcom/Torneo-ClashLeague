@@ -9,37 +9,48 @@
 
 </head>
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
     body {
-        margin: 0;
-        padding: 0;
-        height: 110vh;
-        background-image: url(esqueleto.jpg);
+       background-image: url(esqueleto.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
+        background-attachment: fixed;
+        color: white;
+        margin: 0;
         justify-content: center;
-        align-items: center;
-        gap: 100px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-
+    .login {
+        width: 100%;
+        max-width: 420px;
+        padding: 15px;
+        margin: 0 auto;
+        padding-bottom: 120px;
+    }
+    .titulo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid;
+    }
     h1 {
         color: white;
-        margin-bottom: 50px;
         letter-spacing: 4px;
         text-align: center;
         font-size: 29px;
     }
 
     #icono {
-        right: 350px;
-        top: 215px;
-        width: 60px;
-        position: absolute;
+    
+     width: 60px;
     }
+
+
 
     .form {
         background: rgba(51, 49, 49, 0.55);
@@ -49,6 +60,7 @@
         width: 230px;
         box-shadow: 0 0 25px rgba(175, 171, 171, 0.6);
         display: flex;
+        justify-content: space-between;
         flex-direction: column;
 
     }
@@ -105,16 +117,20 @@
         text-shadow: 0 0 8px yellow;
         transform: scale(1.03);
     }
-
+ /*Navegacion baja */
     .Botones {
         margin-top: 10px;
         padding: 15px;
         background: rgba(39, 37, 37, 0.6);
         display: flex;
-        gap: 110px;
+        justify-content: space-between;
         box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
         border-radius: 5px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
+
     .Botones img {
         width: 60px;
         cursor: pointer;
@@ -124,35 +140,42 @@
     .Botones img:hover {
         transform: scale(1.09);
     }
+   
 </style>
 
 <body>
-    <div class="form">
-        <div class="titulo">
-            <h1>CLASH LEAGUE</h1>
-            <img src="image_png.png" id="icono">
+    <div class="login">
+        <div class="form">
+            <div class="titulo">
+            <div class="text">
+                <h1>CLASH LEAGUE</h1>
+            </div>
+            <div clas="img-icon">
+                <img src="image_png.png" id="icono">
+            </div>
+            </div>
+            <form action="Jugadores.html" method="get">
+                <label class="log">EMAIL</label>
+                <input type="email" id="email" required>
+
+                <label class="log">CONTRASEÑA</label>
+                <input type="password" id="password" required>
+
+                <a href="PanelAdmin.html"> <button class="administrador" type="button">
+                        Registrarse como administrador
+                    </button></a>
+
+                <br><br>
+
+                <a href="Jugadores.html"><input class="submit" type="submit" value="Login"></a>
+            </form>
         </div>
-        <form action="Jugadores.html" method="get">
-            <label class="log">EMAIL</label>
-            <input type="email" id="email" required>
-
-            <label class="log">CONTRASEÑA</label>
-            <input type="password" id="password" required>
-
-            <a href="PanelAdmin.html"> <button class="administrador" type="button">
-                    Registrarse como administrador
-                </button></a>
-
-            <br><br>
-
-            <a href="Jugadores.html"><input class="submit" type="submit" value="Login"></a>
-        </form>
     </div>
 
     <div class="Botones">
         <a href="Principal.html"><img src="Volver.svg"></a>
         <a href="Principal.html"><img src="Casa.svg"></a>
-        <a href="Jugadores.html"><img src="Siguiente.svg"></a>
+        <a href="Login.html"><img src="Siguiente.svg"></a>
     </div>
 
 </body>

@@ -48,7 +48,7 @@
             top: 10px;
         }
 
-         desplegable {
+        .desplegable {
             position: absolute;
             border-radius: 5px;
             cursor: pointer;
@@ -142,9 +142,20 @@
 
         .contenido-carrusel{
             display: flex;
-            position: fixed;
+            position: static;
+            justify-content: center;
+            gap: 15px;
             top: 350px;
             
+        }
+
+        #Nuvtorneo img{
+            width: 65%;
+            justify-content: center;
+        }
+
+        #Nuvtorneo{
+            background-color: black;
         }
 
         .carta{
@@ -154,7 +165,7 @@
 
         .carta img{
             width: 80%;
-            
+            position: relative;
         }
 
         .carta p{
@@ -236,7 +247,7 @@
 
     <div class="titulos">
     <h2 id="torneo1">TORNEO 1</h2>
-    <h2 id="Nuvtorneo">NUEVO TORNEO</h2>
+    <h2 id="Nuvtorneo"><img src="arena5.webp" alt="arena 5"><p>ARENA 5</p></h2>
     <h3 id="Arena">ELIGUE ARENA:</h3>
     </div>
 
