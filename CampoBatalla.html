@@ -144,6 +144,11 @@
         width: 100%;
     }
 
+     .Botones button{
+        background: none;
+        border: none;
+    }
+
     .Botones img {
         width: 60px;
         cursor: pointer;
@@ -168,8 +173,11 @@
     }
 
     .video {
+        position: fixed;
+        display: flex;
         width: 100%;
-        width: 100%;
+        height: 81%;
+        right: 1px;
         object-fit: cover;
     }
 </style>
@@ -208,9 +216,9 @@
         </div>
     </div>
     <div class="Botones">
-        <a href="Jugadores.html"><img src="Volver.svg"></a>
+        <button onclick="history.back()"><img src="Volver.svg"></button>
         <a href="Principal.html"><img src="Casa.svg"></a>
-        <a href="Principal.html"><img src="Siguiente.svg"></a>
+        <a href="Clasificaciones.html"><img src="Siguiente.svg"></a>
     </div>
 </body>
 

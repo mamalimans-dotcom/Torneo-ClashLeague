@@ -91,60 +91,32 @@ opacity: 1;
 transform: translateX(0);
 }
 
-.Panel .opciones{
-    width: 100%;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: rgba(14, 13, 13, 0.5);
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-    border-color: gold;
-    margin: 10px;
-    display: flex;
-    cursor: pointer;
-    transition: 0.3s;
-}
+ .Panel .opciones {
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(14, 13, 13, 0.5);
+            color: white;
+            font-size: 25px;
+            font-family: 'bangers', cursive;
+            text-transform: uppercase;
+            border: 1px solid gold;
+            margin: 10px ;
+            display: block;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
+        .Panel .opciones:hover {
+            background: gold;
+            transform: scale(1.05);
+        }
 
-    .Panel .opciones {
-        width: 100%;
-        padding: 10px;
-        border-radius: 15px;
-        background-color: rgba(14, 13, 13, 0.5);
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        text-transform: uppercase;
-        border-color: gold;
-        margin: 10px;
-        display: flex;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        .Panel a {
+            text-decoration: none;
+            
+        }
 
-    .Panel .opciones:hover {
-        background: gold;
-        transform: scale(1.1);
-    }
-
-    .Panel a {
-        text-decoration: none;
-    }
-<<<<<<< HEAD
-
-.Panel .opciones:hover{
-    background: gold;
-    transform: scale(1.1);
-}
-
-
-.Panel a{
-    text-decoration: none;
-}
-=======
->>>>>>> 3f6ca1156bf59a00d02ab38689a1f966f81a062c
     .logo {
         width: 60px;
     }
@@ -168,6 +140,11 @@ transform: translateX(0);
         width: 100%;
     }
 
+    .Botones button{
+        background: none;
+        border: none;
+    }
+
     .Botones img {
         width: 60px;
         cursor: pointer;
@@ -182,27 +159,22 @@ transform: translateX(0);
         width: 100%;
         padding: 15px;
         overflow: hidden;
-        font-family: 'FontAwesome';/*?*/
+        font-family: 'bangers', cursive;
     }
 
     h2 {
       
         text-align: center;
         margin-bottom: 25px;
-<<<<<<< HEAD
-
-        font-family: 'FontAwesome';
-
-=======
-        font-family: 'FontAwesome';
->>>>>>> 3f6ca1156bf59a00d02ab38689a1f966f81a062c
+        font-family: 'bangers', cursive;
         color: rgb(237, 237, 105);
+        font-size: 38px;  
     }
 
     h2 span {
         color: white;
         margin-top: 15px;
-        font-size: 20px;
+        
     }
 
     .torneo-checkbox {
@@ -234,7 +206,7 @@ transform: translateX(0);
         text-align: center;
         color: rgb(237, 237, 105);
         font-weight: bold;
-        font-size: 16px;
+        font-size: 25px;
         font-weight: bold;
         width: 100%;
     }
@@ -277,14 +249,14 @@ transform: translateX(0);
         color: #FFE600;
         border-bottom: 2px solid #00F5FF;
         padding: 10px 8px;
-        font-size: 14px;
+        font-size: 25px;
         white-space: nowrap;
     }
 
     td {
         padding: 8px 6px;
         border-bottom: 1px dashed rgba(0, 245, 255, 0.4);
-        font-size: 13px;
+        font-size: 20px;
         text-align: center;
     }
 
@@ -329,16 +301,12 @@ transform: translateX(0);
         border: 2px solid cyan;
         color: rgb(237, 237, 105);
         font-family: 'FontAwesome';
-<<<<<<< HEAD
         font-weight: bold;
         font-size: 16px;
-
-    }
-=======
         cursor: pointer;
         transition: all 0.3s;
   }
->>>>>>> 3f6ca1156bf59a00d02ab38689a1f966f81a062c
+
 
     .btn:hover {
         background-color: cyan;
@@ -357,7 +325,6 @@ transform: translateX(0);
 
 
             <div class="Panel">
-                <a href="GestionJugadores.html"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
                 <a href="ListaTorneos.html"><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
                 <a href="Clasificaciones.html"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
 
@@ -398,56 +365,56 @@ transform: translateX(0);
                         <td>#w4855</td>
                         <td>5000</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="CuadroEmergencia.html"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>ClashMaster99</td>
                         <td>#y1554</td>
                         <td>6420</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>ValkyriaQueen</td>
                         <td>#d1456</td>
                         <td>9010</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>RoyalGiantFan</td>
                         <td>#g1556</td>
                         <td>5980</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>SparkyWizard</td>
                         <td>#v7964</td>
                         <td>6150</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>PekkaDestroyer</td>
                         <td>#f9845</td>
                         <td>5730</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>GolemExpert</td>
                         <td>#t5896</td>
                         <td>6990</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>XBowSniper</td>
                         <td>#p1689</td>
                         <td>5560</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                 </table>
 
@@ -477,56 +444,56 @@ transform: translateX(0);
                         <td>#w4855</td>
                         <td>5000</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="CuadroEmergencia.html"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>ClashMaster99</td>
                         <td>#y1554</td>
                         <td>6420</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>ValkyriaQueen</td>
                         <td>#d1456</td>
                         <td>9010</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>RoyalGiantFan</td>
                         <td>#g1556</td>
                         <td>5980</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>SparkyWizard</td>
                         <td>#v7964</td>
                         <td>6150</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>PekkaDestroyer</td>
                         <td>#f9845</td>
                         <td>5730</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>GolemExpert</td>
                         <td>#t5896</td>
                         <td>6990</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>XBowSniper</td>
                         <td>#p1689</td>
                         <td>5560</td>
                         <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                 </table>
                 <input type="submit" value=" + Nuevo" class="btn">
@@ -560,49 +527,49 @@ transform: translateX(0);
                     <td>#y1554</td>
                     <td>6420</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>ValkyriaQueen</td>
                     <td>#d1456</td>
                     <td>9010</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>RoyalGiantFan</td>
                     <td>#g1556</td>
                     <td>5980</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>SparkyWizard</td>
                     <td>#v7964</td>
                     <td>6150</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>PekkaDestroyer</td>
                     <td>#f9845</td>
                     <td>5730</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>GolemExpert</td>
                     <td>#t5896</td>
                     <td>6990</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>XBowSniper</td>
                     <td>#p1689</td>
                     <td>5560</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
             </table>
         </div>
@@ -627,63 +594,63 @@ transform: translateX(0);
                     <td>#w4855</td>
                     <td>5000</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>ClashMaster99</td>
                     <td>#y1554</td>
                     <td>6420</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>ValkyriaQueen</td>
                     <td>#d1456</td>
                     <td>9010</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>RoyalGiantFan</td>
                     <td>#g1556</td>
                     <td>5980</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>SparkyWizard</td>
                     <td>#v7964</td>
                     <td>6150</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>PekkaDestroyer</td>
                     <td>#f9845</td>
                     <td>5730</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>GolemExpert</td>
                     <td>#t5896</td>
                     <td>6990</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <tr>
                     <td>XBowSniper</td>
                     <td>#p1689</td>
                     <td>5560</td>
                     <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
             </table>
         </div>
     </div>
     <!--Navegacion baja -->
     <div class="Botones">
-        <a href="Principal.html"><img src="Volver.svg"></a>
+        <button onclick="history.back()"><img src="Volver.svg"></button>
         <a href="Principal.html"><img src="Casa.svg"></a>
         <a href="Principal.html"><img src="Siguiente.svg"></a>
     </div>

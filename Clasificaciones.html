@@ -132,9 +132,14 @@ transform: translateX(0);
         border-radius: 5px;
         position: fixed;
         bottom: 0;
-        width: 80%;
+        width: 100%;
     }
 
+     .Botones button{
+        background: none;
+        border: none;
+    }
+    
     .Botones img {
         width: 60px;
         cursor: pointer;
@@ -156,14 +161,15 @@ transform: translateX(0);
     h2 {
         text-align: center;
         margin-bottom: 25px;
-        font-family: 'FontAwesome';
+        font-family: "Bangers", cursive;
         color: rgb(237, 237, 105);
+        font-size: 40px;
     }
 
     h2 span {
         color: white;
         margin-top: 15px;
-        font-size: 20px;
+        font-size: 35px;
     }
 
     .ronda {
@@ -174,7 +180,8 @@ transform: translateX(0);
         text-align: center;
         background-color: rgba(36, 26, 49, 0.778);
         color: rgb(237, 237, 105);
-        font-weight: bold;
+        font-family: "Bangers", cursive;
+        font-size: 20px;
         padding: 6px 15px;
         border-radius: 20px;
         width: fit-content;
@@ -204,7 +211,7 @@ transform: translateX(0);
         border-radius: 6px;
         width: 150px;
         text-align: center;
-        font-weight: bold;
+        font-family: "Bangers", cursive;
 
     }
 
@@ -214,7 +221,7 @@ transform: translateX(0);
         color: white;
         padding: 10px 12px;
         border-radius: 6px;
-        font-weight: bold;
+        font-family: "Bangers", cursive;
         position: relative;
     }
 
@@ -243,7 +250,7 @@ transform: translateX(0);
         background: #261037c4;
         border: 2px solid gold;
         color: rgb(237, 237, 105);
-        font-weight: bold;
+        font-family: "Bangers", cursive;
         text-align: center;
         padding: 15px;
         border-radius: 10px;
@@ -261,7 +268,6 @@ transform: translateX(0);
 
 
             <div class="Panel">
-                <a href=""><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
                 <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
                 <a href="Clasificaciones.html"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
 
@@ -363,7 +369,7 @@ transform: translateX(0);
     </div>
 
     <div class="Botones">
-        <a href="Jugadores.html"><img src="Volver.svg"></a>
+        <button onclick="history.back()"><img src="Volver.svg"></button>
         <a href="Principal.html"><img src="Casa.svg"></a>
         <a href="CampoBatalla.html"><img src="Siguiente.svg"></a>
     </div>
