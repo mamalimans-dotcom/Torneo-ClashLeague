@@ -165,11 +165,28 @@
             font-family: 'FontAwesome';
             color: rgb(237, 237, 105);
         }
+
         .torneo {
             display: flex;
+            border: 1px solid cyan;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .img {
+           
+            display: flex;
+            align-items: center;
+        }
+
+        .img-torneo {
+            width: 100%;
+           
         }
     </style>
 </head>
+
 <body>
     <!--encabezado -->
 
@@ -185,11 +202,6 @@
                 <a href="GestionJugadores.html"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
                 <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
                 <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
-
-                <a href="ListaTorneos.html"><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
-                <a href="Clasificaciones.html"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
-
-
                 <ol>
                     <a href="Clasificaciones.html"><input class="opciones" id="torneos" type="submit"
                             value="TORNEO 1"></a>
@@ -208,16 +220,17 @@
 
         <div class="torneo 1 ">
             <p>TORNEO 1 </p>
-            <img src="torneo1.png" alt="torneo" width="60%">
+            <div class="img">
+                <img src="torneo1.png" alt="torneo" class="img-torneo">
+            </div>
         </div>
-    </div>
-    <!--Navegacion baja -->
-    <div class="Botones">
-        <a href="Principal.html"><img src="Volver.svg"></a>
-        <a href="Principal.html"><img src="Casa.svg"></a>
-        <a href="Principal.html"><img src="Siguiente.svg"></a>
+        <!--Navegacion baja -->
+        <div class="Botones">
+            <a href="Principal.html"><img src="Volver.svg"></a>
+            <a href="Principal.html"><img src="Casa.svg"></a>
+            <a href="Principal.html"><img src="Siguiente.svg"></a>
 
-    </div>
+        </div>
 </body>
 
 </html>
