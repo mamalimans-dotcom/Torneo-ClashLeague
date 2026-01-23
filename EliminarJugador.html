@@ -4,8 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Jugador</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
 </head>
+<style>
+ body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url(fondo.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Bangers', cursive;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+      .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.418);
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: aliceblue;
+            margin: 0;
+            position: fixed;
+            top: 10px;
+            left: 20%;
+            text-align: center;
+        }
+        #icono {
+            width: 50px;
+            position: absolute;
+            left: 85%;
+            top: 10px;
+        }
+
+        .desplegable {
+            position: absolute;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .desplegable img {
+            width: 40px;
+            transition: 0.3s;
+            position: fixed;
+            top: 10px;
+        }
+
+        .desplegable img:hover {
+            transform: scale(1.09);
+        }
+
+        #desplegable {
+            display: none;
+        }
+
+        .Panel {
+            display: none;
+            position: absolute;
+            font-size: 50%;
+            top: 50px;
+            left: 20px;
+            width: 200px;
+            background-color: rgba(7, 7, 7, 0.8);
+            padding: 35px;
+            border-radius: 10px;
+            z-index: 10;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        #desplegable:checked + label + .Panel {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .Panel .opciones {
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(14, 13, 13, 0.5);
+            color: white;
+            font-size: 17px;
+            text-transform: uppercase;
+            border: 1px solid gold;
+            margin: 10px ;
+            display: block;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .Panel .opciones:hover {
+            background: gold;
+            transform: scale(1.05);
+        }
+
+        .Panel a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .Contenido{
+            flex-direction: column;
+            display: contents;
+        }
+
+        .Cuadro{
+            top: 130px;
+            right: 50px;
+            position: fixed;
+            background-color: aliceblue;
+            border-radius: 5px;
+            text-align: center;
+            margin: 40px;
+            border: 7px solid black;
+        
+        }
+
+        p{
+             font-weight: bold;
+            font-size: 35px;
+            color: black;
+            font-family: 'bangers', cursive;
+            transform: skew(-5deg);
+        }
+
+        .Confirmacion{
+           display: flex;
+           justify-content: center;
+           gap: 80px;
+           margin-bottom: 60px;
+           margin-top: 130px;
+        }
+        #Si, #No{
+          width: 90px;
+          height: 50px;
+          background-color: white;
+          border: 5px solid black;
+          font-family: 'bangers', cursive;
+          font-size: 25px;
+          cursor: pointer;
+        }
+
+        #Si:hover, #No:hover{
+            transform: scale(1.09);
+        }
+
+       .Linea{
+            width: 90%;
+            border: 1px solid white;
+            margin: auto;
+        }
+
+      .Botones {
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(39, 37, 37, 0.6);
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
+        border-radius: 5px;
+        position: fixed;
+        bottom: 0;
+        width: 80%;
+    }
+
+    .Botones img {
+        width: 60px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .Botones img:hover {
+        transform: scale(1.09);
+    }
+</style>
 <body>
+    <div class="cabecera">
+        <h1>CLASH LEAGUE</h1>
+        <img src="image_png.png" id="icono">
+        
+    </div>
+
+     <input type="checkbox" id="desplegable">
+    <label for="desplegable" class="desplegable">
+        <img src="Barras.svg" alt="Menú">
+    </label>
+
+     <div class="Panel">
+        <a href="GestionJugadores.html"><div class="opciones">GESTIÓN DE JUGADORES</div></a>
+        <a href="ListaTorneos.html"><div class="opciones">LISTA DE TORNEOS</div></a>
+        <a href="Clasificaciones.html"><div class="opciones">CLASIFICACIONES</div></a>
+       <ol>
+        <a href="#"><div class="opciones">TORNEO 1</div></a>
+        <a href="#"><div class="opciones">TORNEO 2</div></a>
+        <a href="#"><div class="opciones">TORNEO 3</div></a>
+        </ol>
+    </div>
+
+<div class="Contenido">
+    <div class="Cuadro">
+        <p>¿ESTA SEGURO DE QUE DESEA ELIMINAR AL JUGADOR?</p>
+        <br>
+    </div>
     
+    <div class="Confirmacion">
+        <a href="PanelAdmin.html"><input type="submit" value="SI" id="Si"></a>
+        <a href="CreacionTorneos.html"><input type="submit" value="NO" id="No"></a>
+        
+     
+    </div>
+   
+
+     <div class="Botones">
+        <a href="Clasificaciones.html"><img src="Volver.svg" alt="Volver"></a>
+        <a href="Login.html"><img src="Casa.svg" alt="Inicio"></a>
+        <a href="Clasificaciones.html"><img src="Siguiente.svg" alt="Siguiente"></a>
+    </div>
+</div>
 </body>
 </html>

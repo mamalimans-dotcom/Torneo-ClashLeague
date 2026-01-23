@@ -25,6 +25,8 @@
 h1{
     text-transform: uppercase;
     font-size: 35px;
+    position: absolute;
+    left: 90px;
 
 }
 
@@ -33,14 +35,26 @@ h1{
     right: 5px;
     width: 60px;
     position: absolute;
+    justify-content: space-between;
+
 }
+
+ .cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 45px;
+            background: rgba(0, 0, 0, 0.418);
+            color: aliceblue;
+            width: 100%;
+        }
 
 .desplegable{
     position: absolute;
     background-color: rgba(14, 13, 13, 0.5);
     border-radius: 5px;
-    top: 130px;
-    left: 15px;
+    top: 15px;
+    left: 5px;
     cursor: pointer;
 }
 .desplegable img{
@@ -59,8 +73,8 @@ h1{
 .Panel{
     display: none;
     position: absolute;
-    top: 195px;
-    left: 50px;
+    top: 100px;
+    left: 30px;
     width: 70%;
     background-color: rgba(7, 7, 7, 0.5);
     padding: 30px;
@@ -106,30 +120,35 @@ transform: translateX(0);
     width: 50%;
 }
 
-.Botones{
-    margin-top: 10px;
-    padding: 15px;
-    background: rgba(39, 37, 37, 0.6);
-    display: flex;
-    gap: 110px;
-    box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
-    border-radius: 5px;
-}
+ .Botones {
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(39, 37, 37, 0.6);
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        border-radius: 5px;
+        position: fixed;
+        bottom: 0;
+        width: 90%;
+    }
 
-.Botones img{
-    width: 60px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    .Botones img {
+        width: 60px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-.Botones img:hover{
-    transform: scale(1.09);
-}
+    .Botones img:hover {
+        transform: scale(1.09);
+    }
    
 </style>
 <body>
-    <h1>CLASH LEAGUE</h1>
-    <img src="image_png.png" id="icono">
+     <div class="cabecera">
+        <h1>CLASH LEAGUE</h1>
+        <img src="image_png.png" id="icono">
+    </div>
 
     <input type="checkbox" id="desplegable">
     <label for="desplegable" class="desplegable">
@@ -144,8 +163,8 @@ transform: translateX(0);
 
         <ol>
             <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
-            <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
-            <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+            <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 2"></a>
+            <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 3"></a>
         </ol>
     </div>
 
