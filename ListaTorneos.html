@@ -165,11 +165,70 @@
             font-family: 'FontAwesome';
             color: rgb(237, 237, 105);
         }
-        .torneo {
+
+        .torneos {
             display: flex;
+            border: 1px solid cyan;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            background: #261037;
+            padding: 15px;
+            border-radius: 20px;
+            border: 8px solid cyan;
+            margin-top: 20px;
+
         }
+
+        .torneos p {
+            text-align: center;
+            color: rgb(237, 237, 105);
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'FontAwesome';
+            ;
+        }
+      .torneo-checkbox{
+    
+        background-color: cyan;
+        color: #261037;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+        .img {
+
+            display: flex;
+            align-items: center;
+        }
+
+        .img-torneo {
+            width: 100%;
+
+        }
+         .btn {
+        width: 70%;
+        padding: 10px;
+        margin: 20px auto;
+        display: block;
+        background-color: #261037cc;
+        border-radius: 10px;
+        border: 2px solid cyan;
+        color: rgb(237, 237, 105);
+        font-family: 'FontAwesome';
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .btn:hover {
+        background-color: cyan;
+        color: #261037;
+        font-weight: bold;
+        transition: 0.3s;
+    }
     </style>
 </head>
+
 <body>
     <!--encabezado -->
 
@@ -185,11 +244,6 @@
                 <a href="GestionJugadores.html"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
                 <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
                 <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
-
-                <a href="ListaTorneos.html"><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
-                <a href="Clasificaciones.html"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
-
-
                 <ol>
                     <a href="Clasificaciones.html"><input class="opciones" id="torneos" type="submit"
                             value="TORNEO 1"></a>
@@ -205,11 +259,48 @@
     <!--lista de torneos-->
     <div class="listaTorneos">
         <h2>Lista de Torneos </h2>
-
-        <div class="torneo 1 ">
-            <p>TORNEO 1 </p>
-            <img src="torneo1.png" alt="torneo" width="60%">
+        <div class="torneos">
+            <input type="checkbox" id="torneo" class="torneo-checkbox">
+            <label for="torneo uno ">
+                <p>TORNEO 1 </p>
+                <div class="img">
+                    <img src="torneo1.png" alt="torneo" class="img-torneo">
+                </div>
+            </label>
         </div>
+            <div class="torneos">
+            <input type="checkbox" id="torneo dos" class="torneo-checkbox">
+            <label for="torneo uno ">
+                <p>TORNEO 2 </p>
+                <div class="img">
+                    <img src="torneo2.png" alt="torneo" class="img-torneo">
+                </div>
+            </label>
+        </div>
+            <div class="torneos">
+            <input type="checkbox" id="torneo" class="torneo-checkbox">
+            <label for="torneo uno ">
+                <p>TORNEO 1 </p>
+                <div class="img">
+                    <img src="torneo1.png" alt="torneo" class="img-torneo">
+                </div>
+            </label>
+        </div>
+            <div class="torneos">
+            <input type="checkbox" id="torneo" class="torneo-checkbox">
+            <label for="torneo uno ">
+                <p>TORNEO 1 </p>
+                <div class="img">
+                    <img src="torneo1.png" alt="torneo" class="img-torneo">
+                </div>
+            </label>
+        </div>
+              <div class="boton">
+                <a href="CreacionTorneos.html"><input type="submit" value=" + Nuevo" class="btn"></a>
+                <a href="EditarTorneos.html"><i class="fa-solid fa-pen-to-square"><input type="submit" value="Editar" class="btn"></i></a>
+                <a href="EliminarJugador.html"><i class="fa-solid fa-trash"><input type="submit" value=" Eliminar" clas="btn"></i></a>
+               
+                </div>
     </div>
     <!--Navegacion baja -->
     <div class="Botones">
