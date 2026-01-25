@@ -207,7 +207,7 @@
 
         }
          .btn {
-        width: 70%;
+        width: 95%;
         padding: 10px;
         margin: 20px auto;
         display: block;
@@ -219,6 +219,8 @@
         font-weight: bold;
         font-size: 16px;
     }
+
+   
 
     .btn:hover {
         background-color: cyan;
@@ -243,13 +245,14 @@
             <div class="Panel">
                 <a href="GestionJugadores.html"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
                 <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
-                <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
                 <ol>
                     <a href="Clasificaciones.html"><input class="opciones" id="torneos" type="submit"
                             value="TORNEO 1"></a>
                     <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
                     <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
                 </ol>
+                <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
+               
             </div>
         </div>
         <h1> CLASH LEAGUE </h1>
@@ -297,16 +300,16 @@
         </div>
               <div class="boton">
                 <a href="CreacionTorneos.html"><input type="submit" value=" + Nuevo" class="btn"></a>
-                <a href="EditarTorneos.html"><i class="fa-solid fa-pen-to-square"><input type="submit" value="Editar" class="btn"></i></a>
-                <a href="EliminarJugador.html"><i class="fa-solid fa-trash"><input type="submit" value=" Eliminar" clas="btn"></i></a>
+                <a href="EditarTorneos.html"><button class="btn"><i class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i> Eliminar</button></a>
                
                 </div>
     </div>
     <!--Navegacion baja -->
     <div class="Botones">
-        <a href="Principal.html"><img src="Volver.svg"></a>
+        <a onclick="history.back()"><img src="Volver.svg"></a>
         <a href="Principal.html"><img src="Casa.svg"></a>
-        <a href="Principal.html"><img src="Siguiente.svg"></a>
+        <a onclick="history.forward()"><img src="Siguiente.svg"></a>
 
     </div>
 </body>

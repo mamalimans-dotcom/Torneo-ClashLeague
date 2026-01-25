@@ -34,11 +34,14 @@
         padding: 10px 20px;
         font-family: "Bangers", cursive;
         background: rgba(0, 0, 0, 0.418);
-
+        letter-spacing: 1px;
+        
     }
 
+    
+   
     .boton-hamburguesa {
-        width: 50px;
+        width: 40px;
         height: 50px;
         border-radius: 8px;
         display: flex;
@@ -48,7 +51,6 @@
     }
 
     .desplegable {
-        background-color: rgba(14, 13, 13, 0.5);
         border-radius: 5px;
         top: 130px;
         left: 15px;
@@ -74,7 +76,7 @@
         top: 70px;
         left: 20px;
         width: 70%;
-        background-color: rgba(7, 7, 7, 0.5);
+        background-color: rgba(7, 7, 7, 0.8);
         padding: 30px;
         border-radius: 5px;
         z-index: 10;
@@ -83,6 +85,7 @@
         transition: 0.3s;
     }
 
+     
     #desplegable:checked+label+.Panel {
         display: block;
         opacity: 1;
@@ -90,13 +93,13 @@
     }
 
     .Panel .opciones {
-        width: 100%;
+        width: 105%;
         padding: 10px;
-        border-radius: 15px;
+        border-radius: 10px;
         background-color: rgba(14, 13, 13, 0.5);
         color: white;
-        font-weight: bold;
-        font-size: 18px;
+        font-family: "Bangers", cursive;
+        font-size: 25px;
         text-transform: uppercase;
         border-color: gold;
         margin: 10px;
@@ -134,7 +137,7 @@
         border-radius: 5px;
         position: fixed;
         bottom: 0;
-        width: 80%;
+        width: 100%;
     }
 
     .Botones img {
@@ -149,27 +152,26 @@
 
    
     .contenedor {
-        font-family: 'FontAwesome';
+        font-family: "Bangers", cursive;
         width: 100%;
         max-width: 420px;
         padding: 15px;
         margin: 0 auto;
         padding-bottom: 120px;
+        letter-spacing: 1px;
     }
 
     h2 {
         text-align: center;
         margin-bottom: 18px;
         color: rgb(237, 237, 105);
-        font-size: 22px;
-        font-weight: bold;
-
+        font-size: 45px;
     }
 
     h2 span {
         display: block;
         margin-top: 10px;
-        font-size: 15px;
+        font-size: 25px;
         color: white;
         margin-bottom: 50px;
     }
@@ -197,8 +199,8 @@
     .form .usuario2 {
         background-color: white;
         border: 5px solid black;
-        width: 10%;
-        height: 30px;
+        width: 20%;
+        height: 35px;
         border-radius: 10px;
 
     }
@@ -253,13 +255,6 @@
                 <a href="GestionJugadores.html"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
                 <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
                 <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
-
-                <ol>
-                    <a href="Clasificaciones.html"><input class="opciones" id="torneos" type="submit"
-                            value="TORNEO 1"></a>
-                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
-                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
-                </ol>
             </div>
         </div>
         <h1> CLASH LEAGUE </h1>
@@ -313,11 +308,12 @@
                     <option value="SOLDADO">SOLDADO</option>
                 </select>
                 <br><br>
-                <div class="Confirmacion">
-                    <a href=""><input type="submit" value="GUARDAR" id="guardar"></a>
-                    <a href=""><input type="submit" value="DESCARTAR" id="descartar"></a>
-                </div>
+               
             </form>
+             <div class="Confirmacion">
+                    <a href="CuadroEmergencia.html"><input type="submit"  value="GUARDAR"  id="guardar"></a>
+                    <a href="GestionJugadores.html"><input type="submit" value="DESCARTAR" id="descartar"></a>
+                </div>
 
         </div>
     </div>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CuadroEmergencia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Eliminar Jugador</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
 </head>
 <style>
@@ -98,7 +98,7 @@
             border-radius: 5px;
             background-color: rgba(14, 13, 13, 0.5);
             color: white;
-            font-size: 22px;
+            font-size: 17px;
             text-transform: uppercase;
             border: 1px solid gold;
             margin: 10px ;
@@ -117,6 +117,11 @@
             color: inherit;
         }
 
+        .Contenido{
+            flex-direction: column;
+            display: contents;
+        }
+
         .Cuadro{
             top: 130px;
             right: 50px;
@@ -126,7 +131,6 @@
             text-align: center;
             margin: 40px;
             border: 7px solid black;
-            margin-top: 30%;
         
         }
 
@@ -138,26 +142,12 @@
             transform: skew(-5deg);
         }
 
-        #creacion{
-            font-size: 35px;
-            color:white;
-            font-family: 'bangers', cursive;
-            transform: skew(-5deg);
-            position: fixed;
-            left: 100px;
-            bottom: 300px;
-            background: black;
-            width: 45%;
-            text-align: center;
-            
-        }
-
         .Confirmacion{
            display: flex;
            justify-content: center;
            gap: 80px;
-           margin-bottom: 80%;
-           
+           margin-bottom: 60px;
+           margin-top: 130px;
         }
         #Si, #No{
           width: 90px;
@@ -173,19 +163,24 @@
             transform: scale(1.09);
         }
 
-    
+       .Linea{
+            width: 90%;
+            border: 1px solid white;
+            margin: auto;
+        }
 
-        .Botones {
+      .Botones {
         margin-top: 10px;
         padding: 15px;
         background: rgba(39, 37, 37, 0.6);
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
         border-radius: 5px;
         position: fixed;
         bottom: 0;
         width: 83%;
+        gap: 80px;
     }
 
     .Botones img {
@@ -211,33 +206,34 @@
     </label>
 
      <div class="Panel">
-        <a href="#"><div class="opciones">GESTIÓN DE JUGADORES</div></a>
-        <a href="#"><div class="opciones">LISTA DE TORNEOS</div></a>
-         <ol>
+        <a href="GestionJugadores.html"><div class="opciones">GESTIÓN DE JUGADORES</div></a>
+        <a href="ListaTorneos.html"><div class="opciones">LISTA DE TORNEOS</div></a>
+        <a href="Clasificaciones.html"><div class="opciones">CLASIFICACIONES</div></a>
+       <ol>
         <a href="#"><div class="opciones">TORNEO 1</div></a>
         <a href="#"><div class="opciones">TORNEO 2</div></a>
         <a href="#"><div class="opciones">TORNEO 3</div></a>
         </ol>
-        <a href="Clasificaciones.html"><div class="opciones">CLASIFICACIONES</div></a>
-      
     </div>
 
 <div class="Contenido">
     <div class="Cuadro">
-        <p>¿ESTA SEGURO DE QUE DESEA AÑADIR UN NUEVO JUGADOR?</p>
+        <p>¿ESTA SEGURO DE QUE DESEA ELIMINAR EL TORNEO?</p>
         <br>
     </div>
     
     <div class="Confirmacion">
         <a href="GestionJugadores.html"><input type="submit" value="SI" id="Si"></a>
-        <a href="EditarJugador.html"><input type="submit" value="NO" id="No"></a>   
+        <a href="GestionJugadores.html"><input type="submit" value="NO" id="No"></a>
+        
+     
     </div>
+   
 
-</div>
      <div class="Botones">
-        <a href="Clasificaciones.html"><img src="Volver.svg" alt="Volver"></a>
+        <a onclick="history.back()"><img src="Volver.svg" alt="Volver"></a>
         <a href="Login.html"><img src="Casa.svg" alt="Inicio"></a>
-        <a href="Clasificaciones.html"><img src="Siguiente.svg" alt="Siguiente"></a>
     </div>
+</div>
 </body>
 </html>
