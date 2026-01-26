@@ -11,7 +11,6 @@
     <title>Lista de torneos</title>
 
     <style>
-        
         * {
             box-sizing: border-box;
         }
@@ -39,7 +38,7 @@
 
         }
 
-        
+
         .boton-hamburguesa {
             width: 50px;
             height: 50px;
@@ -127,7 +126,7 @@
 
         }
 
-        
+
         .Botones {
             margin-top: 10px;
             padding: 15px;
@@ -151,7 +150,7 @@
             transform: scale(1.09);
         }
 
-        
+
         .listaTorneos {
             width: 100%;
             max-width: 420px;
@@ -188,13 +187,14 @@
             font-family: 'FontAwesome';
             ;
         }
-      .torneo-checkbox{
-    
-        background-color: cyan;
-        color: #261037;
-        font-weight: bold;
-        transition: 0.3s;
-      }
+
+        .torneo-checkbox {
+            display: none;
+            background-color: cyan;
+            color: #261037;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
         .img {
 
@@ -206,28 +206,37 @@
             width: 100%;
 
         }
-         .btn {
-        width: 95%;
-        padding: 10px;
-        margin: 20px auto;
-        display: block;
-        background-color: #261037cc;
-        border-radius: 10px;
-        border: 2px solid cyan;
-        color: rgb(237, 237, 105);
-        font-family: 'FontAwesome';
-        font-weight: bold;
-        font-size: 16px;
-    }
 
-   
+        .boton {
+            display: flex;
+            justify-content: space-between;
+        }
 
-    .btn:hover {
-        background-color: cyan;
-        color: #261037;
-        font-weight: bold;
-        transition: 0.3s;
-    }
+        .btn {
+            width: 95%;
+            padding: 10px;
+            margin: 20px auto;
+            display: block;
+            background-color: #261037cc;
+            border-radius: 10px;
+            border: 2px solid cyan;
+            color: rgb(237, 237, 105);
+            font-family: 'FontAwesome';
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .boton a {
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: cyan;
+            color: #261037;
+
+            font-weight: bold;
+            transition: 0.3s;
+        }
     </style>
 </head>
 
@@ -244,15 +253,15 @@
 
             <div class="Panel">
                 <a href="GestionJugadores.html"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
-                <a href=""><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
+                <a href="ListaTorneos.html"><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
                 <ol>
-                    <a href="Clasificaciones.html"><input class="opciones" id="torneos" type="submit"
-                            value="TORNEO 1"></a>
-                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
-                    <a href=""><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                    <a href="#torneo-uno"><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                    <a href="#torneo-dos"><input class="opciones" id="torneos" type="submit" value="TORNEO 2"></a>
+                    <a href="#torneo-tres"><input class="opciones" id="torneos" type="submit" value="TORNEO 3"></a>
+                    <a href="#torneo-cuatro"><input class="opciones" id="torneos" type="submit" value="TORNEO 4"></a>
                 </ol>
-                <a href=""><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
-               
+                <a href="Clasificaciones.html"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
+
             </div>
         </div>
         <h1> CLASH LEAGUE </h1>
@@ -263,47 +272,68 @@
     <div class="listaTorneos">
         <h2>Lista de Torneos </h2>
         <div class="torneos">
-            <input type="checkbox" id="torneo" class="torneo-checkbox">
+            <input type="checkbox" id="torneo-uno" class="torneo-checkbox">
             <label for="torneo uno ">
                 <p>TORNEO 1 </p>
                 <div class="img">
                     <img src="torneo1.png" alt="torneo" class="img-torneo">
                 </div>
             </label>
+            <div class="boton">
+                <a href="EditarTorneos.html"><button class="btn"><i
+                            class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i>
+                        Eliminar</button></a>
+            </div>
         </div>
-            <div class="torneos">
-            <input type="checkbox" id="torneo dos" class="torneo-checkbox">
+        <div class="torneos">
+            <input type="checkbox" id="torneo-dos" class="torneo-checkbox">
             <label for="torneo uno ">
                 <p>TORNEO 2 </p>
                 <div class="img">
                     <img src="torneo2.png" alt="torneo" class="img-torneo">
                 </div>
             </label>
+            <div class="boton">
+                <a href="EditarTorneos.html"><button class="btn"><i
+                            class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i>
+                        Eliminar</button></a>
+            </div>
         </div>
-            <div class="torneos">
-            <input type="checkbox" id="torneo" class="torneo-checkbox">
+        <div class="torneos">
+            <input type="checkbox" id="torneo-tres" class="torneo-checkbox">
             <label for="torneo uno ">
-                <p>TORNEO 1 </p>
+                <p>TORNEO 3 </p>
                 <div class="img">
                     <img src="torneo1.png" alt="torneo" class="img-torneo">
                 </div>
             </label>
+            <div class="boton">
+                <a href="EditarTorneos.html"><button class="btn"><i
+                            class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i>
+                        Eliminar</button></a>
+            </div>
         </div>
-            <div class="torneos">
-            <input type="checkbox" id="torneo" class="torneo-checkbox">
-            <label for="torneo uno ">
-                <p>TORNEO 1 </p>
+        <div class="torneos">
+            <input type="checkbox" id="torneo-cuatro" class="torneo-checkbox">
+            <label for="torneo cuatro ">
+                <p>TORNEO 4 </p>
                 <div class="img">
                     <img src="torneo1.png" alt="torneo" class="img-torneo">
                 </div>
             </label>
+            <div class="boton">
+                <a href="EditarTorneos.html"><button class="btn"><i
+                            class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i>
+                        Eliminar</button></a>
+            </div>
         </div>
-              <div class="boton">
-                <a href="CreacionTorneos.html"><input type="submit" value=" + Nuevo" class="btn"></a>
-                <a href="EditarTorneos.html"><button class="btn"><i class="fa-solid fa-pen-to-square"></i>Editar</button></a>
-                <a href="ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i> Eliminar</button></a>
-               
-                </div>
+
+        <a href="CreacionTorneos.html"><input type="submit" value=" + Nuevo" class="btn"></a>
+
     </div>
     <!--Navegacion baja -->
     <div class="Botones">
