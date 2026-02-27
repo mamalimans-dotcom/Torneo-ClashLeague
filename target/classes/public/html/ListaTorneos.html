@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/ListaTorneos.css">
+    <title>Lista de torneos</title>
+
+
+</head>
+
+<body>
+    <!--encabezado -->
+
+    <div class="encavezado">
+        <div class="boton-hamburguesa" id="botonMenu">
+            <input type="checkbox" id="desplegable">
+            <label for="desplegable" class="desplegable">
+                <img src="../../../../../doc/gui/Barras.svg">
+            </label>
+
+
+            <div class="Panel">
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/GestionJugadores.html"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
+                <a href="ListaTorneos.html"><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
+                <ol>
+                    <a href="#torneo-uno"><input class="opciones" id="torneos" type="submit" value="TORNEO 1"></a>
+                    <a href="#torneo-dos"><input class="opciones" id="torneos" type="submit" value="TORNEO 2"></a>
+                    <a href="#torneo-tres"><input class="opciones" id="torneos" type="submit" value="TORNEO 3"></a>
+                    <a href="#torneo-cuatro"><input class="opciones" id="torneos" type="submit" value="TORNEO 4"></a>
+                </ol>
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/Clasificaciones.html"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
+
+            </div>
+        </div>
+        <h1> CLASH LEAGUE </h1>
+        <img class="logo" src="../../../../../doc/gui/image_png.png" alt="icono">
+    </div>
+
+    <!--lista de torneos-->
+    <div class="listaTorneos">
+        <h2>Lista de Torneos </h2>
+        <div class="torneos">
+            <input type="checkbox" id="torneo-uno" class="torneo-checkbox">
+            <label for="torneo uno ">
+                <p>TORNEO 1 </p>
+                <div class="img">
+                    <img src="../../../../../doc/gui/torneo1.png" alt="torneo" class="img-torneo">
+                </div>
+            </label>
+            <div class="boton">
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarTorneos.html"><button class="btn"><i
+                            class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i>
+                        Eliminar</button></a>
+            </div>
+        </div>
+        <div class="torneos">
+            <input type="checkbox" id="torneo-dos" class="torneo-checkbox">
+            <label for="torneo uno ">
+                <p>TORNEO 2 </p>
+                <div class="img">
+                    <img src="../../../../../doc/gui/torneo2.png" alt="torneo" class="img-torneo">
+                </div>
+            </label>
+            <div class="boton">
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarTorneos.html"><button class="btn"><i
+                            class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i>
+                        Eliminar</button></a>
+            </div>
+        </div>
+        <div class="torneos">
+            <input type="checkbox" id="torneo-tres" class="torneo-checkbox">
+            <label for="torneo uno ">
+                <p>TORNEO 3 </p>
+                <div class="img">
+                    <img src="../../../../../doc/gui/torneo1.png" alt="torneo" class="img-torneo">
+                </div>
+            </label>
+            <div class="boton">
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarTorneos.html"><button class="btn"><i
+                            class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i>
+                        Eliminar</button></a>
+            </div>
+        </div>
+        <div class="torneos">
+            <input type="checkbox" id="torneo-cuatro" class="torneo-checkbox">
+            <label for="torneo cuatro ">
+                <p>TORNEO 4 </p>
+                <div class="img">
+                    <img src="../../../../../doc/gui/torneo1.png" alt="torneo" class="img-torneo">
+                </div>
+            </label>
+            <div class="boton">
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarTorneos.html"><button class="btn"><i
+                            class="fa-solid fa-pen-to-square"></i>Editar</button></a>
+                <a href="../Torneo_ClashLeague/src/main/resources/public/html/ElimininarToneo.html"><button class="btn"><i class="fa-solid fa-trash"></i>
+                        Eliminar</button></a>
+            </div>
+        </div>
+
+        <a href="../Torneo_ClashLeague/src/main/resources/public/css/CreacionTorneos.html"><input type="submit" value=" + Nuevo" class="btn"></a>
+
+    </div>
+    <!--Navegacion baja -->
+    <div class="Botones">
+        <a onclick="history.back()"><img src="../../../../../doc/gui/Volver.svg"></a>
+        <a href="Principal.html"><img src="../../../../../doc/gui/Casa.svg"></a>
+        <a onclick="history.forward()"><img src="../../../../../doc/gui/Siguiente.svg"></a>
+
+    </div>
+</body>
+
+</html>
