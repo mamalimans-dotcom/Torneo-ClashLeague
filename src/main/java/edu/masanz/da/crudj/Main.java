@@ -24,5 +24,7 @@ public class Main {
 
         app.get("/", TorneoController::cargarTorneos);
         app.post("/login", TorneoController::login);
+        app.get("/crearTorneo", TorneoController::crearTorneo);
+
     }
 }

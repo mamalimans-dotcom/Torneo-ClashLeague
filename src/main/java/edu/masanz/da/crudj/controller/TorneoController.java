@@ -23,5 +23,10 @@ public class TorneoController {
     }
 
     public static void login(@NotNull Context context) {
+        
+        context.render("templates/Login.ftl",)
+    }
+
+    public static void crearTorneo(@NotNull Context context) {
     }
 }

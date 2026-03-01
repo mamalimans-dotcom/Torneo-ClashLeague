@@ -27,7 +27,7 @@
                 <a href="/"><input class="opciones" type="button" value="LISTA DE TORNEOS"></a>
                 <ol>
 
-                    <#list torneos as t>
+                    <#list torneo as t>
                         <a href="#torneo-${t.id}"><input class="opciones" id="torneos" type="button" value="${t.nombre}"></a>
                     </#list>
                 </ol>
@@ -43,13 +43,11 @@
         <h2>Lista de Torneos </h2>
 
 
-        <#list torneos as t>
+        <#list torneo as t>
             <div class="torneos" id="torneo-${t.id}">
                 <input type="checkbox" id="check-${t.id}" class="torneo-checkbox">
                 <label for="check-${t.id}">
                     <p>${t.nombre}</p>
-                    <#-- Muestra el rol y contraseña si lo necesitas, usando tus atributos -->
-                    <small>Rol: ${t.rol}</small>
                     <div class="img">
                         <img src="/img/torneo1.png" alt="torneo" class="img-torneo">
                     </div>

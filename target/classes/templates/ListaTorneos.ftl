@@ -48,8 +48,6 @@
                 <input type="checkbox" id="check-${t.id}" class="torneo-checkbox">
                 <label for="check-${t.id}">
                     <p>${t.nombre}</p>
-                    <#-- Muestra el rol y contraseña si lo necesitas, usando tus atributos -->
-                    <small>Rol: ${t.rol}</small>
                     <div class="img">
                         <img src="/img/torneo1.png" alt="torneo" class="img-torneo">
                     </div>
