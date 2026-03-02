@@ -6,10 +6,9 @@ CREATE TABLE crud_db.notas (
                              modificado varchar(4095) DEFAULT '',
                              PRIMARY KEY (id)
 );
- create table usuarios(
- id int auto_increment,
- nombre varchar(50) not null,
- contrasenia varchar(50),
- rol int ,
- constraint pk_usuarios primary key (id)
- );
+CREATE TABLE users (
+                       id INT AUTO_INCREMENT PRIMARY KEY,
+                       email VARCHAR(100) NOT NULL UNIQUE,
+                       password VARCHAR(255) NOT NULL,
+                       rol VARCHAR(50) NOT NULL
+);

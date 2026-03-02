@@ -1,11 +1,14 @@
 
 CREATE USER 'proy'@'localhost' IDENTIFIED BY 'password';
 
-CREATE DATABASE clash_royale;
+CREATE DATABASE  crud_clash;;
 
-GRANT ALL PRIVILEGES ON clash_royale.* TO 'proy'@'localhost';
+GRANT ALL PRIVILEGES ON  crud_clash;.* TO 'proy'@'localhost';
 
-USE clash_royale;
+USE  crud_clash;
+
+
+
 
 
 

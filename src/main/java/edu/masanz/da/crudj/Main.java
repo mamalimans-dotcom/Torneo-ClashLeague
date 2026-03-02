@@ -1,6 +1,8 @@
 package edu.masanz.da.crudj;
 
 import edu.masanz.da.crudj.controller.TorneoController;
+import edu.masanz.da.crudj.controller.UserController;
+import edu.masanz.da.crudj.database.ConnectionManager;
 import io.javalin.http.staticfiles.Location;
 
 import io.javalin.Javalin;
@@ -17,13 +19,19 @@ public class Main {
 
         logger.info("ARRANCANDO APLICACION");
 
+        ConnectionManager.conectar("crud_clash", "proy", "password");
+
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("public");
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
-        app.get("/", TorneoController::cargarTorneos);
-        app.post("/login", TorneoController::login);
+        app.get("/", ctx -> ctx.redirect("/login"));
+        app.get("/login", UserController::servirLogin);
+        app.post("/login", UserController::login);
+        app.get("/jugadores", ctx -> {
+            ctx.render("templates/jugadores.ftl");
+        });
         app.get("/crearTorneo", TorneoController::crearTorneo);
 
     }

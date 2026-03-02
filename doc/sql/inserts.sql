@@ -33,5 +33,6 @@ VALUES ('Ropa boda', 'Reservar un día para probar ropa', '2024-04-29 10:00:00',
 
 INSERT INTO crud_db.notas (titulo, contenido, creado, modificado) 
 VALUES ('Banco', 'Anular transferencia mensual', '2024-04-29 10:00:00', '2024-04-29 10:00:00');
- INSERT INTO usuarios (nombre, contrasenia, rol)
- VALUES('admin', 'admin123', 1),('usuario1', 'pass123', 2),('usuario2', 'pass456', 2),('invitado', 'invitado2024', 3),('supervisor', 'super123', 1);
+
+INSERT INTO users (email, password, rol) VALUES ('admin@correo.com', 'admin123', 'ADMIN'),('user1@correo.com', 'user123', 'USER'),
+ ('user2@correo.com', 'user123', 'USER'),('doctor@correo.com', 'doc123', 'DOCTOR'),('cliente@correo.com', 'cliente123', 'CLIENTE');
