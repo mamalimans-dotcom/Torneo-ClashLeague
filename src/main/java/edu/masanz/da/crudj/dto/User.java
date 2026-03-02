@@ -10,6 +10,13 @@ public class User {
 
     public User(){}
 
+    public User(int id, String email, String password, String rol) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.rol = rol;
+    }
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
