@@ -1,9 +1,7 @@
 package edu.masanz.da.crudj;
 
 import edu.masanz.da.crudj.controller.TorneoController;
-import edu.masanz.da.crudj.controller.UserController;
 import edu.masanz.da.crudj.database.ConnectionManager;
-import io.javalin.http.staticfiles.Location;
 
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
@@ -26,14 +24,14 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
-        app.before("/listaTorneos", UserController::Before);
+        app.before("/listaTorneos", TorneoController::Before);
         app.get("/", ctx -> ctx.redirect("/login"));
-        app.get("/login", UserController::servirLogin);
-        app.post("/login", UserController::login);
+        app.get("/login", TorneoController::servirLogin);
+        app.post("/login", TorneoController::login);
         app.get("/jugadores", ctx -> {
             ctx.render("templates/jugadores.ftl");
         });
         app.get("/crearTorneo", TorneoController::crearTorneo);
-        app.after("",UserController::after);
+        app.after("",TorneoController::after);
     }
 }
