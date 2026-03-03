@@ -9,6 +9,7 @@ public class TorneoService {
 
 
     public static List<Torneo> cargarTorneos(){
+
         return TorneoDao.cargarTorneos();
     }
 }

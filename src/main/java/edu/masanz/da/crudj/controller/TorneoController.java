@@ -12,12 +12,12 @@ import java.util.Map;
 public class TorneoController {
 
     public static void cargarTorneos(@NotNull Context context) {
-        List<Torneo> lista = TorneoService.cargarTorneos();
+        List<Torneo> torneos = TorneoService.cargarTorneos();
 
 
         Map<String, Object> model = new HashMap<>();
 
-        model.put("torneos", lista);
+        model.put("torneos", torneos);
 
         context.render("templates/ListaTorneos.ftl", model);
     }

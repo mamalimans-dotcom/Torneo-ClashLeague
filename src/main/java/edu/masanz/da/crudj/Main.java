@@ -26,6 +26,7 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
+        app.before("/listaTorneos", UserController::Before);
         app.get("/", ctx -> ctx.redirect("/login"));
         app.get("/login", UserController::servirLogin);
         app.post("/login", UserController::login);
@@ -33,6 +34,6 @@ public class Main {
             ctx.render("templates/jugadores.ftl");
         });
         app.get("/crearTorneo", TorneoController::crearTorneo);
-
+        app.after("",UserController::after);
     }
 }
