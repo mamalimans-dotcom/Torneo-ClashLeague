@@ -1,6 +1,5 @@
 package edu.masanz.da.crudj.dao;
 
-import com.sun.jdi.connect.spi.Connection;
 import edu.masanz.da.crudj.database.ConnectionManager;
 import edu.masanz.da.crudj.dto.Torneo;
 
@@ -25,5 +24,18 @@ public class TorneoDao {
             }
         }
         return torneos;
+    }
+
+    public static boolean crearTorneos( String nombre, int NumeroCopas){
+        String sql = "INSERT INTO torneos (nombre, NumeroCopas) VALUES (?,?,?)";
+        Object[] params = {nombre, NumeroCopas};
+        long id = ConnectionManager.ejecutarInsertSQL(sql, params);
+        if (id > 0){
+            System.out.println("Torneo creado");
+            return true;
+        }else {
+            System.out.println("Error en el inser ["+sql+"] con los siguientes parametros ["+params[0]+", "+params[1]+"]");
+        }
+        return false;
     }
 }

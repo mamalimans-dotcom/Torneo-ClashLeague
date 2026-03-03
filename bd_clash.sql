@@ -33,6 +33,8 @@ CREATE TABLE rondas_clasificacion (
     nombre VARCHAR(50) DEFAULT 'RONDA',
     FOREIGN KEY (torneo_id) REFERENCES torneos(id)
 );
+
+drop table if exists enfrentamientos_clasificacion;
 CREATE TABLE enfrentamientos_clasificacion (
     id INT AUTO_INCREMENT PRIMARY KEY,
     ronda_id INT,

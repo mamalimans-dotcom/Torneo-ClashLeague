@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/Principal.css">
+    <title>Jugadores</title>
+</head>
+
+
+<body>
+    <!--encabezado -->
+    <div class="encavezado">
+        <div class="boton-hamburguesa" id="botonMenu">
+            <input type="checkbox" id="desplegable">
+            <label for="desplegable" class="desplegable">
+                <img src="/img/Barras.svg">
+            </label>
+
+
+            <div class="Panel">
+                <a href="/GestionJugadores"><input class="opciones" type="submit" value="GESTION DE JUGADORES"></a>
+                <a href="/ListaTorneos"><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
+                <a href="/Clasificaciones"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
+
+                <ol>
+                    <a href="/Clasificaciones/1">TORNEO 1</a>
+                    <a href="/Clasificaciones/2">TORNEO 2</a>
+                    <a href="/Clasificaciones/3">TORNEO 3</a>
+                </ol>
+            </div>
+        </div>
+        <h1> CLASH LEAGUE </h1>
+        <img class="logo" src="/img/image_png.png" alt="icono">
+    </div>
+    <!-- LISTADO DE TORNEOS A JUGAR  ---->
+    <div class="torneos">
+        <h2>Torneos</h2>
+        <!--TORNEO 1 -->
+        <div class="participar">
+            <form action="../Torneo_ClashLeague/src/main/resources/public/html/Login.html" method="get">
+                <div class="torneo">
+                    <div class="info-lateral izquierda">
+
+                        <label class="icon-ver">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>ver</span>
+                        </label>
+                        <div class="copas">
+                            <span>5000</span>
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                    </div>
+                    <div class="info-princ">
+                        <p class="titulo">
+                            Sin Cartas Legendarias<br>
+                            <span>1 x 1</span>
+                        </p>
+                        <img src="../Torneo_ClashLeague/doc/gui/arena1.png" alt="arena" class="info-img">
+                    </div>
+                    <div class="info-lateral derecha">
+                        <span>5 / 8</span>
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                </div>
+                <div class="boton">
+                    <input type="submit" value="Participar" class="btn">
+                </div>
+            </form>
+        </div>
+        <!--torneo 2 -->
+        <div class="participar">
+            <form action="../Torneo_ClashLeague/src/main/resources/public/html/Jugadores.html" method="get">
+                <div class="torneo">
+                    <div class="info-lateral izquierda">
+
+                        <label class="icon-ver">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>ver</span>
+                        </label>
+                        <div class="copas">
+                            <span>5000</span>
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                    </div>
+                    <div class="info-princ">
+                        <p class="titulo">
+                            Definitivo Gigantes vs. Pekkas<br>
+                            <span>1 x 1</span>
+                        </p>
+                        <img src="../../../../../doc/gui/arena2.png" alt="arena" class="info-img">
+                    </div>
+                    <div class="info-lateral derecha">
+                        <span>5 / 8</span>
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                </div>
+                <div class="boton">
+                    <input type="submit" value="Participar" class="btn">
+                </div>
+            </form>
+        </div>
+        <!--torneo 3 -->
+        <div class="participar">
+            <div class="torneo">
+                <div class="info-lateral izquierda">
+
+                    <label class="icon-ver">
+                        <input type="checkbox">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>ver</span>
+                    </label>
+                    <div class="copas">
+                        <span>5000</span>
+
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                </div>
+                <div class="info-princ">
+                    <p class="titulo">
+                        Torneo Elite del Recreo <br>
+                        <span>1 x 1</span>
+                    </p>
+                    <img src="/img/arena3.png" alt="arena" class="info-img">
+                </div>
+                <div class="info-lateral derecha">
+                    <span>5 / 8</span>
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+            </div>
+            <div class="boton">
+                <input type="submit" value="Participar" class="btn">
+            </div>
+        </div>
+        <!--torneo 4 -->
+        <div class="participar">
+            <div class="torneo">
+                <div class="info-lateral izquierda">
+
+                    <label class="icon-ver">
+                        <input type="checkbox">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>ver</span>
+                    </label>
+                    <div class="copas">
+                        <span>5000</span>
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                </div>
+                <div class="info-princ">
+                    <p class="titulo">
+                        Duelo de Mazos Raros<br>
+                        <span>1 x 1</span>
+                    </p>
+                    <img src="/img/Arena7.webp" alt="arena" class="info-img">
+                </div>
+                <div class="info-lateral derecha">
+                    <span>5 / 8</span>
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+            </div>
+            <div class="boton">
+                <input type="submit" value="Participar" class="btn">
+            </div>
+        </div>
+    </div>
+    <!--Navegacion baja -->
+    <div class="Botones">
+        <a href=""><img src="/img/Volver.svg"></a>
+        <a href="Principal.html"><img src="/img/Casa.svg"></a>
+        <a href=""><img src="/img/Siguiente.svg"></a>
+    </div>
+</body>
+
+</html>

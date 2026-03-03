@@ -24,18 +24,17 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
-        app.before("/listaTorneos", TorneoController::Before);
-        app.get("/", ctx -> ctx.redirect("/login"));
+        app.before("/*", TorneoController::before);
+
+        app.get("/", ctx -> ctx.redirect("/principal"));
+        app.get("/principal", TorneoController::servirPrincipal);
         app.get("/login", TorneoController::servirLogin);
         app.post("/login", TorneoController::login);
         app.get("/jugadores", ctx -> {
-            ctx.render("templates/jugadores.ftl");
+            ctx.redirect("templates/jugadores.ftl");
         });
         app.get("/crearTorneo", TorneoController::crearTorneo);
         app.after("",TorneoController::after);
-
-        app.get("/jugadores", TorneoController::crearTorneo);
-        app.after("Jugadores",TorneoController::after);
 
     }
 }

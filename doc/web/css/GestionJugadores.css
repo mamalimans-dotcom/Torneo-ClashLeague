@@ -1,0 +1,301 @@
+  /*encabezado */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url(../../../../../doc/gui/fondo.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        margin: 0;
+        min-height: 100vh;
+        padding-bottom: 110px;
+
+        font-family: 'Bangers', cursive;
+    }
+
+.encavezado {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        font-family: "Bangers", cursive;
+        background: rgba(0, 0, 0, 0.418);
+
+    }
+/* Menu Admin */
+    .boton-hamburguesa {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+  .desplegable{
+    background-color: rgba(14, 13, 13, 0.5);
+    border-radius: 5px;
+    top: 130px;
+    left: 15px;
+    cursor: pointer;
+}
+.desplegable img{
+    width: 60px;
+    transition: 0.3s;
+}
+
+.desplegable img:hover{
+    transform: scale(1.09);
+}
+
+#desplegable{
+    display: none;
+}
+
+.Panel{
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 70%;
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 30px;
+    border-radius: 5px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: 0.3s;
+}
+
+#desplegable:checked + label + .Panel{
+display: block;
+opacity: 1;
+transform: translateX(0);
+}
+
+ .Panel .opciones {
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(14, 13, 13, 0.5);
+            color: white;
+            font-size: 25px;
+            font-family: 'bangers', cursive;
+            text-transform: uppercase;
+            border: 1px solid gold;
+            margin: 10px ;
+            display: block;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .Panel .opciones:hover {
+            background: gold;
+            transform: scale(1.05);
+        }
+
+        .Panel a {
+            text-decoration: none;
+
+        }
+
+    .logo {
+        width: 60px;
+    }
+
+    .encavezado h1 {
+        margin: 0;
+        font-size: 30px;
+
+    }
+    /*Navegacion baja */
+    .Botones {
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(39, 37, 37, 0.6);
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
+        border-radius: 5px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .Botones button{
+        background: none;
+        border: none;
+    }
+
+    .Botones img {
+        width: 60px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .Botones img:hover {
+        transform: scale(1.09);
+    }
+
+    .torneos-jugadores {
+        width: 100%;
+        padding: 15px;
+        overflow: hidden;
+        font-family: 'bangers', cursive;
+    }
+
+    h2 {
+
+        text-align: center;
+        margin-bottom: 25px;
+        font-family: 'bangers', cursive;
+        color: rgb(237, 237, 105);
+        font-size: 38px;
+    }
+
+    h2 span {
+        color: white;
+        margin-top: 15px;
+
+    }
+
+    .torneo-checkbox {
+        display: none !important;
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /*estilos de rondas*/
+    .jugadores {
+        border: 8px solid cyan;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        height: 90px;
+        margin-bottom: 30px;
+        align-items: center;
+        background-color: #261037cc;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        padding: 0 15px;
+    }
+
+
+    .torneo {
+        text-align: center;
+        color: rgb(237, 237, 105);
+        font-weight: bold;
+        font-size: 25px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    #jugadores:hover {
+        display: none;
+        background-color: rgba(38, 16, 55, 1);
+        border-color: #00F5FF;
+        transform: translateY(-2px);
+    }
+
+    .tabla-jugadores {
+        display: none;
+        width: 100%;
+        background-color: rgba(40, 15, 60, 0.9);
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 20px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /*controlar mi tablita :) */
+    #jugadores1:checked ~ #tabla1,
+    #jugadores2:checked ~ #tabla2,
+    #jugadores3:checked ~ #tabla3,
+    #jugadores4:checked ~ #tabla4 {
+        display: block;
+    }
+
+    /* TABLA RESPONSIVA */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #EDEDED;
+        min-width: 500px; /* Ancho mínimo para móviles */
+    }
+
+    th {
+        color: #FFE600;
+        border-bottom: 2px solid #00F5FF;
+        padding: 10px 8px;
+        font-size: 25px;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 8px 6px;
+        border-bottom: 1px dashed rgba(0, 245, 255, 0.4);
+        font-size: 20px;
+        text-align: center;
+    }
+
+    tr:hover {
+        background-color: rgba(0, 245, 255, 0.15);
+    }
+
+    /* ICONOS */
+    .fa-pen-to-square {
+        color: #00F5FF;
+        font-size: 18px;
+        transition: 0.3s;
+        padding: 5px;
+    }
+
+    .fa-trash {
+        color: #FF4D6D;
+        font-size: 18px;
+        transition: 0.3s;
+        padding: 5px;
+    }
+
+    .fa-pen-to-square:hover {
+        transform: scale(1.2);
+        color: #7CFFFB;
+    }
+
+    .fa-trash:hover {
+        transform: scale(1.2);
+        color: #FF7A90;
+    }
+
+    /* BOTÓN NUEVO */
+    .btn {
+        width: 90%;
+        max-width: 300px;
+        padding: 12px;
+        margin: 20px auto;
+        display: block;
+        background-color: rgba(39, 37, 37, 0.8);
+        border-radius: 10px;
+        border: 2px solid cyan;
+        color: rgb(237, 237, 105);
+        font-family: 'FontAwesome';
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+  }
+
+
+    .btn:hover {
+        background-color: cyan;
+        color: black;
+    }

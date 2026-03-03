@@ -9,7 +9,6 @@ import freemarker.template.Template;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 import io.javalin.http.Context;
-import jakarta.servlet.RequestDispatcher;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -65,24 +64,36 @@ public class TorneoController {
 
             ctx.render("templates/login.ftl", model);
         } else {
-            // LOGIN CORRECTO → ir a jugadores
-            ctx.redirect("/jugadores");
+            ctx.sessionAttribute("email", user.getEmail());
+            // LOGIN CORRECTO → ir a principal
+            ctx.redirect("/principal");
         }
     }
 
-    public static void Before(@NotNull Context context) {
+    public static void before(@NotNull Context context) {
 
-        Object usuario = context.formParam("usuario");
-        if (usuario == null) {
-            context.render("/login");
+        if (context.path().equals("/")  ||
+                context.path().equals("/login")  ||
+                context.path().equals("/principal")  ||
+                context.path().startsWith("/img/")  ||
+                context.path().startsWith("/css/")
+        ){
+            return;
         }
-        // context.req().getSession().getId();
 
+        String email = context.sessionAttribute("email");
+        if (email == null){
+            context.redirect("/login");
+        }
     }
 
 
     public static void after(@NotNull Context context) {
         System.out.println("finalizando");
+    }
+
+    public static void servirPrincipal(@NotNull Context context) {
+        context.render("/templates/principal.ftl");
     }
 
     public static void listaJugadores() throws SQLException, IOException, TemplateException { //Para el ftl de jugadores

@@ -1,0 +1,131 @@
+  * {
+        box-sizing: border-box;
+    }
+
+    body {
+       background-image: url(/img/esqueleto.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        margin: 0;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .login {
+        width: 100%;
+        max-width: 420px;
+        padding: 15px;
+        margin: 0 auto;
+        padding-bottom: 120px;
+    }
+    .titulo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid;
+    }
+    h1 {
+        color: white;
+        letter-spacing: 4px;
+        text-align: center;
+        font-size: 29px;
+    }
+
+    #icono {
+
+     width: 60px;
+    }
+
+
+
+    .form {
+        background: rgba(51, 49, 49, 0.55);
+        padding: 50px;
+        margin: 60px;
+        border-radius: 20px;
+        width: 300px;
+        box-shadow: 0 0 25px rgba(175, 171, 171, 0.6);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 12px;
+        border: 3px solid black;
+        font-size: 15px;
+    }
+
+    .log {
+        text-align: left;
+        font-size: 19px;
+        font-weight: bold;
+        color: aliceblue;
+    }
+
+    .submit {
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: yellow;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: 0.3s;
+        border-color: gold;
+        border: 10%;
+    }
+
+    .submit:hover {
+        background: gold;
+        transform: scale(1.05);
+    }
+
+    .administrador {
+        background: none;
+        border: none;
+        color: yellow;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: 0.3s;
+        margin: 20px;
+    }
+
+    .administrador:hover {
+        text-shadow: 0 0 8px yellow;
+        transform: scale(1.03);
+    }
+
+    .Botones {
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(39, 37, 37, 0.6);
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 0 15px rgba(136, 133, 133, 0.6);
+        border-radius: 5px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .Botones img {
+        width: 60px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .Botones img:hover {
+        transform: scale(1.09);
+    }

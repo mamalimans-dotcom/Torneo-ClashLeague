@@ -44,17 +44,17 @@
         <div class="contenido-carrusel">
 
             <div class="carta">
-                <img src="../../../../../doc/gui/arena5.webp" alt="arena 5">
+                <img src="/img/arena5.webp" alt="arena 5">
                 <p>ARENA 5</p>
             </div>
 
             <div class="carta">
-                <img src="../../../../../doc/gui/Arena7.webp" alt="arena 7">
+                <img src="/img/Arena7.webp" alt="arena 7">
                 <p>ARENA 7</p>
             </div>
 
             <div class="carta">
-                <img src="../../../../../doc/gui/Arena9.webp" alt="arena 9">
+                <img src="/img/Arena9.webp" alt="arena 9">
                 <p>ARENA 9</p>
             </div>
 
