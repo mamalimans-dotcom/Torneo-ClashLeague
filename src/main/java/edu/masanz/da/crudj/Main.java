@@ -33,5 +33,9 @@ public class Main {
         });
         app.get("/crearTorneo", TorneoController::crearTorneo);
         app.after("",TorneoController::after);
+
+        app.get("/jugadores", TorneoController::crearTorneo);
+        app.after("Jugadores",TorneoController::after);
+
     }
 }

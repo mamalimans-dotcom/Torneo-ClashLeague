@@ -7,15 +7,13 @@ public class User {
     private String email;
     private String password;
     private String rol;
+    private String alias;
+    private String nombre;
+    private String nivel;
+    private int copas;
 
     public User(){}
 
-    public User(int id, String email, String password, String rol) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.rol = rol;
-    }
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -28,4 +26,32 @@ public class User {
 
     public String getRol() { return rol; }
     public void setRol(String rol) { this.rol = rol; }
+
+    public String getAlias() {
+        return alias;
+    }
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public int getCopas() {
+        return copas;
+    }
+    public void setCopas(int copas) {
+        this.copas = copas;
+    }
 }

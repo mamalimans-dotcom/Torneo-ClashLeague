@@ -132,4 +132,7 @@ public class ConnectionManager {
         return exito;
     }
 
+    public static Connection getConexion() {
+        return conexion;
+    }
 }

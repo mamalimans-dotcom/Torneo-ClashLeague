@@ -18,7 +18,7 @@
         <div class="boton-hamburguesa" id="botonMenu">
             <input type="checkbox" id="desplegable">
             <label for="desplegable" class="desplegable">
-                <img src="../../../../../doc/gui/Barras.svg">
+                <img src="img/Barras.svg">
             </label>
 
 
@@ -36,8 +36,10 @@
         </div>
 
         <h1> CLASH LEAGUE </h1>
-        <img class="logo" src="../../../../../doc/gui/image_png.png" alt="icono">
+        <img class="logo" src="img/image_png.png" alt="icono">
     </div>
+
+
 
 
     <div class="enfrentamientos">
@@ -46,15 +48,16 @@
                 <span>TORNEO 1</span>
             </h2>
             <div class="duelo">
-                <div class="jugador">
-                    <img src="../../../../../doc/gui/emblema%201.png" class="icono">
+
+<div class="jugador">
+                    <img src="img/emblema1.png" class="icono">
                     <p>NOVALCIOP<br>
                         <span class="info">TRAP<br>RANKED #29</span>
                     </p>
                 </div>
 
                 <div class="vs-container">
-                    <img src="../../../../../doc/gui/espaditas.png" class="vs-img">
+                    <img src="img/espaditas.png" class="vs-img">
 
                 </div>
 
@@ -62,65 +65,69 @@
                     <p>HUGODRILL<br>
                         <span class="info">KINGLEGENDS<br>RANKED #50</span>
                     </p>
-                    <img src="../../../../../doc/gui/emblema%202.png" class="icono">
+                    <img src="img/emblema2.png" class="icono">
                 </div>
             </div>
             <div class="duelo">
                 <div class="jugador">
-                    <img src="../Torneo_ClashLeague/doc/gui/emblema%203.png" class="icono">
+                    <img src="img/emblema3.png" class="icono">
                     <p>CipherLux<br>
                         <span class="info">ROYAL ARENA<br>RANKED #38</span>
                     </p>
                 </div>
 
                 <div class="vs-container">
-                    <img src="../../../../../doc/gui/espaditas.png" class="vs-img">
+                    <img src="img/espaditas.png" class="vs-img">
                 </div>
 
                 <div class="jugador derecha">
                     <p>ApexRio<br>
                         <span class="info">ELECTRO VALLEY<br>RANKED #12</span>
                     </p>
-                    <img src="../../../../../doc/gui/emblema%204.png" class="icono">
+                    <img src="img/emblema4.png" class="icono">
                 </div>
             </div>
             <div class="duelo">
                 <div class="jugador">
-                    <img src="../../../../../doc/gui/emblema%205.png" class="icono">
+                    <img src="img/emblema5.png" class="icono">
                     <p>NexusZane<br>
                         <span class="info">GOBLIN GANG<br>RANKED #27</span>
                     </p>
                 </div>
 
                 <div class="vs-container">
-                    <img src="../../../../../doc/gui/espaditas.png" class="vs-img">
+                    <img src="img/espaditas.png" class="vs-img">
                 </div>
 
                 <div class="jugador derecha">
                     <p>VoidAxel<br>
                         <span class="info">DARK PRINCE<br>RANKED #44</span>
                     </p>
-                    <img src="../../../../../doc/gui/emblema%206.png" class="icono">
+                    <img src="img/emblema6.png" class="icono">
                 </div>
             </div>
             <div class="duelo">
                 <div class="jugador">
-                    <img src="../../../../../doc/gui/emblema%207.png" class="icono">
+                    <img src="img/emblema7.png" class="icono">
                     <p>ZenithKai<br>
                         <span class="info">FIREBALL ARMY<br>RANKED #32</span>
                     </p>
                 </div>
 
                 <div class="vs-container">
-                    <img src="../../../../../doc/gui/espaditas.png" class="vs-img">
+                    <img src="img/espaditas.png" class="vs-img">
                 </div>
 
                 <div class="jugador derecha">
                     <p>RexFury<br>
                         <span class="info">ICE WIZARDS<br>RANKED #15</span>
                     </p>
-                    <img src="../../../../../doc/gui/emblema%208.png" class="icono">
+                    <img src="img/emblema8.png" class="icono">
                 </div>
+
+
+
+            </div>
             </div>
 
             <input type="submit" value="LISTO" class="btn">
@@ -129,9 +136,9 @@
 
     </div>
     <div class="Botones">
-        <a href="Login.html"><img src="../../../../../doc/gui/Volver.svg"></a>
-        <a href="Principal.html"><img src="../../../../../doc/gui/Casa.svg"></a>
-        <a href="Principal.html"><img src="../../../../../doc/gui/Siguiente.svg"></a>
+        <a href="Login.html"><img src="img/Volver.svg"></a>
+        <a href="Principal.html"><img src="img/Casa.svg"></a>
+        <a href="Principal.html"><img src="img/Siguiente.svg"></a>
     </div>
 </body>
 
