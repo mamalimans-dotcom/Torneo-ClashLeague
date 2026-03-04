@@ -27,17 +27,17 @@ public class TorneoDao {
         return torneos;
     }
 
-    public static boolean crearTorneos( String nombre, int NumeroCopas){
-        String sql = "INSERT INTO torneos (nombre, NumeroCopas) VALUES (?,?,?)";
+    public static int crearTorneos(String nombre, int NumeroCopas){
+        String sql = "INSERT INTO torneos (nombre, NumeroCopas) VALUES (?, ?)";
         Object[] params = {nombre, NumeroCopas};
         long id = ConnectionManager.ejecutarInsertSQL(sql, params);
         if (id > 0){
-            System.out.println("Torneo creado");
-            return true;
+            System.out.println("Torneo creado: "+id);
+            return (int) id;
         }else {
             System.out.println("Error en el inser ["+sql+"] con los siguientes parametros ["+params[0]+", "+params[1]+"]");
         }
-        return false;
+        return 0;
     }
 
     public static int eliminarTorneos(int id){
@@ -49,8 +49,14 @@ public class TorneoDao {
     }
 
     public static boolean actualizarTorneos(Torneo torneo){
-        String sql = "UPDATE torneos set nombre=? , numeroCopas= ?";
-        return true;
+        String sql = "UPDATE torneos set nombre=? , numeroCopas= ? WHERE id=?";
+        Object[] params = {torneo.getNombre(), torneo.getNumeroCopas(), torneo.getId()};
+       int n = ConnectionManager.ejecutarUpdateSQL(sql, params);
+       if (n > 0){
+           return true;
+       }else {
+           return false;
+       }
     }
 }
 

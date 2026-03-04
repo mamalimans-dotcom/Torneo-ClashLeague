@@ -19,14 +19,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TorneoController {
 
     private static UserService userService = new UserService();
+    private static TorneoService torneoService = new TorneoService();
 
     public static void cargarTorneos(@NotNull Context context) {
         List<Torneo> torneos = TorneoService.cargarTorneos();
@@ -40,6 +38,16 @@ public class TorneoController {
     }
 
     public static void crearTorneo(@NotNull Context context) {
+        String nombre = context.formParam("nombre");
+        int numeroCopas = Integer.parseInt(Objects.requireNonNull(context.formParam("NumeroCopas")));
+
+        int resultado = torneoService.crearTorneo(nombre, numeroCopas);
+
+        if (resultado > 0) {
+            context.redirect("/templates/creacionTorneos.ftl");
+        }else{
+            System.out.println("Error al crear torneo");
+        }
     }
 
     public static void servirLogin(Context ctx) {
