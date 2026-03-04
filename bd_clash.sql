@@ -1,50 +1,60 @@
 DROP DATABASE IF EXISTS crud_clash;
-CREATE USER IF NOT EXISTS 'proy'@'localhost' IDENTIFIED BY 'password';
+DROP USER IF EXISTS 'proy'@'localhost';
+
+-- Crear usuario y base de datos
+CREATE USER 'proy'@'localhost' IDENTIFIED BY 'password';
 CREATE DATABASE crud_clash;
 GRANT ALL PRIVILEGES ON crud_clash.* TO 'proy'@'localhost';
 FLUSH PRIVILEGES;
-USE  crud_clash;
-drop table if exists users;
 
-/*********  Creacion de tablas  *************/
-drop table if exists users;
+-- Usar la base de datos
+USE crud_clash;
+
+DROP TABLE IF EXISTS enfrentamientos_clasificacion;
+DROP TABLE IF EXISTS rondas_clasificacion;
+DROP TABLE IF EXISTS torneos;
+DROP TABLE IF EXISTS users;
+
 CREATE TABLE users (
-                       id INT AUTO_INCREMENT PRIMARY KEY,
-                       email VARCHAR(100) NOT NULL UNIQUE,
-                       password VARCHAR(255) NOT NULL,
-                       rol VARCHAR(50) NOT NULL,
-                       alias varchar(50) not null,
-                       nombre varchar (50) not null,
-                       nivel varchar(50) ,
-                       copas int
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    rol VARCHAR(50) NOT NULL CHECK (rol IN ('usuario', 'admin', 'moderador')),
+    alias VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    nivel INT,
+    copas INT
 );
-drop table if exists torneos;
- create table torneos (
-					id int auto_increment primary key,
-                    nombre varchar(70) not null,
-                    NumeroCopas int not null
- );
- 
-drop table if exists rondas_clasificacion;
+
+
+CREATE TABLE torneos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(70) NOT NULL,
+    numeroCopas INT NOT NULL
+);
+
+
 CREATE TABLE rondas_clasificacion (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    torneo_id INT,
+    torneo_id INT NOT NULL,
     numero_ronda INT NOT NULL,
     nombre VARCHAR(50) DEFAULT 'RONDA',
-    FOREIGN KEY (torneo_id) REFERENCES torneos(id)
+    FOREIGN KEY (torneo_id) REFERENCES torneos(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    INDEX idx_torneo_id (torneo_id)
 );
 
-drop table if exists enfrentamientos_clasificacion;
+
 CREATE TABLE enfrentamientos_clasificacion (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    ronda_id INT,
-    jugador1_id INT,
-    jugador2_id INT,
+    ronda_id INT NOT NULL,
+    jugador1_id INT ,
+    jugador2_id INT ,
     ganador_id INT NULL,
-    FOREIGN KEY (ronda_id) REFERENCES rondas_clasificacion(id),
-    FOREIGN KEY (jugador1_id) REFERENCES users(id),
-    FOREIGN KEY (jugador2_id) REFERENCES users(id),
-    FOREIGN KEY (ganador_id) REFERENCES users(id)
+    FOREIGN KEY (ronda_id) REFERENCES rondas_clasificacion(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (jugador1_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (jugador2_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (ganador_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    INDEX idx_ronda_id (ronda_id)
 );
 
 /***************** Iserccion de Datos **********/
@@ -61,7 +71,7 @@ INSERT INTO users (email, password, rol, alias, nombre, nivel, copas) VALUES
 ('jugador10@email.com', 'password123', 'usuario', 'SparkyPower', 'Marta Ruiz', '12', 4500);
 
  
- insert into torneos (nombre, NumeroCopas) values
+ insert into torneos (nombre, numeroCopas) values
  ('Batalla de Vikingos', 3000),
  ('Gladiadores', 2000),
  ('Mineros', 4500),

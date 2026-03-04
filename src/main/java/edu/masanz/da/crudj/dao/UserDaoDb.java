@@ -73,7 +73,7 @@ public class UserDaoDb {
     }
 
     public static boolean inicializarUsuario() {
-        ConnectionManager.conectar("crud_db", "root", "roo7");
+        ConnectionManager.conectar("crud_clash", "root", "roo7");
         return true;
     }
 

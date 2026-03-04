@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TorneoDao {
+
     public static List<Torneo> cargarTorneos(){
 
         List<Torneo> torneos = new ArrayList<>();
@@ -38,4 +39,18 @@ public class TorneoDao {
         }
         return false;
     }
+
+    public static int eliminarTorneos(int id){
+        int n = 0;
+        String sql = "DELETE FROM torneos WHERE id = ?";
+        Object[] params = {id};
+        n = ConnectionManager.ejecutarUpdateSQL(sql, params);
+        return n;
+    }
+
+    public static boolean actualizarTorneos(Torneo torneo){
+        String sql = "UPDATE torneos set nombre=? , numeroCopas= ?";
+        return true;
+    }
 }
+
