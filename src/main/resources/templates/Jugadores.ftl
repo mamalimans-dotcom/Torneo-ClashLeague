@@ -40,97 +40,46 @@
     </div>
 
 
-
-
     <div class="enfrentamientos">
-        <form action="../Torneo_ClashLeague/src/main/resources/public/html/CampoBatalla.html" method="get">
-            <h2>JUGADORES
-                <span>TORNEO 1</span>
-            </h2>
-            <div class="duelo">
+                            <h2>JUGADORES
+                                <span>TORNEO 1</span>
+                            </h2>
+                                <div class="duelo">
+                                <ul>
+                                    <#list jugadores?chunk(2) as pareja>
 
-<div class="jugador">
-                    <img src="img/emblema1.png" class="icono">
-                    <p>NOVALCIOP<br>
-                        <span class="info">TRAP<br>RANKED #29</span>
-                    </p>
-                </div>
-
-                <div class="vs-container">
-                    <img src="img/espaditas.png" class="vs-img">
-
-                </div>
-
-                <div class="jugador derecha">
-                    <p>HUGODRILL<br>
-                        <span class="info">KINGLEGENDS<br>RANKED #50</span>
-                    </p>
-                    <img src="img/emblema2.png" class="icono">
-                </div>
-            </div>
-            <div class="duelo">
-                <div class="jugador">
-                    <img src="img/emblema3.png" class="icono">
-                    <p>CipherLux<br>
-                        <span class="info">ROYAL ARENA<br>RANKED #38</span>
-                    </p>
-                </div>
-
-                <div class="vs-container">
-                    <img src="img/espaditas.png" class="vs-img">
-                </div>
-
-                <div class="jugador derecha">
-                    <p>ApexRio<br>
-                        <span class="info">ELECTRO VALLEY<br>RANKED #12</span>
-                    </p>
-                    <img src="img/emblema4.png" class="icono">
-                </div>
-            </div>
-            <div class="duelo">
-                <div class="jugador">
-                    <img src="img/emblema5.png" class="icono">
-                    <p>NexusZane<br>
-                        <span class="info">GOBLIN GANG<br>RANKED #27</span>
-                    </p>
-                </div>
-
-                <div class="vs-container">
-                    <img src="img/espaditas.png" class="vs-img">
-                </div>
-
-                <div class="jugador derecha">
-                    <p>VoidAxel<br>
-                        <span class="info">DARK PRINCE<br>RANKED #44</span>
-                    </p>
-                    <img src="img/emblema6.png" class="icono">
-                </div>
-            </div>
-            <div class="duelo">
-                <div class="jugador">
-                    <img src="img/emblema7.png" class="icono">
-                    <p>ZenithKai<br>
-                        <span class="info">FIREBALL ARMY<br>RANKED #32</span>
-                    </p>
-                </div>
-
-                <div class="vs-container">
-                    <img src="img/espaditas.png" class="vs-img">
-                </div>
-
-                <div class="jugador derecha">
-                    <p>RexFury<br>
-                        <span class="info">ICE WIZARDS<br>RANKED #15</span>
-                    </p>
-                    <img src="img/emblema8.png" class="icono">
-                </div>
+                                        <#-- Jugador izquierda -->
+                                            <div class="jugador">
+                                            <img src="img/emblema1.png" class="icono">
+                                            <p>${pareja[0].alias}<br>
+                                                 <span class="info">${pareja[0].nombre}<br>RANKED # ${pareja[0].nivel}</span>
+                                                 </p>
+                                            </div>
+                                        <#-- Jugador izquierda -->
 
 
+                                        <#-- Imagen -->
+                                            <div class="vs-container">
+                                            <img src="img/espaditas.png" class="vs-img">
+                                            </div>
+                                        <#-- Imagen -->
 
-            </div>
-            </div>
 
-            <input type="submit" value="LISTO" class="btn">
+                                        <#-- Jugador derecha -->
+                                            <div class="jugador derecha">
+                                            <#if pareja[1]??>
+                                            <img src="img/emblema2.png" class="icono">
+                                                <p>${pareja[1].alias}<br>
+                                                   <span class="info">${pareja[1].nombre}<br>RANKED # ${pareja[1].nivel}</span>
+                                                   </p>
+                                                </#if>
+                                            </div>
+                                        <#-- Jugador derecha -->
+                                    </#list>
+                                </ul>
+                                </div>
+
+        <a href="/principal" class="btn">LISTO</a>
 
         </form>
 

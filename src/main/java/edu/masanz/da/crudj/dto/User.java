@@ -9,7 +9,7 @@ public class User {
     private String rol;
     private String alias;
     private String nombre;
-    private String nivel;
+    private Integer nivel;
     private int copas;
 
     public User(){}
@@ -41,10 +41,11 @@ public class User {
         this.nombre = nombre;
     }
 
-    public String getNivel() {
+    public Integer
+    getNivel() {
         return nivel;
     }
-    public void setNivel(String nivel) {
+    public void setNivel(Integer nivel) {
         this.nivel = nivel;
     }
 

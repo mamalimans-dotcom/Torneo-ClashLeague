@@ -44,8 +44,8 @@ public class UserService {
         return userDao.obtenerUsuarios();
     }
 
-    public boolean crearUsuario(String email, String contraseña, String rol) {
-        return userDao.crearUsuario(email,contraseña,rol);
+    public boolean crearUsuario(String email, String contraseña, String rol, String alias, String nombre, String nivel, int copas) {
+        return userDao.crearUsuario(email,contraseña,rol,alias,nombre,nivel,copas);
     }
 
 }

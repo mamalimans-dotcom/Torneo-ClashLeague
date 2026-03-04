@@ -104,44 +104,14 @@ public class TorneoController {
         context.render("/templates/principal.ftl");
     }
 
-    public static void listaJugadores() throws SQLException, IOException, TemplateException { //Para el ftl de jugadores
+    public static void cargarJugadores(@NotNull Context context){ //Para el ftl de jugadores
 
-        List<User> jugadores = new ArrayList<>();
-        Connection con = ConnectionManager.getConexion();
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM usuarios");
-        ResultSet rs = ps.executeQuery();
-
-        while (rs.next()) {
-            User u = new User();
-            u.setId(rs.getInt("id"));
-            u.setEmail(rs.getString("email"));
-            u.setRol(rs.getString("rol"));
-            u.setAlias(rs.getString("alias"));
-            u.setNombre(rs.getString("nombre"));
-            u.setNivel(rs.getString("nivel"));
-            u.setCopas(rs.getInt("copas"));
-            jugadores.add(u);
-        }
-
-        rs.close();
-        ps.close();
-
+        List<User> jugadores = userService.obtenerUsuarios();
 
         Map<String, Object> datos = new HashMap<>();
         datos.put("jugadores", jugadores);
 
-
-        Configuration cfg = new Configuration(Configuration.VERSION_2_3_31);
-        cfg.setDirectoryForTemplateLoading(new File("src/main/resources/templates")); // tu FTL aquí
-        cfg.setDefaultEncoding("UTF-8");
-
-        Template template = cfg.getTemplate("Jugadores.ftl");
-
-
-        Writer out = new FileWriter("salida.html");
-        template.process(datos, out);
-        out.close();
-
+        context.render("templates/Jugadores.ftl", datos);
 
     }
 
