@@ -44,16 +44,18 @@
                             <h2>JUGADORES
                                 <span>TORNEO 1</span>
                             </h2>
-                                <div class="duelo">
-                                <ul>
-                                    <#list jugadores?chunk(2) as pareja>
 
+                                <#if jugadores?has_content>
+                                    <#list jugadores?chunk(2) as pareja>
+                                        <div class="duelo">
                                         <#-- Jugador izquierda -->
                                             <div class="jugador">
+                                            <#if pareja[0]??>
                                             <img src="img/emblema1.png" class="icono">
                                             <p>${pareja[0].alias}<br>
                                                  <span class="info">${pareja[0].nombre}<br>RANKED # ${pareja[0].nivel}</span>
                                                  </p>
+                                                 </#if>
                                             </div>
                                         <#-- Jugador izquierda -->
 
@@ -74,14 +76,13 @@
                                                    </p>
                                                 </#if>
                                             </div>
+                                        </div>
                                         <#-- Jugador derecha -->
                                     </#list>
-                                </ul>
+                                    </#if>
                                 </div>
 
         <a href="/principal" class="btn">LISTO</a>
-
-        </form>
 
     </div>
     <div class="Botones">

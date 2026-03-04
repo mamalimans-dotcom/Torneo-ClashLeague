@@ -4,7 +4,7 @@
     }
 
     body {
-        background-image: url(../../../../../doc/gui/fondo.png);
+        background-image: url(../img/fondo.png);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
