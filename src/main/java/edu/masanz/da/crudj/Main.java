@@ -37,5 +37,8 @@ public class Main {
         app.get("/crearTorneo", TorneoController::crearTorneo);
         app.after("",TorneoController::after);
 
+
+        app.get("/cambioArena", TorneoController::cambioArena);
+
     }
 }

@@ -104,7 +104,7 @@ public class TorneoController {
         context.render("/templates/principal.ftl");
     }
 
-    public static void cargarJugadores(@NotNull Context context){ //Para el ftl de jugadores
+    public static void cargarJugadores(@NotNull Context context){
 
         List<User> jugadores = userService.obtenerUsuarios();
 
@@ -112,6 +112,15 @@ public class TorneoController {
         datos.put("jugadores", jugadores);
 
         context.render("templates/Jugadores.ftl", datos);
+
+    }
+
+
+    public static void cambioArena(@NotNull Context context){
+
+        Map<String, Object> model = new HashMap<>();
+
+        context.render("templates/cambioArena.ftl", model);
 
     }
 
