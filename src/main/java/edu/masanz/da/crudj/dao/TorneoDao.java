@@ -11,7 +11,7 @@ public class TorneoDao {
     public static List<Torneo> cargarTorneos(){
 
         List<Torneo> torneos = new ArrayList<>();
-        String sql = "SELECT id, nombre, NumeroCopas FROM Torneo";
+        String sql = "SELECT id, nombre, NumeroCopas FROM torneos";
         Object[] parametros = {};
         Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, parametros );
 
