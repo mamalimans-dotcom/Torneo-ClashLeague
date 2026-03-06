@@ -3,49 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreacioUsuarios</title>
-     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/CambioArena.css">
+    <title>Creacion Usuarios - Servidor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/estilosAgrupados.css">
 </head>
-<body>
+<body class="CreacionUsuarios-css">
     <div class="cabecera">
         <h1>CLASH LEAGUE</h1>
-        <img src="../../../../../doc/gui/image_png.png" id="icono">
+        <img src="/img/image_png.png" id="icono">
     </div>
 
     <input type="checkbox" id="desplegable">
     <label for="desplegable" class="desplegable">
-        <img src="../../../../../doc/gui/Barras.svg" alt="Menú">
+        <img src="/img/Barras.svg" alt="Menú">
     </label>
     <div class="Panel">
-        <a href="#"><div class="opciones">GESTIÓN DE JUGADORES</div></a>
-        <a href="#"><div class="opciones">LISTA DE TORNEOS</div></a>
-        <a href="Clasificaciones.html"><div class="opciones">CLASIFICACIONES</div></a>
-       <ol>
-        <a href="#"><div class="opciones">TORNEO 1</div></a>
-        <a href="#"><div class="opciones">TORNEO 2</div></a>
-        <a href="#"><div class="opciones">TORNEO 3</div></a>
+        <a href="/gestion"><div class="opciones">GESTIÓN DE JUGADORES</div></a>
+        <a href="/torneos"><div class="opciones">LISTA DE TORNEOS</div></a>
+        <a href="/clasificaciones"><div class="opciones">CLASIFICACIONES</div></a>
+        <ol>
+            <#if torneos??>
+                <#list torneos as t>
+                    <a href="#"><div class="opciones">${t.nombre}</div></a>
+                </#list>
+            </#if>
         </ol>
     </div>
 
     <div class="form-container">
         <div class="form">
-            <form>
+            <form action="/crearUsuario" method="POST">
                 <label for="nombre" class="nombre">NOMBRE USUARIO:</label>
-                <input type="text" class="submit" id="nombre">
+                <input type="text" name="username" class="submit-input" id="nombre" required>
 
                 <label for="contraseña" class="nombre">CONTRASEÑA:</label>
-                <input type="password" class="submit" id="contraseña">
+                <input type="password" name="password" class="submit-input" id="contraseña" required>
 
-                <input type="submit" id="boton" value="SIGUIENTE" formaction="EditarJugador.html">
+                <input type="submit" id="boton" value="SIGUIENTE">
             </form>
         </div>
     </div>
 
     <div class="Botones">
-        <a href="Clasificaciones.html"><img src="../../../../../doc/gui/Volver.svg" alt="Volver"></a>
-        <a href="Login.html"><img src="../../../../../doc/gui/Casa.svg" alt="Inicio"></a>
-        <a href="Clasificaciones.html"><img src="../../../../../doc/gui/Siguiente.svg" alt="Siguiente"></a>
+        <a href="/clasificaciones"><img src="/img/Volver.svg" alt="Volver"></a>
+        <a href="/"><img src="/img/Casa.svg" alt="Inicio"></a>
+        <a href="/clasificaciones"><img src="/img/Siguiente.svg" alt="Siguiente"></a>
     </div>
 </body>
 </html>

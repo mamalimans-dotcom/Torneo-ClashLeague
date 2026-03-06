@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${titulo!"Login"}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/Login.css">
-</head>
-
-<body>
+<body class="Login-css">
 <div class="login">
     <div class="form">
         <div class="titulo">
@@ -28,20 +17,16 @@
             <label>CONTRASEÑA</label>
             <input type="password" name="password" required>
 
-            <br><br>
+            <#if error??>
+                <p style="color: #ff4d6d; text-align: center; margin-top: 10px;">${error}</p>
+            </#if>
 
-            <button class="submit" type="submit">Login</button>
+            <button class="submit" type="submit">LOGIN</button>
         </form>
 
-        <#if error??>
-            <p style="color:red">${error}</p>
-        </#if>
-
-        <br>
-
-        <a href="/admin">
+        <a href="/admin/registro" style="text-decoration: none;">
             <button type="button" class="administrador">
-                Ir a Admin
+                IR A ADMIN / REGISTRO
             </button>
         </a>
     </div>
@@ -53,5 +38,3 @@
     </a>
 </div>
 </body>
-
-</html>

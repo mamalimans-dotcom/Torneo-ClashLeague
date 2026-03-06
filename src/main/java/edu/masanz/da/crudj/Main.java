@@ -24,6 +24,7 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
+
         app.before("/*", TorneoController::before);
 
         app.get("/", ctx -> ctx.redirect("/principal"));

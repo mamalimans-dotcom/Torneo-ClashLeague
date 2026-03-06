@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -8,352 +8,187 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/GestionJugadores.css">
-    <title>Gestion Jugadores</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/estilosAgrupados.css">
+
+    <title>Gestión de Jugadores - Clash League</title>
 </head>
 
+<body class="GestionJugadores-css">
 
-<body>
-    <!--encabezado -->
-    <div class="encavezado">
-        <div class="boton-hamburguesa" id="botonMenu">
-            <input type="checkbox" id="desplegable">
-            <label for="desplegable" class="desplegable">
-                <img src="../../../../../doc/gui/Barras.svg">
-            </label>
+<div class="encavezado">
+    <div class="boton-hamburguesa" id="botonMenu">
+        <input type="checkbox" id="desplegable">
+        <label for="desplegable" class="desplegable">
+            <img src="../img/Barras.svg" alt="Menú">
+        </label>
 
-
-            <div class="Panel">
-                <a href="ListaTorneos.html"><input class="opciones" type="submit" value="LISTA DE TORNEOS"></a>
-                <a href="Clasificaciones.html"><input class="opciones" type="submit" value="CLASIFICACIONES"></a>
-                <div id="torneos">
+        <div class="Panel">
+            <a href="ListaTorneos.html"><input class="opciones" type="button" value="LISTA DE TORNEOS"></a>
+            <a href="Clasificaciones.html"><input class="opciones" type="button" value="CLASIFICACIONES"></a>
+            <div id="torneos">
                 <ol>
-                    <a href="CampoBatalla.html"><input class="opciones"  type="submit"
-                            value="TORNEO 1"></a>
-                    <a href="Clasificaciones.html"><input class="opciones"  type="submit" value="TORNEO 2"></a>
-                    <a href="Clasificaciones.html"><input class="opciones"  type="submit" value="TORNEO 3"></a>
+                    <a href="CampoBatalla.html"><input class="opciones" type="button" value="TORNEO 1"></a>
+                    <a href="Clasificaciones.html"><input class="opciones" type="button" value="TORNEO 2"></a>
+                    <a href="Clasificaciones.html"><input class="opciones" type="button" value="TORNEO 3"></a>
                 </ol>
             </div>
-            </div>
-        </div>
-        <h1> CLASH LEAGUE </h1>
-        <img class="logo" src="../../../../../doc/gui/image_png.png" alt="icono">
-    </div>
-    <!--Contenedor Principal -->
-    <div class="torneos-jugadores">
-        <h2>Gestion Jugadores</h2>
-        <!--torneo 1-->
-
-        <input type="checkbox" id="jugadores1" class="torneo-checkbox">
-        <label for="jugadores1" class="jugadores">
-            <div class="torneo">
-                <p>TORNEO 1 </p>
-            </div>
-        </label>
-        <div class="tabla-jugadores" id="tabla1">
-            <form action="CreacionUsuarios.html" method="get">
-                <table>
-                    <tr>
-                        <th>Nombres</th>
-                        <th>ID</th>
-                        <th>Copas</th>
-                        <th>Edicion</th>
-                        <th>Eliminar</th>
-                    </tr>
-                    <tr>
-                        <td>MegaKnightPro</td>
-                        <td>#w4855</td>
-                        <td>5000</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>ClashMaster99</td>
-                        <td>#y1554</td>
-                        <td>6420</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>ValkyriaQueen</td>
-                        <td>#d1456</td>
-                        <td>9010</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>RoyalGiantFan</td>
-                        <td>#g1556</td>
-                        <td>5980</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>SparkyWizard</td>
-                        <td>#v7964</td>
-                        <td>6150</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>PekkaDestroyer</td>
-                        <td>#f9845</td>
-                        <td>5730</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>GolemExpert</td>
-                        <td>#t5896</td>
-                        <td>6990</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>XBowSniper</td>
-                        <td>#p1689</td>
-                        <td>5560</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                </table>
-
-                <input type="submit" value=" + Nuevo" class="btn">
-            </form>
-        </div>
-        <!--torneo 2-->
-
-        <input type="checkbox" id="jugadores2" class="torneo-checkbox">
-        <label for="jugadores2" class="jugadores">
-            <div class="torneo">
-                <p>TORNEO 2 </p>
-            </div>
-        </label>
-        <div class="tabla-jugadores" id="tabla2">
-            <form action="CreacionUsuarios.html" method="get">
-                <table>
-                    <tr>
-                        <th>Nombres</th>
-                        <th>ID</th>
-                        <th>Copas</th>
-                        <th>Edicion</th>
-                        <th>Eliminar</th>
-                    </tr>
-                    <tr>
-                        <td>MegaKnightPro</td>
-                        <td>#w4855</td>
-                        <td>5000</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>ClashMaster99</td>
-                        <td>#y1554</td>
-                        <td>6420</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>ValkyriaQueen</td>
-                        <td>#d1456</td>
-                        <td>9010</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>RoyalGiantFan</td>
-                        <td>#g1556</td>
-                        <td>5980</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>SparkyWizard</td>
-                        <td>#v7964</td>
-                        <td>6150</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>PekkaDestroyer</td>
-                        <td>#f9845</td>
-                        <td>5730</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>GolemExpert</td>
-                        <td>#t5896</td>
-                        <td>6990</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>XBowSniper</td>
-                        <td>#p1689</td>
-                        <td>5560</td>
-                        <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                    </tr>
-                </table>
-                <input type="submit" value=" + Nuevo" class="btn">
-            </form>
-        </div>
-        <!--Torneo 3 -->
-        <input type="checkbox" id="jugadores3" class="torneo-checkbox">
-        <label for="jugadores3" class="jugadores">
-            <div class="torneo">
-                <p>TORNEO 3 </p>
-            </div>
-        </label>
-        <div class="tabla-jugadores" id="tabla3">
-            <table>
-                <tr>
-                    <th>Nombres</th>
-                    <th>ID</th>
-                    <th>Copas</th>
-                    <th>Edicion</th>
-                    <th>Eliminar</th>
-                </tr>
-                <tr>
-                    <td>MegaKnightPro</td>
-                    <td>#w4855</td>
-                    <td>5000</td>
-                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="EliminarJugador"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>ClashMaster99</td>
-                    <td>#y1554</td>
-                    <td>6420</td>
-                    <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>ValkyriaQueen</td>
-                    <td>#d1456</td>
-                    <td>9010</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>RoyalGiantFan</td>
-                    <td>#g1556</td>
-                    <td>5980</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>SparkyWizard</td>
-                    <td>#v7964</td>
-                    <td>6150</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>PekkaDestroyer</td>
-                    <td>#f9845</td>
-                    <td>5730</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>GolemExpert</td>
-                    <td>#t5896</td>
-                    <td>6990</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>XBowSniper</td>
-                    <td>#p1689</td>
-                    <td>5560</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-            </table>
-        </div>
-        <!--torneo 4-->
-        <input type="checkbox" id="jugadores4" class="torneo-checkbox">
-        <label for="jugadores4" class="jugadores">
-            <div class="torneo">
-                <p>TORNEO 4</p>
-            </div>
-        </label>
-        <div class="tabla-jugadores" id="tabla4">
-            <table>
-                <tr>
-                    <th>Nombres</th>
-                    <th>ID</th>
-                    <th>Copas</th>
-                    <th>Edicion</th>
-                    <th>Eliminar</th>
-                </tr>
-                <tr>
-                    <td>MegaKnightPro</td>
-                    <td>#w4855</td>
-                    <td>5000</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>ClashMaster99</td>
-                    <td>#y1554</td>
-                    <td>6420</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>ValkyriaQueen</td>
-                    <td>#d1456</td>
-                    <td>9010</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>RoyalGiantFan</td>
-                    <td>#g1556</td>
-                    <td>5980</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>SparkyWizard</td>
-                    <td>#v7964</td>
-                    <td>6150</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>PekkaDestroyer</td>
-                    <td>#f9845</td>
-                    <td>5730</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>GolemExpert</td>
-                    <td>#t5896</td>
-                    <td>6990</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <td>XBowSniper</td>
-                    <td>#p1689</td>
-                    <td>5560</td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a href="../Torneo_ClashLeague/src/main/resources/public/html/EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-            </table>
         </div>
     </div>
-    <!--Navegacion baja -->
-    <div class="Botones">
-        <button onclick="history.back()"><img src="../../../../../doc/gui/Volver.svg"></button>
-        <a href="Principal.html"><img src="../../../../../doc/gui/Casa.svg"></a>
-        <a href="Principal.html"><img src="../../../../../doc/gui/Siguiente.svg"></a>
+    <h1> CLASH LEAGUE </h1>
+    <img class="logo" src="../img/image_png.png" alt="Icono Clash League">
+</div>
+
+<div class="torneos-jugadores">
+    <h2>Gestión Jugadores</h2>
+
+    <input type="checkbox" id="jugadores1" class="torneo-checkbox">
+    <label for="jugadores1" class="jugadores">
+        <div class="torneo">
+            <p>TORNEO 1 <i class="fa-solid fa-chevron-down" style="font-size: 15px; margin-left: 10px;"></i></p>
+        </div>
+    </label>
+    <div class="tabla-jugadores" id="tabla1">
+        <table>
+            <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>ID</th>
+                <th>Copas</th>
+                <th>Edición</th>
+                <th>Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>MegaKnightPro</td>
+                <td>#w4855</td>
+                <td>5000</td>
+                <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td>ClashMaster99</td>
+                <td>#y1554</td>
+                <td>6420</td>
+                <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
+            </tr>
+            </tbody>
+        </table>
+        <form action="CreacionUsuarios.html" method="get">
+            <input type="submit" value="+ Nuevo Jugador" class="btn">
+        </form>
     </div>
+
+    <input type="checkbox" id="jugadores2" class="torneo-checkbox">
+    <label for="jugadores2" class="jugadores">
+        <div class="torneo">
+            <p>TORNEO 2 <i class="fa-solid fa-chevron-down" style="font-size: 15px; margin-left: 10px;"></i></p>
+        </div>
+    </label>
+    <div class="tabla-jugadores" id="tabla2">
+        <table>
+            <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>ID</th>
+                <th>Copas</th>
+                <th>Edición</th>
+                <th>Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>ValkyriaQueen</td>
+                <td>#d1456</td>
+                <td>9010</td>
+                <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
+            </tr>
+            </tbody>
+        </table>
+        <form action="CreacionUsuarios.html" method="get">
+            <input type="submit" value="+ Nuevo Jugador" class="btn">
+        </form>
+    </div>
+
+    <input type="checkbox" id="jugadores3" class="torneo-checkbox">
+    <label for="jugadores3" class="jugadores">
+        <div class="torneo">
+            <p>TORNEO 3 <i class="fa-solid fa-chevron-down" style="font-size: 15px; margin-left: 10px;"></i></p>
+        </div>
+    </label>
+    <div class="tabla-jugadores" id="tabla3">
+        <table>
+            <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>ID</th>
+                <th>Copas</th>
+                <th>Edición</th>
+                <th>Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>PekkaDestroyer</td>
+                <td>#f9845</td>
+                <td>5730</td>
+                <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
+            </tr>
+            </tbody>
+        </table>
+        <form action="CreacionUsuarios.html" method="get">
+            <input type="submit" value="+ Nuevo Jugador" class="btn">
+        </form>
+    </div>
+
+    <input type="checkbox" id="jugadores4" class="torneo-checkbox">
+    <label for="jugadores4" class="jugadores">
+        <div class="torneo">
+            <p>TORNEO 4 <i class="fa-solid fa-chevron-down" style="font-size: 15px; margin-left: 10px;"></i></p>
+        </div>
+    </label>
+    <div class="tabla-jugadores" id="tabla4">
+        <table>
+            <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>ID</th>
+                <th>Copas</th>
+                <th>Edición</th>
+                <th>Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>XBowSniper</td>
+                <td>#p1689</td>
+                <td>5560</td>
+                <td><a href="EditarJugador.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="EliminarJugador.html"><i class="fa-solid fa-trash"></i></a></td>
+            </tr>
+            </tbody>
+        </table>
+        <form action="CreacionUsuarios.html" method="get">
+            <input type="submit" value="+ Nuevo Jugador" class="btn">
+        </form>
+    </div>
+</div>
+
+<div class="Botones">
+    <button onclick="history.back()" title="Volver">
+        <img src="../img/Volver.svg" alt="Volver">
+    </button>
+    <a href="Principal.html" title="Inicio">
+        <img src="../img/Casa.svg" alt="Inicio">
+    </a>
+    <a href="ListaTorneos.html" title="Siguiente">
+        <img src="../img/Siguiente.svg" alt="Siguiente">
+    </a>
+</div>
+
 </body>
-
 </html>
