@@ -20,12 +20,12 @@
             </div>
         </div>
 
-        <form action="Jugadores.html" method="get">
+        <form action="/login" method="post">
             <label>EMAIL</label>
-            <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
 
             <label>CONTRASEÑA</label>
-            <input type="password" id="password" placeholder="******" required>
+            <input type="password" id="password" name="password" placeholder="******" required>
 
             <input class="submit" type="submit" value="Entrar">
             <#if error??>
