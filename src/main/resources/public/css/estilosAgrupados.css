@@ -1,0 +1,737 @@
+/* =============================================================
+   BLOQUE 1: CONTENIDO ÍNTEGRO CON RUTAS /img/
+   ============================================================= */
+
+/* --- ARCHIVO: CreacionTorneos.css --- */
+.CreacionTorneos-css {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(/img/fondo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Bangers', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.CreacionTorneos-css .cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.418);
+    width: 100%;
+}
+
+.CreacionTorneos-css h1 {
+    font-size: 45px;
+    color: aliceblue;
+    margin: 0;
+    position: fixed;
+    top: 10px;
+    left: 20%;
+    text-align: center;
+}
+
+.CreacionTorneos-css #icono {
+    width: 50px;
+    position: absolute;
+    left: 85%;
+    top: 10px;
+}
+
+.CreacionTorneos-css .desplegable {
+    position: absolute;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.CreacionTorneos-css .desplegable img {
+    width: 60px;
+    transition: 0.3s;
+}
+
+.CreacionTorneos-css .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.CreacionTorneos-css .usuario1 {
+    background-color: white;
+    border: 5px solid black;
+    width: 45%;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.CreacionTorneos-css .form-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+}
+
+.CreacionTorneos-css label {
+    color: white;
+    font-size: 30px;
+    margin: 30px;
+}
+
+.CreacionTorneos-css select {
+    background-color: white;
+    border: 5px solid black;
+    width: 23%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Bangers', cursive;
+}
+
+.CreacionTorneos-css option {
+    font-family: 'Bangers', cursive;
+    font-size: 16px;
+}
+
+.CreacionTorneos-css .Confirmacion {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 50px;
+}
+
+.CreacionTorneos-css #guardar,
+.CreacionTorneos-css #descartar {
+    background-color: white;
+    width: 130px;
+    height: 40px;
+    border: 5px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Bangers', cursive;
+}
+
+.CreacionTorneos-css .Botones {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(39, 37, 37, 0.6);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- ARCHIVO: CambioArena.css --- */
+.CambioArena-css {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(/img/fondo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Bangers', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.CambioArena-css .cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.418);
+    width: 100%;
+}
+
+.CambioArena-css h1 {
+    font-size: 45px;
+    color: aliceblue;
+    margin: 0;
+    position: fixed;
+    top: 10px;
+    left: 20%;
+    text-align: center;
+}
+
+.CambioArena-css #icono {
+    width: 50px;
+    position: absolute;
+    left: 85%;
+    top: 10px;
+}
+
+.CambioArena-css .alerta {
+    background-color: white;
+    width: 45%;
+    height: 200px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 40px;
+    border: 7px solid black;
+}
+
+.CambioArena-css p {
+    font-weight: bold;
+    font-size: 35px;
+    color: black;
+    font-family: 'bangers', cursive;
+    transform: skew(-5deg);
+}
+
+.CambioArena-css .Confirmacion {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 200px;
+    margin-top: 110px;
+}
+
+.CambioArena-css #Si,
+.CambioArena-css #No {
+    width: 90px;
+    height: 50px;
+    background-color: white;
+    border: 5px solid black;
+    font-family: 'bangers', cursive;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.CambioArena-css .Linea {
+    width: 90%;
+    border: 1px solid white;
+    margin: auto;
+    position: fixed;
+    top: 650px;
+}
+
+.CambioArena-css .Botones {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(39, 37, 37, 0.6);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- ARCHIVO: CampoBatalla.css --- */
+.CampoBatalla-css {
+    background-image: url(/img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.CampoBatalla-css * {
+    box-sizing: border-box;
+}
+
+.CampoBatalla-css .encavezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: "Bangers", cursive;
+    background: rgba(0, 0, 0, 0.418);
+}
+
+.CampoBatalla-css .Panel {
+    display: none;
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    width: 250px;
+    background-color: rgba(7, 7, 7, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid gold;
+    z-index: 10;
+}
+
+.CampoBatalla-css #desplegable:checked ~ .Panel {
+    display: block;
+}
+
+.CampoBatalla-css .Botones {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(39, 37, 37, 0.6);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* =============================================================
+   BLOQUE 2: CONTENIDO ÍNTEGRO CON RUTAS /img/
+   ============================================================= */
+
+/* --- ARCHIVO: Clasificaciones.css --- */
+.Clasificaciones-css {
+    background-image: url(/img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    justify-content: center;
+}
+
+.Clasificaciones-css * {
+    box-sizing: border-box;
+}
+
+.Clasificaciones-css .encavezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: "Bangers", cursive;
+    background: rgba(0, 0, 0, 0.418);
+}
+
+.Clasificaciones-css .boton-hamburguesa {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Clasificaciones-css .desplegable {
+    background-color: rgba(14, 13, 13, 0.5);
+    border-radius: 5px;
+    top: 130px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.Clasificaciones-css .desplegable img {
+    width: 60px;
+    transition: 0.3s;
+}
+
+.Clasificaciones-css .desplegable img:hover {
+    transform: scale(1.09);
+}
+
+.Clasificaciones-css #desplegable {
+    display: none;
+}
+
+.Clasificaciones-css .Panel {
+    display: none;
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    width: 250px;
+    background-color: rgba(7, 7, 7, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid gold;
+    z-index: 10;
+}
+
+.Clasificaciones-css #desplegable:checked ~ .Panel {
+    display: block;
+}
+
+.Clasificaciones-css .titulo-seccion {
+    text-align: center;
+    background: #261037;
+    border: 2px solid cyan;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto 20px;
+}
+
+.Clasificaciones-css .secciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.Clasificaciones-css .grupos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Clasificaciones-css .grupo {
+    background-color: #261037;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 6px;
+    width: 150px;
+    text-align: center;
+    font-family: "Bangers", cursive;
+}
+
+.Clasificaciones-css .ganador {
+    background-color: #261037c4;
+    border: 2px solid gold;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-family: "Bangers", cursive;
+    position: relative;
+}
+
+/* --- ARCHIVO: CreacionUsuarios.css --- */
+.CreacionUsuarios-css {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(/img/fondo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Bangers', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.CreacionUsuarios-css .cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.418);
+    width: 100%;
+}
+
+.CreacionUsuarios-css h1 {
+    font-size: 45px;
+    color: aliceblue;
+    margin: 0;
+    position: fixed;
+    top: 10px;
+    left: 20%;
+    text-align: center;
+}
+
+.CreacionUsuarios-css #icono {
+    width: 50px;
+    position: absolute;
+    left: 85%;
+    top: 10px;
+}
+
+.CreacionUsuarios-css .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.CreacionUsuarios-css .usuario1 {
+    background-color: white;
+    border: 5px solid black;
+    width: 45%;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.CreacionUsuarios-css .Botones {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(39, 37, 37, 0.6);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- ARCHIVO: CuadroEmergencia.css --- */
+.CuadroEmergencia-css {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(/img/fondo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Bangers', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.CuadroEmergencia-css #creacion {
+    font-size: 35px;
+    color: white;
+    font-family: 'bangers', cursive;
+    transform: skew(-5deg);
+    position: fixed;
+    left: 100px;
+    bottom: 300px;
+    background: black;
+    width: 45%;
+    text-align: center;
+}
+
+.CuadroEmergencia-css .Confirmacion {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 80%;
+}
+
+.CuadroEmergencia-css #Si,
+.CuadroEmergencia-css #No {
+    width: 90px;
+    height: 50px;
+    background-color: white;
+    border: 5px solid black;
+    font-family: 'bangers', cursive;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* --- ARCHIVO: EditarJugador.css --- */
+.EditarJugador-css {
+    background-image: url(/img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    justify-content: center;
+}
+
+.EditarJugador-css .encavezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: "Bangers", cursive;
+    background: rgba(0, 0, 0, 0.418);
+    letter-spacing: 1px;
+}
+
+.EditarJugador-css .form {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    color: aliceblue;
+    margin-bottom: 20px;
+    align-items: center;
+    top: 100px;
+    font-family: "Bangers", cursive;
+}
+
+.EditarJugador-css .form .usuario1 {
+    background-color: white;
+    border: 5px solid black;
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.EditarJugador-css .form .usuario2 {
+    background-color: white;
+    border: 5px solid black;
+    width: 20%;
+    height: 35px;
+    border-radius: 10px;
+}
+
+/* =============================================================
+   BLOQUE 4: GESTIÓN FINAL Y PÁGINAS PRINCIPALES
+   ============================================================= */
+
+/* --- ARCHIVO: GestionJugadores.css --- */
+.GestionJugadores-css {
+    background-image: url(/img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+    padding-bottom: 110px;
+    font-family: 'Bangers', cursive;
+}
+
+.GestionJugadores-css .encavezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: "Bangers", cursive;
+    background: rgba(0, 0, 0, 0.418);
+}
+
+.GestionJugadores-css .tabla-contenedor {
+    width: 95%;
+    margin: 20px auto;
+    overflow-x: auto;
+    background-color: rgba(38, 16, 55, 0.8);
+    border: 3px solid #00F5FF;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.GestionJugadores-css table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #EDEDED;
+    min-width: 500px;
+}
+
+.GestionJugadores-css th {
+    color: #FFE600;
+    border-bottom: 2px solid #00F5FF;
+    padding: 10px 8px;
+    font-size: 25px;
+}
+
+.GestionJugadores-css td {
+    padding: 8px 6px;
+    border-bottom: 1px dashed rgba(0, 245, 255, 0.4);
+    font-size: 20px;
+    text-align: center;
+}
+
+/* --- ARCHIVO: Jugadores.css --- */
+.Jugadores-css {
+    background-image: url(/img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    justify-content: center;
+}
+
+.Jugadores-css .duelo {
+    border: 3px solid cyan;
+    border-radius: 8px;
+    display: flex;
+    height: 120px;
+    margin-bottom: 30px;
+    align-items: center;
+    background: #261037;
+    padding: 8px;
+    gap: 6px;
+}
+
+.Jugadores-css .jugador p {
+    margin: 0;
+    font-size: 15px;
+    color: rgb(237, 237, 105);
+}
+
+/* --- ARCHIVO: Login.css --- */
+.Login-css {
+    background-image: url(/img/esqueleto.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Login-css .form {
+    background: rgba(51, 49, 49, 0.55);
+    padding: 50px;
+    margin: 60px;
+    border-radius: 20px;
+    border: 1px solid;
+}
+
+.Login-css .submit {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: yellow;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 2px solid gold;
+}
+
+.Login-css .submit:hover {
+    background: gold;
+    transform: scale(1.05);
+}
+
+/* --- ARCHIVO: PanelAdmin.css --- */
+.PanelAdmin-css {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url(/img/espadaesquel.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.PanelAdmin-css .Panel {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    width: 70%;
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 30px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.PanelAdmin-css #desplegable:checked + label + .Panel {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- ARCHIVO: Principal.css --- */
+.Principal-css {
+    background-image: url(/img/esqueleto.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    justify-content: center;
+}
+
+.Principal-css .info-princ .titulo {
+    margin: 0;
+    font-size: 18px;
+    color: rgb(237, 237, 105);
+    font-weight: bold;
+}
