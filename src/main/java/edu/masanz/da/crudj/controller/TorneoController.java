@@ -8,6 +8,11 @@ import edu.masanz.da.crudj.service.UserService;
 import io.javalin.http.Context;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 public class TorneoController {
     private static UserService userService = new UserService();
     private static TorneoService torneoService = new TorneoService();
@@ -89,32 +94,42 @@ public class TorneoController {
     public static void servirPrincipal(@NotNull Context context) {
         Map<String, Object> model = new HashMap<>();
 
-        //Aquí podrías traer los torneos de la base de datos
         List<Torneo> lista = TorneoDao.cargarTorneos();
         model.put("torneos", lista);
 
-
         context.render("templates/principal.ftl", model);
+    }
+
+    public static void cargarJugadores(@NotNull Context context){
+
+        List<User> jugadores = TorneoController.userService.obtenerUsuarios();
+
+        Map<String, Object> datos = new HashMap<>();
+        datos.put("jugadores", jugadores);
+
+        context.render("templates/Jugadores.ftl", datos);
+
+    }
+
+
+    public static void cambioArena(@NotNull Context context){
+        Map<String, Object> model = new HashMap<>();
+
+        context.render("templates/cambioArena.ftl", model);
+
+    }
+
+    public static void eliminarTorneo(@NotNull Context context) {
+    }
+
+    public static void eliminiarUsuario(@NotNull Context context) {
+
+    }
+
+    public static void gestionUsuarios(@NotNull Context context) {
+
     }
 }
 
-public static void cargarJugadores(@NotNull Context context){
 
-    List<User> jugadores = TorneoController.userService.obtenerUsuarios();
-
-    Map<String, Object> datos = new HashMap<>();
-    datos.put("jugadores", jugadores);
-
-    context.render("templates/Jugadores.ftl", datos);
-
-}
-
-
-public static void cambioArena(@NotNull Context context){
-
-    Map<String, Object> model = new HashMap<>();
-
-    context.render("templates/cambioArena.ftl", model);
-
-}
 

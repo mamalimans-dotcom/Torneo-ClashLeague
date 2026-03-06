@@ -28,10 +28,6 @@ public class UserService {
         return userDao.actualizarUsuario(user);
     }
 
-    public boolean eliminarUsuario(User deleteUser) {
-        return userDao.eliminarUsuario(deleteUser);
-    }
-
     public boolean eliminarUsuario(int id) {
         return userDao.eliminarUsuario(id);
     }

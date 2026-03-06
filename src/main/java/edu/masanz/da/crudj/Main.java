@@ -26,20 +26,21 @@ public class Main {
 
 
         app.before("/*", TorneoController::before);
-
         app.get("/", ctx -> ctx.redirect("/principal"));
         app.get("/principal", TorneoController::servirPrincipal);
         app.get("/login", TorneoController::servirLogin);
         app.post("/login", TorneoController::login);
 
         app.get("/jugadores",TorneoController::cargarJugadores);
-        app.post("/jugadores",TorneoController::cargarJugadores);
+        app.get("/eliminarUsuario", TorneoController::eliminiarUsuario);
+        app.get("/gestionUsuarios", TorneoController::gestionUsuarios);
 
+        app.get("/listaTorneo", TorneoController::cargarTorneos);
         app.get("/crearTorneo", TorneoController::crearTorneo);
-        app.after("",TorneoController::after);
+        app.get("/eliminarTorneo", TorneoController::eliminarTorneo);
 
 
         app.get("/cambioArena", TorneoController::cambioArena);
-
+        app.after("",TorneoController::after);
     }
 }

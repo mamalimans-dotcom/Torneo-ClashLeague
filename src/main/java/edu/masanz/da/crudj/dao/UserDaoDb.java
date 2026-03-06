@@ -63,12 +63,7 @@ public class UserDaoDb {
         return true;
     }
 
-    public static boolean eliminarUsuario(User deleteUser) {
-        String sql = "DELETE FROM users WHERE id = ?";
-        Object[] params = {deleteUser.getId()};
-        ConnectionManager.ejecutarUpdateSQL(sql, params);
-        return true;
-    }
+
 
     public static boolean eliminarUsuario(int id) {
         String sql = "DELETE FROM users WHERE id = ?";
