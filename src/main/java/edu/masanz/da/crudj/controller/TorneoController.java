@@ -101,22 +101,11 @@ public class TorneoController {
     }
 
     public static void cargarJugadores(@NotNull Context context){
-        // 1. Obtener jugadores
+
         List<User> jugadores = TorneoController.userService.obtenerUsuarios();
 
-        // 2. 🟡 DEPURACIÓN: Imprime en consola para ver si hay datos
-        System.out.println("=== DEPURACIÓN JUGADORES ===");
-        System.out.println("Número de jugadores: " + (jugadores == null ? 0 : jugadores.size()));
-
-        if (jugadores != null) {
-            for (User u : jugadores) {
-                System.out.println("Jugador: " + u.getAlias() + " - IMG: " + u.getImg());
-            }
-        }
-
-        // 3. Pasar datos a la vista
         Map<String, Object> datos = new HashMap<>();
-        datos.put("jugadores", jugadores);  // <-- ¿Seguro que se llama "jugadores"?
+        datos.put("jugadores", jugadores);
 
         context.render("templates/Jugadores.ftl", datos);
     }
