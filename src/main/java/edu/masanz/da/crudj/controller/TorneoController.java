@@ -102,7 +102,7 @@ public class TorneoController {
 
     public static void cargarJugadores(@NotNull Context context){
 
-        List<User> jugadores = TorneoController.userService.obtenerUsuarios();
+        List<User> jugadores = TorneoController.userService.obtenerUsuarios();  
 
         Map<String, Object> datos = new HashMap<>();
         datos.put("jugadores", jugadores);

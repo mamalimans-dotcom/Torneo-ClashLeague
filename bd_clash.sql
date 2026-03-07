@@ -23,7 +23,9 @@ CREATE TABLE users (
     alias VARCHAR(50) NOT NULL,
     nombre VARCHAR(50) NOT NULL,
     nivel INT,
-    copas INT
+    copas INT,
+    clan varchar(50),
+    img varchar(500)
 );
 
 
@@ -58,17 +60,17 @@ CREATE TABLE enfrentamientos_clasificacion (
 );
 
 /***************** Iserccion de Datos **********/
-INSERT INTO users (email, password, rol, alias, nombre, nivel, copas) VALUES
-('jugador1@email.com', 'password123', 'usuario', 'DragonLegend', 'Carlos López', '14', 6500),
-('jugador2@email.com', 'password123', 'usuario', 'MegaKnightPro', 'Ana García', '13', 5800),
-('jugador3@email.com', 'password123', 'admin', 'KingCrimson', 'Miguel Rodríguez', '15', 7200),
-('jugador4@email.com', 'password123', 'usuario', 'HogRider33', 'Laura Martínez', '12', 4900),
-('jugador5@email.com', 'password123', 'usuario', 'WizardMaster', 'Pedro Sánchez', '11', 3800),
-('jugador6@email.com', 'password123', 'usuario', 'BalloonKiller', 'Sofía Pérez', '13', 5400),
-('jugador7@email.com', 'password123', 'usuario', 'GolemCrusher', 'Javier Gómez', '14', 6100),
-('jugador8@email.com', 'password123', 'moderador', 'ValkyrieQueen', 'Elena Díaz', '13', 5600),
-('jugador9@email.com', 'password123', 'usuario', 'MiniPekka23', 'David Torres', '10', 3200),
-('jugador10@email.com', 'password123', 'usuario', 'SparkyPower', 'Marta Ruiz', '12', 4500);
+INSERT INTO users (email, password, rol, alias, nombre, nivel, copas,clan,img) VALUES
+('jugador1@email.com', 'password123', 'usuario', 'DragonLegend', 'Carlos López', '14', 6500, "Trap", "/img/emblema1.png"),
+('jugador2@email.com', 'password123', 'usuario', 'MegaKnightPro', 'Ana García', '13', 5800, "Kinglegends", "/img/emblema2.png"),
+('jugador3@email.com', 'password123', 'admin', 'KingCrimson', 'Miguel Rodríguez', '15', 7200, "Royal Arena", "/img/emblema3.png"),
+('jugador4@email.com', 'password123', 'usuario', 'HogRider33', 'Laura Martínez', '12', 4900, "Electro Valley", "/img/emblema4.png"),
+('jugador5@email.com', 'password123', 'usuario', 'WizardMaster', 'Pedro Sánchez', '11', 3800, "Trap", "/img/emblema5.png"),
+('jugador6@email.com', 'password123', 'usuario', 'BalloonKiller', 'Sofía Pérez', '13', 5400, "Kinglegends", "/img/emblema6.png"),
+('jugador7@email.com', 'password123', 'usuario', 'GolemCrusher', 'Javier Gómez', '14', 6100, "Royal Arena", "/img/emblema7.png"),
+('jugador8@email.com', 'password123', 'moderador', 'ValkyrieQueen', 'Elena Díaz', '13', 5600, "Electro Valley", "/img/emblema8.png"),
+('jugador9@email.com', 'password123', 'usuario', 'MiniPekka23', 'David Torres', '10', 3200, "Trap", "/img/emblema1.png"),
+('jugador10@email.com', 'password123', 'usuario', 'SparkyPower', 'Marta Ruiz', '12', 4500, "Kinglegends", "/img/emblema2.png");
 
  
  insert into torneos (nombre, numeroCopas) values

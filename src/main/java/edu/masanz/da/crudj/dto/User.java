@@ -11,6 +11,8 @@ public class User {
     private String nombre;
     private Integer nivel;
     private int copas;
+    private String clan;
+    private String img;
 
     public User(){}
 
@@ -54,5 +56,19 @@ public class User {
     }
     public void setCopas(int copas) {
         this.copas = copas;
+    }
+
+    public String getClan() {
+        return clan;
+    }
+    public void setClan(String clan) {
+        this.clan = clan;
+    }
+
+    public String getImg() {
+        return img;
+    }
+    public void setImg(String img) {
+        this.img = img;
     }
 }

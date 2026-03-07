@@ -8,9 +8,9 @@
                     <#-- Jugador 1 (Izquierda) -->
                     <div class="jugador">
                         <#if pareja[0]??>
-                            <img src="/img/emblema${pareja[0].idEmblema}.png" class="icono">
-                            <p>${pareja[0].alias}<br>
-                                <span class="info">${pareja[0].clan}<br>RANKED #${pareja[0].nivel}</span>
+                            <img src="${pareja[0].img!''}" class="icono">
+                            <p>${pareja[0].alias!''}<br>
+                                <span class="info">${pareja[0].clan!''}<br>RANKED #${pareja[0].nivel!''}</span>
                             </p>
                         </#if>
                     </div>
@@ -22,9 +22,9 @@
                     <#-- Jugador 2 (Derecha) -->
                     <div class="jugador derecha">
                         <#if pareja[1]??>
-                            <img src="/img/emblema${pareja[1].idEmblema}.png" class="icono">
-                            <p>${pareja[1].alias}<br>
-                                <span class="info">${pareja[1].clan}<br>RANKED #${pareja[1].nivel}</span>
+                            <img src="&{pareja[1].img!''}" class="icono">
+                            <p>${pareja[1].alias!''}<br>
+                                <span class="info">${pareja[1].clan!''}<br>RANKED #${pareja[1].nivel!''}</span>
                             </p>
                         </#if>
                     </div>
@@ -32,7 +32,7 @@
             </#list>
         </#if>
 
-        <a href="/batalla" class="btn">LISTO</a>
+        <a href="/principal" class="btn">LISTO</a>
     </div>
 
     </body>
