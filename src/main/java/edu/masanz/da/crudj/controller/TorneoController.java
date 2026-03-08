@@ -129,25 +129,15 @@ public class TorneoController {
 
     }
 
-//    public static void editarJugador(@NotNull Context context) {
-//        int id = Integer.parseInt(context.pathParam("id"));
-//
-//        User jugador = TorneoController.userService.obtenerUsuario(id);
-//
-//        Map<String, Object> datos = new HashMap<>();
-//        datos.put("jugadores", jugador);
-//
-//        context.render("templates/editarJugador.ftl", datos);
-//    }
 
     public static void mostrarBuscarJugador(@NotNull Context context) {
         context.render("templates/buscarJugador.ftl");
     }
 
-    // Endpoint 2: Cargar jugador por ID y mostrar formulario de edición
+
     public static void cargarJugador(@NotNull Context context) {
         try {
-            // Obtener el ID del parámetro de consulta (query param)
+
             String idParam = context.queryParam("id");
 
             if (idParam == null || idParam.isEmpty()) {
@@ -158,7 +148,6 @@ public class TorneoController {
 
             int id = Integer.parseInt(idParam);
 
-            // Buscar el jugador en la base de datos
             User jugador = TorneoController.userService.obtenerUsuario(id);
 
             if (jugador == null) {
@@ -194,10 +183,6 @@ public class TorneoController {
         String clan = context.formParam("clan");
         String img = context.formParam("img");
 
-        if (nivel < 1 || nivel > 100) {
-            context.redirect("/gestion?error=El+nivel+debe+ser+entre+1+y+100");
-            return;
-        }
 
         User jugadorActualizado = new User();
         jugadorActualizado.setId(id);
