@@ -42,5 +42,10 @@ public class Main {
 
         app.get("/cambioArena", TorneoController::cambioArena);
         app.after("",TorneoController::after);
+
+
+        app.get("/editarJugador", TorneoController::mostrarBuscarJugador);
+        app.get("/cargarJugador", TorneoController::cargarJugador);
+        app.post("/actualizarJugador", TorneoController::actualizarJugador);
     }
 }

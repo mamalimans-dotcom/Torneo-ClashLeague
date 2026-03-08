@@ -29,14 +29,14 @@
         <h2>Modificar Jugador<br><span>Información de Jugador</span></h2>
         <div class="form">
             <form action="/actualizarJugador" method="POST">
-                <label>NOMBRE JUGADOR:</label><br>
-                <input type="text" name="nombre" class="usuario1" value="${jugador.nombre}"><br><br>
-
                 <label>ID:</label><br>
-                <input type="number" name="id" class="usuario1" value="${jugador.id}" readonly><br><br>
+                <input type="number" name="id" class="usuario1" value="${jugador.id!0}" readonly><br><br>
+
+                <label>NOMBRE JUGADOR:</label><br>
+                <input type="text" name="nombre" class="usuario1" value="${jugador.nombre!''}"><br><br>
 
                 <label>NIVEL:</label>
-                <input type="number" name="nivel" class="usuario2" value="${jugador.nivel}">
+                <input type="number" name="nivel" class="usuario2" value="${jugador.nivel!''}" min="1" max="100">
 
                 <label>COPAS:</label>
                 <select name="copas">
@@ -46,13 +46,19 @@
                 </select><br><br>
 
                 <label>CLAN:</label><br>
-                <input type="text" name="clan" class="usuario1" value="${jugador.clan}"><br><br>
+                <input type="text" name="clan" class="usuario1" value="${jugador.clan!''}"><br><br>
 
                 <label>ROL:</label>
                 <select name="rol" style="width: 100%;">
-                    <option value="LIDER">LIDER</option>
-                    <option value="SOLDADO">SOLDADO</option>
+                    <option value="USUARIO">usuario</option>
+                    <option value="ADMIN">admin</option>
+                    <option value="MODERADOR">moderador</option>
                 </select>
+
+                <input type="hidden" name="email" value="${jugador.email!''}">
+                <input type="hidden" name="password" value="${jugador.password!''}">
+                <input type="hidden" name="alias" value="${jugador.alias!''}">
+                <input type="hidden" name="img" value="${jugador.img!''}">
 
                 <div class="Confirmacion">
                     <input type="submit" value="GUARDAR" id="guardar">

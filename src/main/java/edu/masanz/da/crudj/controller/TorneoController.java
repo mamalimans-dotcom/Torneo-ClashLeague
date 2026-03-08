@@ -128,6 +128,99 @@ public class TorneoController {
     public static void gestionUsuarios(@NotNull Context context) {
 
     }
+
+//    public static void editarJugador(@NotNull Context context) {
+//        int id = Integer.parseInt(context.pathParam("id"));
+//
+//        User jugador = TorneoController.userService.obtenerUsuario(id);
+//
+//        Map<String, Object> datos = new HashMap<>();
+//        datos.put("jugadores", jugador);
+//
+//        context.render("templates/editarJugador.ftl", datos);
+//    }
+
+    public static void mostrarBuscarJugador(@NotNull Context context) {
+        context.render("templates/buscarJugador.ftl");
+    }
+
+    // Endpoint 2: Cargar jugador por ID y mostrar formulario de edición
+    public static void cargarJugador(@NotNull Context context) {
+        try {
+            // Obtener el ID del parámetro de consulta (query param)
+            String idParam = context.queryParam("id");
+
+            if (idParam == null || idParam.isEmpty()) {
+                context.attribute("error", "Debes introducir un ID");
+                context.render("templates/buscarJugador.ftl");
+                return;
+            }
+
+            int id = Integer.parseInt(idParam);
+
+            // Buscar el jugador en la base de datos
+            User jugador = TorneoController.userService.obtenerUsuario(id);
+
+            if (jugador == null) {
+                context.attribute("error", "No existe un jugador con ID: " + id);
+                context.render("templates/buscarJugador.ftl");
+                return;
+            }
+
+            Map<String, Object> datos = new HashMap<>();
+            datos.put("jugador", jugador);
+            context.render("templates/editarJugador.ftl", datos);
+
+        } catch (NumberFormatException e) {
+            context.attribute("error", "El ID debe ser un número válido");
+            context.render("templates/buscarJugador.ftl");
+        }
+    }
+
+
+    public static void actualizarJugador(@NotNull Context context) {
+        int id = Integer.parseInt(context.formParam("id"));
+        String email = context.formParam("email");
+        String password = context.formParam("password");
+        String rol = context.formParam("rol");
+        String alias = context.formParam("alias");
+        String nombre = context.formParam("nombre");
+        int nivel = Integer.parseInt(context.formParam("nivel"));
+
+        String copasStr = context.formParam("copas");
+        copasStr = copasStr.replace(".", "");
+        int copas = Integer.parseInt(copasStr);
+
+        String clan = context.formParam("clan");
+        String img = context.formParam("img");
+
+        if (nivel < 1 || nivel > 100) {
+            context.redirect("/gestion?error=El+nivel+debe+ser+entre+1+y+100");
+            return;
+        }
+
+        User jugadorActualizado = new User();
+        jugadorActualizado.setId(id);
+        jugadorActualizado.setEmail(email);
+        jugadorActualizado.setPassword(password);
+        jugadorActualizado.setRol(rol);
+        jugadorActualizado.setAlias(alias);
+        jugadorActualizado.setNombre(nombre);
+        jugadorActualizado.setNivel(nivel);
+        jugadorActualizado.setCopas(copas);
+        jugadorActualizado.setClan(clan);
+        jugadorActualizado.setImg(img);
+
+        boolean actualizado = TorneoController.userService.actualizarUsuario(jugadorActualizado);
+
+        if (actualizado) {
+            System.out.println("Usuario actualizado");
+        } else {
+            System.out.println("El usuario no se ha podido actualizar");
+        }
+
+    }
+
 }
 
 
