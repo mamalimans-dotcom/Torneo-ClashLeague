@@ -57,7 +57,6 @@ public class TorneoController {
         User user = userService.login(email, password);
 
         if (user == null) {
-            // ERROR: usuario no existe
             Map<String, Object> model = new HashMap<>();
             model.put("titulo", "Login - Clash League");
             model.put("error", "Usuario o contraseña incorrectos");
@@ -65,7 +64,6 @@ public class TorneoController {
             ctx.render("templates/login.ftl", model);
         } else {
             ctx.sessionAttribute("email", user.getEmail());
-            // LOGIN CORRECTO → ir a principal
             ctx.redirect("/principal");
         }
     }
