@@ -47,5 +47,9 @@ public class Main {
         app.get("/editarJugador", TorneoController::mostrarBuscarJugador);
         app.get("/cargarJugador", TorneoController::cargarJugador);
         app.post("/actualizarJugador", TorneoController::actualizarJugador);
+
+        app.get("/crearUsuario", ctx -> ctx.render("templates/creacionUsuarios.ftl"));
+        app.post("/crearUsuario", TorneoController::crearUsuario);
+
     }
 }

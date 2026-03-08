@@ -32,8 +32,11 @@
                 <label>ID:</label><br>
                 <input type="number" name="id" class="usuario1" value="${jugador.id!0}" readonly><br><br>
 
-                <label>NOMBRE JUGADOR:</label><br>
+                <label>NOMBRE:</label><br>
                 <input type="text" name="nombre" class="usuario1" value="${jugador.nombre!''}"><br><br>
+
+                <label>ALIAS:</label><br>
+                <input type="text" name="alias" class="usuario1" value="${jugador.alias!''}"><br><br>
 
                 <label>NIVEL:</label>
                 <input type="number" name="nivel" class="usuario2" value="${jugador.nivel!''}" min="1" max="100">
@@ -57,7 +60,7 @@
 
                 <input type="hidden" name="email" value="${jugador.email!''}">
                 <input type="hidden" name="password" value="${jugador.password!''}">
-                <input type="hidden" name="alias" value="${jugador.alias!''}">
+
                 <input type="hidden" name="img" value="${jugador.img!''}">
 
                 <div class="Confirmacion">

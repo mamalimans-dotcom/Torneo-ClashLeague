@@ -627,27 +627,24 @@
 
 /* --- BLOQUE: CreacionUsuarios-css --- */
 .CreacionUsuarios-css {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
     background-image: url(../img/fondo.png);
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
-    font-family: 'Bangers', cursive;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Bangers", cursive;
 }
 
 .CreacionUsuarios-css .cabecera {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px;
+    padding: 10px 20px;
     background: rgba(0, 0, 0, 0.418);
-    width: 100%;
+    letter-spacing: 1px;
 }
 
 .CreacionUsuarios-css h1 {
@@ -722,13 +719,15 @@
     cursor: pointer;
 }
 
+
+
 /* Formulario */
 .CreacionUsuarios-css .form-container {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 100px; /* Espacio para botones inferiores */
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    margin: 0 auto;
+    padding-bottom: 120px;
 }
 
 .CreacionUsuarios-css .form {

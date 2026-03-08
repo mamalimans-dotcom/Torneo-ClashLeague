@@ -71,6 +71,7 @@ public class TorneoController {
         if (context.path().equals("/")  ||
                 context.path().equals("/login")  ||
                 context.path().equals("/principal")  ||
+                context.path().equals("/crearUsuario")  ||
                 context.path().startsWith("/img/")  ||
                 context.path().startsWith("/css/")
         ){
@@ -134,8 +135,6 @@ public class TorneoController {
 
 
     public static void cargarJugador(@NotNull Context context) {
-        try {
-
             String idParam = context.queryParam("id");
 
             if (idParam == null || idParam.isEmpty()) {
@@ -157,22 +156,22 @@ public class TorneoController {
             Map<String, Object> datos = new HashMap<>();
             datos.put("jugador", jugador);
             context.render("templates/editarJugador.ftl", datos);
-
-        } catch (NumberFormatException e) {
-            context.attribute("error", "El ID debe ser un número válido");
-            context.render("templates/buscarJugador.ftl");
-        }
     }
 
 
     public static void actualizarJugador(@NotNull Context context) {
         int id = Integer.parseInt(context.formParam("id"));
         String email = context.formParam("email");
-        String password = context.formParam("password");
+        String password = context.formParam("contraseña");
         String rol = context.formParam("rol");
         String alias = context.formParam("alias");
         String nombre = context.formParam("nombre");
         int nivel = Integer.parseInt(context.formParam("nivel"));
+
+        if (nivel < 1 || nivel > 100) {
+            context.redirect("/creacionUsuarios?error=El+nivel+debe+ser+entre+1+y+100");
+            return;
+        }
 
         String copasStr = context.formParam("copas");
         copasStr = copasStr.replace(".", "");
@@ -202,6 +201,44 @@ public class TorneoController {
             System.out.println("El usuario no se ha podido actualizar");
         }
 
+    }
+
+    public static void crearUsuario(@NotNull Context context) {
+
+        String nombre = context.formParam("nombre");
+        String alias = context.formParam("alias");
+        String email = context.formParam("email");
+        String password = context.formParam("contraseña");
+        String nivelStr = context.formParam("nivel");
+        if (nivelStr == null || nivelStr.isEmpty()) {
+            context.redirect("/crearUsuario?error=El+nivel+es+obligatorio");
+            return;
+        }
+        int nivel = Integer.parseInt(nivelStr);
+
+        String copasStr = context.formParam("copas");
+        copasStr = copasStr.replace(".", "");
+        int copas = Integer.parseInt(copasStr);
+        String clan = context.formParam("clan");
+        String rol = context.formParam("rol");
+        String img = context.formParam("img");
+
+
+        User user = new User();
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setRol(rol);
+        user.setAlias(alias);
+        user.setNombre(nombre);
+        user.setNivel(nivel);
+        user.setCopas(copas);
+        user.setClan(clan);
+        user.setImg(img);
+
+        userService.crearUsuario(user.getEmail(),user.getPassword(),user.getRol(),user.getAlias(),user.getNombre(),user.getNivel(),user.getCopas(),user.getClan(),user.getImg());
+
+        Map<String, Object> model = new HashMap<>();
+        context.render("templates/creacionUsuarios.ftl",model);
     }
 
 }

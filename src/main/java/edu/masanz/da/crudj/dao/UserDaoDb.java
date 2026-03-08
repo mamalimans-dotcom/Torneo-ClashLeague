@@ -107,7 +107,7 @@ public class UserDaoDb {
         return users;
     }
 
-    public static boolean crearUsuario(String email, String password, String rol, String alias, String nombre, String nivel, int copas, String clan, String img) {
+    public static boolean crearUsuario(String email, String password, String rol, String alias, String nombre, int nivel, int copas, String clan, String img) {
         String sql = "INSERT INTO users (email, password, rol, alias, nombre, nivel, copas, clan, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Object[] params = {email, password, rol, alias, nombre, nivel, copas, clan, img};
         long id = ConnectionManager.ejecutarInsertSQL(sql, params);
