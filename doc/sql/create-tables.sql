@@ -1,13 +1,14 @@
 
 CREATE TABLE users (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    email VARCHAR(100) NOT NULL UNIQUE,
-                    password VARCHAR(255) NOT NULL,
-                    rol VARCHAR(50) NOT NULL CHECK (rol IN ('usuario', 'admin', 'moderador')),
-                    alias VARCHAR(50) NOT NULL,
-                    nombre VARCHAR(50) NOT NULL,
-                    nivel INT,
-                    copas INT
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    rol VARCHAR(50) NOT NULL CHECK (rol IN ('usuario', 'admin', 'moderador')),
+    alias VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    nivel INT,
+    copas INT,
+    clan VARCHAR(50) DEFAULT 'Sin Clan'
 );
 
 

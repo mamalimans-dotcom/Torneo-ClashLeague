@@ -1,5 +1,8 @@
 package edu.masanz.da.crudj.service;
 
+import edu.masanz.da.crudj.dao.UserDaoDb;
+import edu.masanz.da.crudj.dto.User;
+
 import java.util.List;
 
 public class UserService {

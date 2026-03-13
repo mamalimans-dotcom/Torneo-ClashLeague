@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ERROR</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="fondo-general">
+<div class="contenedor">
+
+    <div class="Cuadro">
+        <p>
+          ACCESO DENEGADO: REGISTRATE CORRECTAMENTE.
+        </p>
+      </div>
+</div>
+</body>
+</html>

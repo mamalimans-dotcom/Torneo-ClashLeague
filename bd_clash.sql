@@ -32,7 +32,17 @@ CREATE TABLE users (
 CREATE TABLE torneos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(70) NOT NULL,
-    numeroCopas INT NOT NULL
+    numeroCopas INT NOT NULL,
+    arena varchar(50),
+    numJugadores int
+);
+
+CREATE TABLE usuario_torneo (
+    usuario_id INT,
+    torneo_id INT,
+    PRIMARY KEY (usuario_id, torneo_id),
+    FOREIGN KEY (usuario_id) REFERENCES users(id),
+    FOREIGN KEY (torneo_id) REFERENCES torneos(id)
 );
 
 
@@ -60,24 +70,44 @@ CREATE TABLE enfrentamientos_clasificacion (
 );
 
 /***************** Iserccion de Datos **********/
-INSERT INTO users (email, password, rol, alias, nombre, nivel, copas,clan,img) VALUES
-('jugador1@email.com', 'password123', 'usuario', 'DragonLegend', 'Carlos López', '14', 6500, "Trap", "/img/emblema1.png"),
-('jugador2@email.com', 'password123', 'usuario', 'MegaKnightPro', 'Ana García', '13', 5800, "Kinglegends", "/img/emblema2.png"),
-('jugador3@email.com', 'password123', 'admin', 'KingCrimson', 'Miguel Rodríguez', '15', 7200, "Royal Arena", "/img/emblema3.png"),
-('jugador4@email.com', 'password123', 'usuario', 'HogRider33', 'Laura Martínez', '12', 4900, "Electro Valley", "/img/emblema4.png"),
-('jugador5@email.com', 'password123', 'usuario', 'WizardMaster', 'Pedro Sánchez', '11', 3800, "Trap", "/img/emblema5.png"),
-('jugador6@email.com', 'password123', 'usuario', 'BalloonKiller', 'Sofía Pérez', '13', 5400, "Kinglegends", "/img/emblema6.png"),
-('jugador7@email.com', 'password123', 'usuario', 'GolemCrusher', 'Javier Gómez', '14', 6100, "Royal Arena", "/img/emblema7.png"),
-('jugador8@email.com', 'password123', 'moderador', 'ValkyrieQueen', 'Elena Díaz', '13', 5600, "Electro Valley", "/img/emblema8.png"),
-('jugador9@email.com', 'password123', 'usuario', 'MiniPekka23', 'David Torres', '10', 3200, "Trap", "/img/emblema1.png"),
-('jugador10@email.com', 'password123', 'usuario', 'SparkyPower', 'Marta Ruiz', '12', 4500, "Kinglegends", "/img/emblema2.png");
+INSERT INTO users (email, password, rol, alias, nombre, nivel, copas, clan, img) VALUES
+('jugador1@email.com', 'password123', 'usuario', 'DragonLegend', 'Carlos López', '14', 6500, "Trap", "emblema1"),
+('jugador2@email.com', 'password123', 'usuario', 'MegaKnightPro', 'Ana García', '13', 5800, "Kinglegends", "emblema2"),
+('jugador3@email.com', 'password123', 'admin', 'KingCrimson', 'Miguel Rodríguez', '15', 7200, "Royal Arena", "emblema3"),
+('jugador4@email.com', 'password123', 'usuario', 'HogRider33', 'Laura Martínez', '12', 4900, "Electro Valley", "emblema4"),
+('jugador5@email.com', 'password123', 'usuario', 'WizardMaster', 'Pedro Sánchez', '11', 3800, "Trap", "emblema5"),
+('jugador6@email.com', 'password123', 'usuario', 'BalloonKiller', 'Sofía Pérez', '13', 5400, "Kinglegends", "emblema6"),
+('jugador7@email.com', 'password123', 'usuario', 'GolemCrusher', 'Javier Gómez', '14', 6100, "Royal Arena", "emblema7"),
+('jugador8@email.com', 'password123', 'moderador', 'ValkyrieQueen', 'Elena Díaz', '13', 5600, "Electro Valley", "emblema8"),
+('jugador9@email.com', 'password123', 'usuario', 'MiniPekka23', 'David Torres', '10', 3200, "Trap", "emblema1"),
+('jugador10@email.com', 'password123', 'usuario', 'SparkyPower', 'Marta Ruiz', '12', 4500, "Kinglegends", "emblema2");
 
  
- insert into torneos (nombre, numeroCopas) values
- ('Batalla de Vikingos', 3000),
- ('Gladiadores', 2000),
- ('Mineros', 4500),
- ('Ladrones de Copas',1500);
+ insert into torneos (nombre, numeroCopas, arena, numJugadores) values
+ ('Batalla de Vikingos', 3000, 'arena5', 4),
+ ('Gladiadores', 2000, 'arena7', 4),
+ ('Mineros', 4500, 'arena9', 8),
+ ('Ladrones de Copas',1500, 'arena7', 4);
+ 
+ INSERT INTO usuario_torneo (usuario_id, torneo_id) VALUES
+-- Torneo 1: Relámpago
+(1, 1),  -- guerrero1 en Torneo Relámpago
+(2, 1),  -- mago_oscuro en Torneo Relámpago
+(4, 1),  -- tronco en Torneo Relámpago
+
+-- Torneo 2: Copa de Leyendas
+(1, 2),  -- guerrero1 en Copa Leyendas
+(3, 2),  -- admin en Copa Leyendas
+(5, 2),  -- princesa_arco en Copa Leyendas
+
+-- Torneo 3: Desafío de Clanes
+(2, 3),  -- mago_oscuro en Desafío
+(4, 3),  -- tronco en Desafío
+
+-- Torneo 4: Épico
+(1, 4),  -- guerrero1 en Épico
+(3, 4),  -- admin en Épico
+(5, 4);  -- princesa_arco en Épico
  
  /***************** Inserción de Datos para Rondas y Enfrentamientos **********/
 
@@ -193,3 +223,6 @@ INSERT INTO enfrentamientos_clasificacion (ronda_id, jugador1_id, jugador2_id, g
 -- GANADOR (ronda_id = 16)
 INSERT INTO enfrentamientos_clasificacion (ronda_id, jugador1_id, jugador2_id, ganador_id) VALUES
 (16, 3, NULL, 3);  -- KingCrimson es el campeón
+
+select * from users;
+select * from torneos;
