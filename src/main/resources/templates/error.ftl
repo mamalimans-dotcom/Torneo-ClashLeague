@@ -5,11 +5,14 @@
     <title>ERROR</title>
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
-<body>
-<div class="container">
-    <h1>ERROR</h1>
-    <p class="center">Regreso a la aplicación</p>
-    <a class="center" href="/lista-Torneos">Torneos</a>
+<body class="fondo-general">
+<div class="contenedor">
+
+    <div class="Cuadro">
+        <p>
+          ACCESO DENEGADO: REGISTRATE CORRECTAMENTE.
+        </p>
+      </div>
 </div>
 </body>
 </html>

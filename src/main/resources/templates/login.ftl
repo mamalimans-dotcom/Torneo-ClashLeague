@@ -3,45 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - CLASH LEAGUE</title>
+    <title>Login - Clash League</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/estilosAgrupados.css">
 </head>
+<body class="fondo-esqueleto">
 
-<body class="Login-css">
-<div class="login">
-    <div class="form">
-        <div class="titulo">
-            <div class="text">
-                <h1>CLASH LEAGUE</h1>
-            </div>
-            <div class="img-icon">
-                <img src="/img/image_png.png" id="icono" alt="Icono">
-            </div>
+    <div class="contenedor">
+        <div class="titulo-login">
+            <h1>CLASH LEAGUE</h1>
+            <img src="/img/image_png.png" id="icono-login" alt="Icono">
         </div>
 
-        <form action="/login" method="post">
-            <label>EMAIL</label>
-            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        <form action="/login" method="post" class="form-login">
+            <label for="email">CORREO ELECTRÓNICO</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@email.com" required>
 
-            <label>CONTRASEÑA</label>
-            <input type="password" id="password" name="password" placeholder="******" required>
+            <label for="password">CONTRASEÑA</label>
+            <input type="password" id="password" name="password" placeholder="********" required>
 
-            <input class="submit" type="submit" value="Entrar">
             <#if error??>
-                <p style="color: #ff4d6d; text-align: center; margin-top: 10px;">${error}</p>
+                <div class="error-glow" style="color: #ff4d6d; text-align: center; margin-bottom: 15px; font-weight: bold; text-transform: uppercase;">
+                    ${error}
+                </div>
             </#if>
-            <a href="PanelAdmin.html" style="text-decoration: none;">
-                <button class="administrador" type="button">
-                    Registrarse como administrador
-                </button>
-            </a>
+
+            <input type="submit" value="ENTRAR" class="submit">
         </form>
     </div>
-</div>
-
-<div class="Botones">
-    <a href="Principal.html"><img src="/img/Casa.svg" alt="Inicio"></a>
-</div>
 </body>
 </html>

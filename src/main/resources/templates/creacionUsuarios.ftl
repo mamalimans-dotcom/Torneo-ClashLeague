@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/estilosAgrupados.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Editar Jugador - Servidor</title>
 </head>
 
-<body class="EditarJugador-css">
+<body class="fondo-general">
     <div class="encavezado">
         <div class="boton-hamburguesa" id="botonMenu">
             <input type="checkbox" id="desplegable">
@@ -16,9 +16,7 @@
                 <img src="/img/Barras.svg">
             </label>
             <div class="Panel">
-                <a href="/gestion"><div class="opciones">GESTIÓN DE JUGADORES</div></a>
-                <a href="/torneos"><div class="opciones">LISTA DE TORNEOS</div></a>
-                <a href="/clasificaciones"><div class="opciones">CLASIFICACIONES</div></a>
+                    <a href="/logout"><div class="opciones">CERRAR SESIÓN</div></a>
             </div>
         </div>
         <h1> CLASH LEAGUE </h1>
@@ -27,8 +25,9 @@
 
     <div class="contenedor">
         <h2>Crear Jugador<br><span>Información de Jugador</span></h2>
-        <div class="form">
-            <form action="/crearUsuario" method="POST">
+        <div class="form-ju">
+            <form action="/crearJugador" method="POST">
+                <input type="hidden" name="torneoId" value="${torneoId!}">
 
                 <label>NOMBRE:</label><br>
                 <input type="text" name="nombre" class="usuario1"><br><br>
@@ -37,7 +36,7 @@
                 <input type="text" name="alias" class="usuario1"><br><br>
 
                 <label>EMAIL:</label><br>
-                <input type="text" name="email" class="usuario1"><br><br>
+                <input type="email" name="email" class="usuario1"><br><br>
 
                 <label>CONTRASEÑA:</label><br>
                 <input type="password" name="contraseña" class="usuario1"><br><br>
@@ -83,15 +82,15 @@
 
 
                 <div class="Confirmacion">
-                    <input type="submit" value="GUARDAR" id="guardar">
-                    <a href="/gestion"><input type="button" value="DESCARTAR" id="descartar"></a>
+                    <a href="/gestionUsuarios"><input type="submit" value="GUARDAR" id="guardar">
+                    <a href="/gestionUsuarios"><input type="button" value="DESCARTAR" id="descartar"></a>
                 </div>
             </form>
         </div>
     </div>
 
     <div class="Botones">
-        <a href="/gestion"><img src="/img/Volver.svg"></a>
+        <a href="/gestionUsuarios"><img src="/img/Volver.svg"></a>
         <a href="/"><img src="/img/Casa.svg"></a>
         <a href="#"><img src="/img/Siguiente.svg"></a>
     </div>

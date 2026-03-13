@@ -1,83 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="es">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreacionTorneos - Servidor</title>
+    <title>
+      Creación de Torneo - Clash League
+    </title>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/estilosAgrupados.css">
-</head>
-<body class="CreacionTorneos-css">
-    <div class="cabecera">
-        <h1>CLASH LEAGUE</h1>
-        <img src="/img/image_png.png" id="icono">
-    </div>
-
-    <div class="titulos">
-        <h2 id="torneo1">TORNEO 1</h2>
-        <h2 id="Nuvtorneo">NUEVO TORNEO</h2>
-        <h3 id="Arena">ELIGUE ARENA:</h3>
-    </div>
-
-    <input type="checkbox" id="desplegable">
-    <label for="desplegable" class="desplegable">
-        <img src="/img/Barras.svg" alt="Menú">
-    </label>
-    <div class="Panel">
-        <a href="/gestion"><div class="opciones">GESTIÓN DE JUGADORES</div></a>
-        <a href="/torneos"><div class="opciones">LISTA DE TORNEOS</div></a>
-        <ol>
-        <#if torneos??>
-            <#list torneos as t>
-                <a href="#"><div class="opciones">${t.nombre}</div></a>
-            </#list>
-        </#if>
-        </ol>
-        <a href="/clasificaciones"><div class="opciones">CLASIFICACIONES</div></a>
-    </div>
-
-    <div class="carrusel">
-        <div class="contenido-carrusel">
-            <div class="carta">
-                <img src="/img/arena5.webp" alt="arena 5">
-                <p>ARENA 5</p>
-            </div>
-            <div class="carta">
-                <img src="/img/Arena7.webp" alt="arena 7">
-                <p>ARENA 7</p>
-            </div>
-            <div class="carta">
-                <img src="/img/Arena9.webp" alt="arena 9">
-                <p>ARENA 9</p>
-            </div>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body class="fondo-general" >
+    <div class="encavezado">
+      <div class="boton-hamburguesa">
+        <input type="checkbox" id="desplegable">
+        <label for="desplegable" class="desplegable">
+          <img src="/img/Barras.svg" alt="Menú">
+        </label>
+        <div class="Panel">
+          <#if user??>
+            <a href="/logout">
+              <input class="opciones" type="button" value="CERRAR SESIÓN">
+            </a>
+          <#else>
+            <a href="/login">
+              <input class="opciones" type="button" value="INICIAR SESIÓN">
+            </a>
+          </#if>
         </div>
+      </div>
+      <h1>
+        CLASH LEAGUE
+      </h1>
+      <img class="logo" src="/img/image_png.png" alt="Logo">
     </div>
-
-    <div class="form">
-        <form action="/guardarTorneo" method="POST">
-            <label>CANTIDAD DE JUGADORES:</label>
-            <select name="cantidad">
-                <#list [4, 8] as n>
-                    <option value="${n}">${n}</option>
-                </#list>
-            </select>
-            <label>COPAS MINIMAS:</label>
-            <select name="copas">
-                <#list [1000, 2000, 3000, 4000, 5000] as copas>
-                    <option value="${copas}">${copas}</option>
-                </#list>
-            </select>
-            <div class="Confirmacion">
-               <input type="submit" value="GUARDAR" id="guardar">
-               <a href="/torneos"><input type="button" value="DESCARTAR" id="descartar"></a>
+    <div class="contenedor">
+      <h2 class="h2">
+        NUEVO TORNEO
+      </h2>
+      <div class="form-ju">
+        <form action="/guardarTorneo" method="post">
+          <label>
+            Nombre del torneo
+          </label>
+          <input type="text" name="nombre" required class="usuario1">
+          <h3 class="tituloArena">
+            ELIGE ARENA
+          </h3>
+          <div class="carrusel">
+          <div class="contenido-carrusel">
+            <label class="carta">
+              <input type="radio" name="arena" value="ARENA 5" required>
+              <img src="/img/arena5.webp">
+              <p>
+                Arena 5
+              </p>
+            </label>
+            <label class="carta">
+              <input type="radio" name="arena" value="ARENA 7">
+              <img src="/img/arena7.webp">
+              <p>
+                Arena 7
+              </p>
+            </label>
+            <label class="carta">
+              <input type="radio" name="arena" value="ARENA 9">
+              <img src="/img/arena9.webp">
+              <p>
+                Arena 9
+              </p>
+            </label>
             </div>
-        </form>
-    </div>
-
-    <div class="Botones">
-        <a onclick="history.back()"><img src="/img/Volver.svg" alt="Volver"></a>
-        <a href="/"><img src="/img/Casa.svg" alt="Inicio"></a>
-        <a href="/clasificaciones"><img src="/img/Siguiente.svg" alt="Siguiente"></a>
-    </div>
-</body>
-</html>
+          </div>
+          <label>
+            Cantidad de jugadores
+          </label>
+          <select name="cantidadJugadores">
+            <option value="4" >
+              4
+            </option>
+            <option value="8">
+              8
+            </option>
+          </select>
+          <label>
+            Copas mínimas
+          </label>
+          <select name="numeroCopas">
+            <#list [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000] as c>
+              <option value="${c}">
+                ${c}
+              </option>
+            </#list>
+          </select>
+          <div class="Confirmacion">
+            <a href="/gestionUsuarios">
+              <input type="submit" value="GUARDAR" id="guardar">
+              <a href="/gestionUsuarios">
+                <input type="button" value="DESCARTAR" id="descartar">
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="Botones">
+        <button onclick="history.back()">
+          <img src="/img/Volver.svg">
+        </button>
+        <a href="/principal">
+          <img src="/img/Casa.svg">
+        </a>
+        <a href="/listaTorneo">
+          <img src="/img/Siguiente.svg">
+        </a>
+      </div>
+    </body>
+  </html>

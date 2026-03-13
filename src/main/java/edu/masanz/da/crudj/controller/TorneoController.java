@@ -1,10 +1,5 @@
 package edu.masanz.da.crudj.controller;
 
-import edu.masanz.da.crudj.dao.TorneoDao;
-import edu.masanz.da.crudj.dto.Torneo;
-import edu.masanz.da.crudj.dto.User;
-import edu.masanz.da.crudj.service.TorneoService;
-import edu.masanz.da.crudj.service.UserService;
 import io.javalin.http.Context;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,7 +20,7 @@ public class TorneoController {
 
         model.put("torneos", torneos);
 
-        context.render("templates/ListaTorneos.ftl", model);
+        context.render("templates3/ListaTorneos.ftl", model);
     }
 
 
@@ -36,7 +31,7 @@ public class TorneoController {
         int resultado = torneoService.crearTorneo(nombre, numeroCopas);
 
         if (resultado > 0) {
-            context.redirect("/templates/creacionTorneos.ftl");
+            context.redirect("/templates3/creacionTorneos.ftl");
         }else{
             System.out.println("Error al crear torneo");
         }
@@ -46,7 +41,7 @@ public class TorneoController {
         Map<String, Object> model = new HashMap<>();
         model.put("titulo", "Login - Clash League");
 
-        ctx.render("templates/login.ftl", model);
+        ctx.render("templates3/login.ftl", model);
     }
 
     public static void login(Context ctx) {
@@ -61,7 +56,7 @@ public class TorneoController {
             model.put("titulo", "Login - Clash League");
             model.put("error", "Usuario o contraseña incorrectos");
 
-            ctx.render("templates/login.ftl", model);
+            ctx.render("templates3/login.ftl", model);
         } else {
             ctx.sessionAttribute("email", user.getEmail());
             ctx.redirect("/principal");
@@ -96,7 +91,7 @@ public class TorneoController {
         List<Torneo> lista = TorneoDao.cargarTorneos();
         model.put("torneos", lista);
 
-        context.render("templates/principal.ftl", model);
+        context.render("templates3/principal.ftl", model);
     }
 
     public static void cargarJugadores(@NotNull Context context){
@@ -106,14 +101,14 @@ public class TorneoController {
         Map<String, Object> datos = new HashMap<>();
         datos.put("jugadores", jugadores);
 
-        context.render("templates/Jugadores.ftl", datos);
+        context.render("templates3/Jugadores.ftl", datos);
     }
 
 
     public static void cambioArena(@NotNull Context context){
         Map<String, Object> model = new HashMap<>();
 
-        context.render("templates/cambioArena.ftl", model);
+        context.render("templates3/cambioArena.ftl", model);
 
     }
 
@@ -130,7 +125,7 @@ public class TorneoController {
 
 
     public static void mostrarBuscarJugador(@NotNull Context context) {
-        context.render("templates/buscarJugador.ftl");
+        context.render("templates3/buscarJugador.ftl");
     }
 
 
@@ -139,7 +134,7 @@ public class TorneoController {
 
             if (idParam == null || idParam.isEmpty()) {
                 context.attribute("error", "Debes introducir un ID");
-                context.render("templates/buscarJugador.ftl");
+                context.render("templates3/buscarJugador.ftl");
                 return;
             }
 
@@ -149,13 +144,13 @@ public class TorneoController {
 
             if (jugador == null) {
                 context.attribute("error", "No existe un jugador con ID: " + id);
-                context.render("templates/buscarJugador.ftl");
+                context.render("templates3/buscarJugador.ftl");
                 return;
             }
 
             Map<String, Object> datos = new HashMap<>();
             datos.put("jugador", jugador);
-            context.render("templates/editarJugador.ftl", datos);
+            context.render("templates3/editarJugador.ftl", datos);
     }
 
 
@@ -238,7 +233,7 @@ public class TorneoController {
         userService.crearUsuario(user.getEmail(),user.getPassword(),user.getRol(),user.getAlias(),user.getNombre(),user.getNivel(),user.getCopas(),user.getClan(),user.getImg());
 
         Map<String, Object> model = new HashMap<>();
-        context.render("templates/creacionUsuarios.ftl",model);
+        context.render("templates3/creacionUsuarios.ftl",model);
     }
 
 }

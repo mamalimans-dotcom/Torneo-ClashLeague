@@ -7,56 +7,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TorneoDao {
+    private Torneo mapear(Object[] f) {
+        return new Torneo((int)f[0], (String)f[1],(int)f[2],(String) f[3],(int)f[4]);
+    }
+    public static List<Torneo> cargarTorneos() {
+        List<Torneo> lista = new ArrayList<>();
+        Object[][] res = ConnectionManager.ejecutarSelectSQL("SELECT id, nombre, numeroCopas, arena, numJugadores FROM torneos", null);
+        if (res != null) {
+            for (Object[] f : res) lista.add(new Torneo((int)f[0], (String)f[1], (int)f[2], (String) f[3], (int) f[4]));
+        }
+        return lista;
+    }
 
-    public static List<Torneo> cargarTorneos(){
-
+    public List<Torneo> obtenerTorneos() {
         List<Torneo> torneos = new ArrayList<>();
-        String sql = "SELECT id, nombre, NumeroCopas FROM torneos";
-        Object[] parametros = {};
-        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, parametros );
-
-        if(resultado != null && resultado.length > 0){
-            for(int i=0;i < resultado.length;i++){
-                Torneo torneo = new Torneo();
-                torneo.setId((int) resultado[i][0]);
-                torneo.setNombre((String) resultado[i][1]);
-                torneo.setNumeroCopas((int) resultado[i][2]);
-                torneos.add(torneo);
+        Object[][] resultados = ConnectionManager.ejecutarSelectSQL(
+                "SELECT id, nombre, numeroCopas, arena, numJugadores FROM torneos",
+                null
+        );
+        if (resultados != null) {
+            for (Object[] fila : resultados) {
+                torneos.add(mapear(fila));
             }
         }
         return torneos;
     }
 
-    public static int crearTorneos(String nombre, int NumeroCopas){
-        String sql = "INSERT INTO torneos (nombre, NumeroCopas) VALUES (?, ?)";
-        Object[] params = {nombre, NumeroCopas};
-        long id = ConnectionManager.ejecutarInsertSQL(sql, params);
-        if (id > 0){
-            System.out.println("Torneo creado: "+id);
-            return (int) id;
-        }else {
-            System.out.println("Error en el inser ["+sql+"] con los siguientes parametros ["+params[0]+", "+params[1]+"]");
-        }
-        return 0;
+    public static int crearTorneos(String nombre, int copas, String arena, int numJugadores) {
+        return (int) ConnectionManager.ejecutarInsertSQL("INSERT INTO torneos (nombre, numeroCopas, arena, numJugadores) VALUES (?, ?, ?, ?)", new Object[]{nombre, copas, arena, numJugadores});
     }
 
-    public static int eliminarTorneos(int id){
-        int n = 0;
-        String sql = "DELETE FROM torneos WHERE id = ?";
-        Object[] params = {id};
-        n = ConnectionManager.ejecutarUpdateSQL(sql, params);
-        return n;
+    public static int eliminarTorneos(int id) {
+        return ConnectionManager.ejecutarUpdateSQL("DELETE FROM torneos WHERE id = ?", new Object[]{id});
     }
 
-    public static boolean actualizarTorneos(Torneo torneo){
-        String sql = "UPDATE torneos set nombre=? , numeroCopas= ? WHERE id=?";
-        Object[] params = {torneo.getNombre(), torneo.getNumeroCopas(), torneo.getId()};
-       int n = ConnectionManager.ejecutarUpdateSQL(sql, params);
-       if (n > 0){
-           return true;
-       }else {
-           return false;
-       }
+    public static int actualizarTorneo(int id, String nombre, int numeroCopas, String arena, int numJugadores) {
+        String sql = "UPDATE torneos SET nombre = ?, numeroCopas = ?, arena = ?, numJugadores = ? WHERE id = ?";
+        return ConnectionManager.ejecutarUpdateSQL(sql, new Object[]{nombre, numeroCopas, arena, numJugadores, id});
     }
+
+    public static int eliminarUsuariosDeTorneo(int idTorneo) {
+        return ConnectionManager.ejecutarUpdateSQL("DELETE FROM usuario_torneo WHERE torneo_id = ?", new Object[]{idTorneo});
+    }
+
+    public boolean agregarUsuarioATorneo(int torneoId, int usuarioId) {
+        String sql = "INSERT INTO usuario_torneo (torneo_id, usuario_id) VALUES (?, ?)";
+        int resultado = ConnectionManager.ejecutarUpdateSQL(sql, new Object[]{torneoId, usuarioId});
+        return resultado > 0;
+    }
+
 }
-

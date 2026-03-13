@@ -48,7 +48,7 @@ public class Main {
         app.get("/cargarJugador", TorneoController::cargarJugador);
         app.post("/actualizarJugador", TorneoController::actualizarJugador);
 
-        app.get("/crearUsuario", ctx -> ctx.render("templates/creacionUsuarios.ftl"));
+        app.get("/crearUsuario", ctx -> ctx.render("templates3/creacionUsuarios.ftl"));
         app.post("/crearUsuario", TorneoController::crearUsuario);
 
     }

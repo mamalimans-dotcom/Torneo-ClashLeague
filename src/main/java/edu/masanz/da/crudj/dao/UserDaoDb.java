@@ -7,107 +7,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoDb {
-
-    public UserDaoDb() {
-
+    private User mapear(Object[] f) {
+        return new User((int)f[0], (String)f[1], (String)f[2], (String)f[3],
+                (String)f[4], (String)f[5], (int)f[6], (int)f[7], (String)f[8], (String)f[9]);
     }
 
-    public User obtenerPorEmail(String email) {
-
-        String sql = "SELECT id, email, password, rol, alias, nombre, nivel, copas, clan, img FROM users WHERE email = ?";
-        Object[] params = {email};
-
-        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
-
-        if (resultado != null && resultado.length == 1) {
-            User user = new User();
-            user.setId((Integer) resultado[0][0]);
-            user.setEmail((String) resultado[0][1]);
-            user.setPassword((String) resultado[0][2]);
-            user.setRol((String) resultado[0][3]);
-            user.setAlias((String) resultado[0][4]);
-            user.setNombre((String) resultado[0][5]);
-            user.setNivel((Integer) resultado[0][6]);
-            user.setCopas((Integer) resultado[0][7]);
-            user.setClan((String) resultado[0][8]);
-            user.setImg((String) resultado[0][9]);
-            return user;
-        }
-        return null;
-    }
-
-    public static User obtenerUsuario(int id) {
-        String sql = "SELECT id, email, password, rol, alias, nombre, nivel, copas, clan, img" +
-                " FROM users WHERE id = ? ORDER BY id DESC LIMIT 1";
-        Object[] params = {id};
-        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
-        if (resultado != null && resultado.length == 1) {
-            User user = new User();
-
-            user.setId((Integer) resultado[0][0]);
-            user.setEmail((String) resultado[0][1]);
-            user.setPassword((String) resultado[0][2]);
-            user.setRol((String) resultado[0][3]);
-            user.setAlias((String) resultado[0][4]);
-            user.setNombre((String) resultado[0][5]);
-            user.setNivel((Integer) resultado[0][6]);
-            user.setCopas((Integer) resultado[0][7]);
-            user.setClan((String) resultado[0][8]);
-            user.setImg((String) resultado[0][9]);
-
-            return user;
-        }
-        return null;
-    }
-
-    public static boolean actualizarUsuario(User user) {
-        String sql = "UPDATE users SET email = ?, password = ?, rol = ?, alias = ?, nombre = ?, nivel = ?, copas = ?, clan = ?, img = ? WHERE id = ?";
-        Object[] params = {user.getEmail(), user.getPassword(), user.getRol(), user.getAlias(),user.getNombre(), user.getNivel(), user.getCopas(), user.getClan(), user.getImg(), user.getId()};
-        ConnectionManager.ejecutarUpdateSQL(sql, params);
-        return true;
-    }
-
-
-
-    public static boolean eliminarUsuario(int id) {
-        String sql = "DELETE FROM users WHERE id = ?";
-        Object[] params = {id};
-        ConnectionManager.ejecutarUpdateSQL(sql, params);
-        return true;
-    }
-
-    public static boolean inicializarUsuario() {
-        ConnectionManager.conectar("crud_clash", "root", "roo7");
-        return true;
-    }
-
-    public static List<User> obtenerUsuarios() {
-        List<User> users = new ArrayList<>();
-
-        String sql = "SELECT id, email, password, rol, alias, nombre, nivel, copas, clan, img" +
-                " FROM users ORDER BY id DESC";
-        Object[] params = {};
-        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
-        if (resultado != null && resultado.length>0) {
-            for(int i = 0; i < resultado.length; i++) {
-                User user = new User();
-                user.setId((Integer) resultado[i][0]);
-                user.setEmail((String) resultado[i][1]);
-                user.setPassword((String) resultado[i][2]);
-                user.setRol((String) resultado[i][3]);
-                user.setAlias((String) resultado[i][4]);
-                user.setNombre((String) resultado[i][5]);
-                user.setNivel((Integer) resultado[i][6]);
-                user.setCopas((Integer) resultado[i][7]);
-                user.setClan((String) resultado[i][8]);
-                user.setImg((String) resultado[i][9]);
-                users.add(user);
+    public List<User> obtenerUsuarios() {
+        List<User> usuarios = new ArrayList<>();
+        Object[][] resultados = ConnectionManager.ejecutarSelectSQL(
+                "SELECT id, email, password, rol, alias, nombre, nivel, copas, clan, img FROM users",
+                null
+        );
+        if (resultados != null) {
+            for (Object[] fila : resultados) {
+                usuarios.add(mapear(fila));
             }
         }
-        return users;
+        return usuarios;
     }
 
-    public static boolean crearUsuario(String email, String password, String rol, String alias, String nombre, int nivel, int copas, String clan, String img) {
+    public boolean crear(String email, String password, String rol, String alias, String nombre, int nivel, int copas, String clan, String img) {
         String sql = "INSERT INTO users (email, password, rol, alias, nombre, nivel, copas, clan, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Object[] params = {email, password, rol, alias, nombre, nivel, copas, clan, img};
         long id = ConnectionManager.ejecutarInsertSQL(sql, params);
@@ -118,5 +37,72 @@ public class UserDaoDb {
             System.out.println("algo ha ido mal en el insert: ["+sql+"] con estos paramentros: ["+params[0]+", "+params[1]+", "+params[2]+", "+params[3]+", "+params[4]+", "+params[5]+", "+params[6]+", "+params[7]+", "+params[8]+"]");
             return false;
         }
+    }
+
+    public boolean eliminar(int id) {
+        return ConnectionManager.ejecutarUpdateSQL("DELETE FROM users WHERE id = ?", new Object[]{id}) > 0;
+    }
+
+    public boolean actualizar(User u) {
+        String sql = "UPDATE users SET email=?, password=?, rol=?, alias=?, nombre=?, nivel=?, copas=?, clan=?, img=? WHERE id=?";
+        Object[] params = {
+                u.getEmail(), u.getPassword(), u.getRol(), u.getAlias(),
+                u.getNombre(), u.getNivel(), u.getCopas(), u.getClan(),u.getImg(), u.getId()
+        };
+        return ConnectionManager.ejecutarUpdateSQL(sql, params) > 0;
+    }
+
+    public User obtenerPorId(int id) {
+        String sql = "SELECT id, email, password, rol, alias, nombre, nivel, copas, clan, img FROM users WHERE id = ?";
+        Object[][] res = ConnectionManager.ejecutarSelectSQL(sql, new Object[]{id});
+
+        if (res != null && res.length > 0) {
+            return mapear(res[0]);
+        }
+        return null;
+    }
+
+    public User obtenerPorEmail(String email) {
+
+        String sql = "SELECT id, email, password, rol, alias, nombre, nivel, copas, clan, img FROM users WHERE email = ?";
+        Object[][] res = ConnectionManager.ejecutarSelectSQL(sql, new Object[]{email});
+        if (res != null && res.length > 0) {
+            return mapear(res[0]);
+        }
+
+        return null;
+    }
+
+    public static List<User> obtenerUsuariosPorTorneo(int torneoId) {
+        List<User> usuarios = new ArrayList<>();
+        String sql = "SELECT u.* FROM users u " +
+                "INNER JOIN usuario_torneo ut ON u.id = ut.usuario_id " +
+                "WHERE ut.torneo_id = ?";
+
+        Object[] params = {torneoId};
+        Object[][] resultados = ConnectionManager.ejecutarSelectSQL(sql, params);
+
+        if (resultados != null) {
+            for (Object[] fila : resultados) {
+                User user = new User(
+                        (int) fila[0],
+                        (String) fila[1],
+                        (String) fila[2],
+                        (String) fila[3],
+                        (String) fila[4],
+                        (String) fila[5],
+                        (int) fila[6],
+                        (int) fila[7],
+                        (String) fila[8],
+                        (String) fila[9]
+                );
+                usuarios.add(user);
+            }
+        }
+        return usuarios;
+    }
+
+    public int eliminarUsuariosDeTorneo(int idUsuario) {
+        return ConnectionManager.ejecutarUpdateSQL("DELETE FROM usuario_torneo WHERE usuario_id = ?", new Object[]{idUsuario});
     }
 }
